@@ -5,49 +5,28 @@ import CTASection from '@/components/CTASection';
 export const metadata: Metadata = {
   title: 'À propos',
   description:
-    'Jordan Rodriguez — développeur web basé à Genève. Je crée des sites web pour les petits commerces locaux. Découvrez mon parcours et mes valeurs.',
+    'Atelier Digital Genève — une agence née à Genève, pour Genève. Nous aidons les petits commerces genevois à se démarquer grâce à une présence en ligne soignée.',
 };
 
 const values = [
   {
+    emoji: '🤝',
     title: 'Proximité',
     description:
-      'Je suis basé à Genève, comme vous. Je connais les quartiers, les commerces, les enjeux locaux. Pas une agence distante — votre voisin numérique.',
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-      </svg>
-    ),
+      'Nous sommes vos voisins. On se déplace, on vous rencontre, on comprend votre commerce.',
   },
   {
-    title: 'Qualité',
+    emoji: '✅',
+    title: 'Honnêteté',
     description:
-      'Chaque site est conçu avec soin, optimisé pour mobile, rapide à charger, et visible sur Google. Je ne livre rien dont je ne suis pas fier moi-même.',
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-      </svg>
-    ),
+      "On vous dit ce qu'on peut faire et ce qu'on ne peut pas faire. Pas de promesses en l'air.",
   },
   {
+    emoji: '🎯',
     title: 'Simplicité',
     description:
-      'Pas de jargon technique, pas de surprises dans la facture. Je vous explique tout clairement, je vous livre rapidement, et vous n\'avez rien d\'autre à gérer.',
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-      </svg>
-    ),
+      'Des sites clairs, efficaces, faciles à comprendre pour vous et vos clients.',
   },
-];
-
-const skills = [
-  'Next.js & React',
-  'Design UI/UX',
-  'SEO local Genève',
-  'Responsive mobile',
-  'Performance web',
-  'Google My Business',
 ];
 
 export default function AProposPage() {
@@ -62,24 +41,14 @@ export default function AProposPage() {
                 À propos
               </div>
               <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-6">
-                Bonjour, je suis Jordan 👋
+                Une agence née à Genève, pour Genève
               </h1>
-              <p className="text-slate-300 text-xl leading-relaxed mb-8">
-                Développeur web basé à Genève. Depuis plusieurs années, j&apos;aide les petits commerces à se démarquer grâce à une présence en ligne soignée.
+              <p className="text-slate-300 text-xl leading-relaxed">
+                Nous aidons les petits commerces genevois à se démarquer grâce à une présence en ligne soignée.
               </p>
-              <div className="flex flex-wrap gap-3">
-                {skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="bg-white/10 text-slate-300 text-sm font-medium px-3 py-1.5 rounded-lg"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
             </div>
 
-            {/* Avatar placeholder */}
+            {/* Visual placeholder */}
             <div className="flex justify-center lg:justify-end">
               <div className="w-64 h-64 rounded-3xl bg-gradient-to-br from-red-600 to-red-800 flex items-center justify-center relative overflow-hidden shadow-2xl">
                 <div
@@ -90,8 +59,8 @@ export default function AProposPage() {
                     backgroundSize: '20px 20px',
                   }}
                 />
-                <span className="text-8xl relative z-10" role="img" aria-label="Jordan">
-                  👨‍💻
+                <span className="text-8xl relative z-10" role="img" aria-label="Atelier Digital Genève">
+                  🏙️
                 </span>
               </div>
             </div>
@@ -102,38 +71,48 @@ export default function AProposPage() {
       {/* Story */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="prose prose-lg prose-slate max-w-none">
-            <h2 className="text-3xl font-extrabold text-slate-900 mb-6">Mon histoire</h2>
-            <div className="space-y-5 text-slate-600 leading-relaxed">
-              <p>
-                Je m&apos;appelle Jordan, développeur web basé à Genève. Depuis plusieurs années, j&apos;aide les petits commerces à se démarquer grâce à une présence en ligne soignée.
-              </p>
-              <p>
-                Tout a commencé quand j&apos;ai réalisé que beaucoup de mes commerçants de quartier préférés — le boucher du coin, la petite libraire, le café du bout de la rue — étaient invisibles sur internet. Alors que leurs concurrents captaient des clients en ligne, eux perdaient des opportunités chaque jour.
-              </p>
-              <p>
-                J&apos;ai décidé de mettre mes compétences techniques au service de ces commerces qui font la vie de Genève. L&apos;idée est simple : créer des sites web professionnels, accessibles, et qui donnent vraiment des résultats — sans que le commerçant n&apos;ait à se soucier de la technique.
-              </p>
-            </div>
+          <h2 className="text-3xl font-extrabold text-slate-900 mb-6">Notre histoire</h2>
+          <div className="space-y-5 text-slate-600 leading-relaxed text-lg">
+            <p>
+              Atelier Digital Genève est né d&apos;une conviction simple : les petits commerces genevois méritent une présence en ligne aussi soignée que les grandes enseignes.
+            </p>
+            <p>
+              Tout a commencé avec des proches. Des amis restaurateurs, des membres de la famille avec de petites boutiques, des particuliers qui avaient besoin d&apos;un site mais ne savaient pas par où commencer. On les a aidés. On a appris. On s&apos;est amélioré.
+            </p>
+            <p>
+              Aujourd&apos;hui, nous souhaitons étendre cette aide à tous les commerçants de Genève et de la région. Pas une agence froide et distante — un partenaire de proximité qui comprend vos besoins, votre quartier, et vos clients.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission */}
+      <section className="py-16 bg-slate-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-red-600 rounded-3xl p-8 md:p-12 text-white text-center">
+            <h2 className="text-3xl font-extrabold mb-6">Notre mission</h2>
+            <p className="text-red-100 text-xl leading-relaxed max-w-2xl mx-auto">
+              Nous croyons que chaque commerce local mérite d&apos;être trouvé sur internet. Pas besoin d&apos;un budget énorme. Pas besoin de comprendre la technologie. Vous vous occupez de votre métier — nous nous occupons de votre présence en ligne.
+            </p>
           </div>
         </div>
       </section>
 
       {/* Values */}
-      <section className="py-20 bg-slate-50">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <h2 className="text-3xl font-extrabold text-slate-900 mb-4">Mes valeurs</h2>
+            <h2 className="text-3xl font-extrabold text-slate-900 mb-4">Nos valeurs</h2>
             <p className="text-lg text-slate-500 max-w-xl mx-auto">
-              Ce qui guide mon travail au quotidien avec chaque client.
+              Ce qui guide notre travail au quotidien avec chaque client.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {values.map((value) => (
-              <div key={value.title} className="bg-white rounded-2xl p-7 border border-slate-200">
-                <div className="w-12 h-12 bg-red-50 text-red-600 rounded-xl flex items-center justify-center mb-5">
-                  {value.icon}
+              <div key={value.title} className="bg-slate-50 rounded-2xl p-7 border border-slate-200">
+                <div className="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center text-2xl mb-5">
+                  {value.emoji}
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">{value.title}</h3>
                 <p className="text-slate-500 leading-relaxed">{value.description}</p>
@@ -143,49 +122,20 @@ export default function AProposPage() {
         </div>
       </section>
 
-      {/* Why me */}
-      <section className="py-20 bg-white">
+      {/* Why us */}
+      <section className="py-20 bg-slate-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-red-600 rounded-3xl p-8 md:p-12 text-white">
-            <h2 className="text-3xl font-extrabold mb-6">Pourquoi moi plutôt qu&apos;une agence ?</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {[
-                {
-                  title: 'Je connais Genève',
-                  text: 'Ses quartiers, ses commerces, ses habitudes. Je sais comment référencer votre site pour les Genevois.',
-                },
-                {
-                  title: 'Tarifs justes',
-                  text: 'Pas de structure d\'agence à financer. Mes tarifs reflètent le travail réel, pas les frais généraux.',
-                },
-                {
-                  title: 'Un seul interlocuteur',
-                  text: 'C\'est moi qui crée votre site, moi qui vous répond, moi qui gère les modifications. Pas de service client impersonnel.',
-                },
-                {
-                  title: 'Résultats garantis',
-                  text: 'Je ne suis satisfait que quand vous l\'êtes. Modifications incluses jusqu\'à ce que votre site soit parfait.',
-                },
-              ].map((item) => (
-                <div key={item.title} className="flex items-start gap-3">
-                  <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center shrink-0 mt-0.5">
-                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="font-semibold mb-1">{item.title}</p>
-                    <p className="text-red-100 text-sm leading-relaxed">{item.text}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+          <div className="bg-slate-900 rounded-3xl p-8 md:p-12 text-white">
+            <h2 className="text-3xl font-extrabold mb-6">Pourquoi nous choisir</h2>
+            <p className="text-slate-300 text-xl leading-relaxed">
+              Nous démarrons, et c&apos;est une force. Nos premiers clients bénéficient de tarifs préférentiels, d&apos;une attention maximale, et d&apos;un suivi personnalisé. Vous n&apos;êtes pas un numéro de dossier — vous êtes un partenaire.
+            </p>
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-slate-50 text-center px-4">
+      <section className="py-16 bg-white text-center px-4">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-3xl font-extrabold text-slate-900 mb-4">
             Travaillons ensemble

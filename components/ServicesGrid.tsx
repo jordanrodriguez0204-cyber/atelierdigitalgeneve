@@ -3,47 +3,48 @@ import type { Service } from '@/lib/types';
 
 const services: Service[] = [
   {
-    name: 'Vitrine',
-    price: 490,
-    monthly: 39,
+    name: 'Starter',
+    price: 299,
+    monthly: 29,
     description: 'Idéal pour se lancer avec une présence en ligne simple et efficace.',
     features: [
       'Site 1 page',
       'Mobile responsive',
-      'Google Maps intégré',
       'Formulaire de contact',
-      'Mise en ligne en 5 jours',
+      'Google Maps',
+      'Livré en 5 jours',
     ],
-    cta: 'Choisir Vitrine',
+    cta: 'Choisir Starter',
   },
   {
-    name: 'Commerce',
-    price: 890,
-    monthly: 59,
+    name: 'Standard',
+    price: 599,
+    monthly: 49,
     description: 'Le forfait complet pour développer votre clientèle à Genève.',
     features: [
-      '5 pages (accueil, services, galerie, avis, contact)',
+      "Jusqu'à 5 pages",
       'Galerie photos',
-      'Réservation en ligne (lien)',
       'SEO Genève inclus',
-      'Mise en ligne en 7 jours',
+      'Formulaire de contact avancé',
+      'Livré en 7 jours',
     ],
     recommended: true,
-    cta: 'Choisir Commerce',
+    cta: 'Choisir Standard',
   },
   {
-    name: 'Premium',
-    price: 1490,
-    monthly: 89,
+    name: 'Pro',
+    price: 990,
+    monthly: 79,
     description: 'Pour les commerces ambitieux qui veulent dominer leur marché local.',
     features: [
       'Pages illimitées',
-      'Boutique en ligne',
+      'Réservation en ligne (Calendly)',
       'Blog / actualités',
       'Statistiques visiteurs',
       'Support prioritaire',
+      'Livré en 14 jours',
     ],
-    cta: 'Choisir Premium',
+    cta: 'Choisir Pro',
   },
 ];
 
@@ -93,7 +94,7 @@ export default function ServicesGrid() {
               {service.recommended && (
                 <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
                   <span className="inline-flex items-center gap-1 bg-red-600 text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-md">
-                    ⭐ Populaire
+                    ⭐ Recommandé
                   </span>
                 </div>
               )}

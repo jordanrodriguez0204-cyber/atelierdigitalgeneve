@@ -1,9 +1,9 @@
 import Link from 'next/link';
 
 const stats = [
-  { value: '30+', label: 'Commerces accompagnés' },
-  { value: '100%', label: 'Satisfaits' },
-  { value: '7 jours', label: 'Mise en ligne' },
+  { value: 'Genève', label: 'Basé à Genève' },
+  { value: '7 jours', label: 'Sites livrés en 7 jours' },
+  { value: 'Gratuit', label: 'Devis gratuit' },
 ];
 
 export default function HeroSection() {
@@ -36,8 +36,8 @@ export default function HeroSection() {
         <div className="max-w-3xl">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 text-amber-800 text-sm font-medium px-3 py-1.5 rounded-full mb-6">
-            <span>🏆</span>
-            <span>#1 agence web locale à Genève</span>
+            <span>✨</span>
+            <span>Nouvelle agence genevoise</span>
           </div>
 
           {/* Main Heading */}
@@ -93,7 +93,7 @@ export default function HeroSection() {
           <div className="grid grid-cols-3 gap-6 max-w-lg">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center sm:text-left">
-                <div className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-1">
+                <div className="text-2xl md:text-3xl font-extrabold text-slate-900 mb-1">
                   {stat.value}
                 </div>
                 <div className="text-sm text-slate-500 font-medium">{stat.label}</div>

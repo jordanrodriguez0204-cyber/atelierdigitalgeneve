@@ -6,14 +6,14 @@ import CTASection from '@/components/CTASection';
 export const metadata: Metadata = {
   title: 'Services & Tarifs',
   description:
-    'Découvrez mes forfaits de création de sites web pour les commerces genevois. Vitrine CHF 490, Commerce CHF 890, Premium CHF 1490. Devis gratuit.',
+    'Découvrez nos forfaits de création de sites web pour les commerces genevois. Starter CHF 299, Standard CHF 599, Pro CHF 990. Devis gratuit.',
 };
 
 const faqs = [
   {
     question: 'Combien de temps faut-il pour créer mon site ?',
     answer:
-      'Selon le forfait, entre 5 et 10 jours ouvrables. Le forfait Vitrine est livré en 5 jours, le forfait Commerce en 7 jours, et le forfait Premium en 10 jours. Tout commence par un échange pour bien comprendre votre commerce.',
+      'Selon le forfait, entre 5 et 14 jours ouvrables. Le forfait Starter est livré en 5 jours, le forfait Standard en 7 jours, et le forfait Pro en 14 jours. Tout commence par un échange pour bien comprendre votre commerce.',
   },
   {
     question: 'Est-ce que je garde la propriété de mon site ?',
@@ -38,7 +38,7 @@ const faqs = [
   {
     question: 'Puis-je modifier le contenu moi-même après la livraison ?',
     answer:
-      'Pour les forfaits Commerce et Premium, je configure un tableau de bord simple pour modifier vos textes et photos vous-même. Pour le forfait Vitrine, les modifications sont incluses dans le forfait mensuel.',
+      'Pour les forfaits Standard et Pro, nous configurons un tableau de bord simple pour modifier vos textes et photos vous-même. Pour le forfait Starter, les modifications sont incluses dans le forfait mensuel.',
   },
 ];
 

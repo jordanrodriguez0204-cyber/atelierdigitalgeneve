@@ -19,6 +19,7 @@ const initialFormData: ContactFormData = {
   nom: '',
   email: '',
   telephone: '',
+  nom_commerce: '',
   commerce_type: '',
   message: '',
 };
@@ -52,6 +53,7 @@ export default function ContactForm() {
             nom: formData.nom,
             email: formData.email,
             telephone: formData.telephone || null,
+            nom_commerce: formData.nom_commerce || null,
             commerce_type: formData.commerce_type || null,
             message: formData.message || null,
           },
@@ -86,9 +88,9 @@ export default function ContactForm() {
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-xl font-bold text-slate-900 mb-2">Message envoyé !</h3>
+        <h3 className="text-xl font-bold text-slate-900 mb-2">Demande reçue !</h3>
         <p className="text-slate-600 mb-6">
-          Merci pour votre message. Je vous réponds dans les 24 heures.
+          Votre demande a bien été reçue. Jordan vous contactera dans les 24h.
         </p>
         <button
           onClick={() => setStatus('idle')}
@@ -122,6 +124,22 @@ export default function ContactForm() {
           onChange={handleChange}
           required
           placeholder="Jean Dupont"
+          className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent text-slate-900 placeholder-slate-400 transition"
+        />
+      </div>
+
+      {/* Nom du commerce */}
+      <div>
+        <label htmlFor="nom_commerce" className="block text-sm font-medium text-slate-700 mb-1.5">
+          Nom du commerce
+        </label>
+        <input
+          type="text"
+          id="nom_commerce"
+          name="nom_commerce"
+          value={formData.nom_commerce}
+          onChange={handleChange}
+          placeholder="Le Bistrot du Parc"
           className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent text-slate-900 placeholder-slate-400 transition"
         />
       </div>
@@ -242,7 +260,7 @@ export default function ContactForm() {
       </button>
 
       <p className="text-slate-400 text-xs text-center">
-        Gratuit, sans engagement. Je vous réponds sous 24h.
+        Gratuit, sans engagement. Jordan vous répond sous 24h.
       </p>
     </form>
   );

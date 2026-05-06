@@ -40,6 +40,7 @@ export interface ContactFormData {
   nom: string;
   email: string;
   telephone: string;
+  nom_commerce: string;
   commerce_type: string;
   message: string;
 }
