@@ -32,6 +32,8 @@ const portfolioItems = [
     bg: 'bg-pink-50',
     border: 'border-pink-100',
     iconBg: 'bg-pink-100',
+    demo: 'https://coiffeur.atelierdigitalgeneve.ch',
+    forfait: 'Starter — CHF 299',
   },
   {
     id: 3,
