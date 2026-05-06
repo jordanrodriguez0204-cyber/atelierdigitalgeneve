@@ -45,6 +45,8 @@ const portfolioItems = [
     bg: 'bg-purple-50',
     border: 'border-purple-100',
     iconBg: 'bg-purple-100',
+    demo: 'https://boutique.atelierdigitalgeneve.ch',
+    forfait: 'Pro — CHF 990',
   },
   {
     id: 4,
