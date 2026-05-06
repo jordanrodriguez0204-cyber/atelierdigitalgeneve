@@ -48,28 +48,6 @@ const portfolioItems = [
     demo: 'https://boutique.atelierdigitalgeneve.ch',
     forfait: 'Pro — CHF 990',
   },
-  {
-    id: 4,
-    type: 'Épicerie',
-    emoji: '🛒',
-    description:
-      "Présentation de vos produits, informations pratiques, et formulaire de contact pour fidéliser votre clientèle de quartier.",
-    tags: ['Produits', 'Horaires', 'Click & Collect'],
-    bg: 'bg-green-50',
-    border: 'border-green-100',
-    iconBg: 'bg-green-100',
-  },
-  {
-    id: 5,
-    type: 'Artisan',
-    emoji: '🔨',
-    description:
-      "Mise en valeur de votre savoir-faire, portfolio de réalisations, et devis en ligne pour développer votre activité.",
-    tags: ['Réalisations', 'Devis', 'Expertise'],
-    bg: 'bg-slate-50',
-    border: 'border-slate-200',
-    iconBg: 'bg-slate-200',
-  },
 ];
 
 export default function PortfolioPage() {
