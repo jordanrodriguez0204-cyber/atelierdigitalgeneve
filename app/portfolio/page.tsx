@@ -17,8 +17,10 @@ const portfolioItems = [
       'Menu en ligne, galerie photos, formulaire de réservation, et référencement local pour attirer de nouveaux clients.',
     tags: ['Menu', 'Réservation', 'SEO local'],
     bg: 'bg-amber-50',
-    border: 'border-amber-100',
+    border: 'border-amber-200',
     iconBg: 'bg-amber-100',
+    demo: 'https://restaurant.atelierdigitalgeneve.ch',
+    forfait: 'Standard — CHF 599',
   },
   {
     id: 2,
@@ -76,10 +78,10 @@ export default function PortfolioPage() {
             Portfolio
           </div>
           <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-5">
-            Nos prochaines réalisations
+            Nos réalisations
           </h1>
           <p className="text-slate-400 text-xl leading-relaxed">
-            Notre portfolio est en construction. Nous cherchons nos premiers clients pilotes à Genève.
+            Des exemples concrets de ce qu&apos;on peut créer pour votre commerce à Genève.
           </p>
         </div>
       </section>
@@ -99,11 +101,21 @@ export default function PortfolioPage() {
                     <div className={`w-14 h-14 ${item.iconBg} rounded-2xl flex items-center justify-center text-3xl`}>
                       {item.emoji}
                     </div>
-                    <span className="inline-flex items-center bg-slate-900 text-white text-xs font-bold px-3 py-1 rounded-full">
-                      À venir
-                    </span>
+                    {'demo' in item ? (
+                      <span className="inline-flex items-center gap-1 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                        <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse" />
+                        En ligne
+                      </span>
+                    ) : (
+                      <span className="inline-flex items-center bg-slate-900 text-white text-xs font-bold px-3 py-1 rounded-full">
+                        À venir
+                      </span>
+                    )}
                   </div>
                   <h3 className="text-xl font-bold text-slate-900 mb-2">{item.type}</h3>
+                  {'forfait' in item && (
+                    <p className="text-xs font-semibold text-red-600 mb-2">{item.forfait}</p>
+                  )}
                   <p className="text-slate-600 text-sm leading-relaxed mb-4">
                     {item.description}
                   </p>
@@ -120,12 +132,21 @@ export default function PortfolioPage() {
                 </div>
 
                 {/* CTA */}
-                <div className="px-6 pb-6 mt-auto">
+                <div className="px-6 pb-6 mt-auto flex flex-col gap-2">
+                  {'demo' in item && (
+                    <Link
+                      href={item.demo}
+                      target="_blank"
+                      className="block text-center bg-slate-900 hover:bg-slate-700 text-white font-semibold text-sm px-5 py-3 rounded-xl transition-colors"
+                    >
+                      Voir le site →
+                    </Link>
+                  )}
                   <Link
                     href="/contact"
                     className="block text-center bg-red-600 hover:bg-red-700 text-white font-semibold text-sm px-5 py-3 rounded-xl transition-colors"
                   >
-                    Je suis intéressé
+                    Je veux le même
                   </Link>
                 </div>
               </div>
