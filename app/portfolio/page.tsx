@@ -135,7 +135,7 @@ export default function PortfolioPage() {
                 <div className="px-6 pb-6 mt-auto flex flex-col gap-2">
                   {'demo' in item && (
                     <Link
-                      href={item.demo}
+                      href={item.demo!}
                       target="_blank"
                       className="block text-center bg-slate-900 hover:bg-slate-700 text-white font-semibold text-sm px-5 py-3 rounded-xl transition-colors"
                     >
