@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import type { ContactFormData } from '@/lib/types';
-import { isSupabaseConfigured } from '@/lib/supabase/client';
 
 const commerceTypes = [
   'Restaurant / Café',
@@ -44,24 +43,15 @@ export default function ContactForm() {
     setErrorMessage('');
 
     try {
-      if (isSupabaseConfigured()) {
-        // Real Supabase submission
-        const { createClient } = await import('@/lib/supabase/client');
-        const supabase = createClient();
-        const { error } = await supabase.from('leads').insert([
-          {
-            nom: formData.nom,
-            email: formData.email,
-            telephone: formData.telephone || null,
-            nom_commerce: formData.nom_commerce || null,
-            commerce_type: formData.commerce_type || null,
-            message: formData.message || null,
-          },
-        ]);
-        if (error) throw error;
-      } else {
-        // Simulate success when Supabase not configured
-        await new Promise((resolve) => setTimeout(resolve, 800));
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || 'Une erreur est survenue.');
       }
 
       setStatus('success');
