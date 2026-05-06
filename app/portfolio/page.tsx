@@ -89,6 +89,9 @@ export default function PortfolioPage() {
       {/* Portfolio items */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-center text-slate-400 text-sm italic mb-8">
+            * Les sites marqués &quot;En ligne&quot; sont des exemples fictifs créés à titre de démonstration.
+          </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {portfolioItems.map((item) => (
               <div
