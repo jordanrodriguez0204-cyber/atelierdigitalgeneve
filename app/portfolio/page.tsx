@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import CTASection from '@/components/CTASection';
+import PortfolioCards from '@/components/PortfolioCards';
 
 export const metadata: Metadata = {
   title: 'Portfolio',
@@ -8,169 +9,137 @@ export const metadata: Metadata = {
     'Découvrez nos réalisations web pour les commerces genevois : restaurant, coiffeur, boutique. Sites modernes, mobiles et optimisés Google. Devis gratuit.',
 };
 
-const portfolioItems = [
-  {
-    id: 1,
-    type: 'Coiffeur',
-    emoji: '✂️',
-    description:
-      'Site une page avec tout l\'essentiel : vos prestations et tarifs, une galerie de réalisations, et un formulaire de prise de rendez-vous. Sobre, rapide, efficace.',
-    tags: ['1 page', 'Galerie', 'Rendez-vous'],
-    image: '/card-coiffeur.jpg',
-    overlay: 'bg-pink-50/85',
-    border: 'border-pink-200',
-    iconBg: 'bg-white/80',
-    demo: 'https://coiffeur.atelierdigitalgeneve.ch',
-    forfait: 'Starter — CHF 299',
-  },
-  {
-    id: 2,
-    type: 'Restaurant',
-    emoji: '🍽️',
-    description:
-      '5 pages indépendantes : accueil, menu complet, galerie, à propos et réservation. Chaque page est optimisée pour Google séparément — plus de visibilité locale.',
-    tags: ['5 pages', 'Menu dédié', 'SEO local'],
-    image: '/card-restaurant.jpg',
-    overlay: 'bg-amber-50/85',
-    border: 'border-amber-200',
-    iconBg: 'bg-white/80',
-    demo: 'https://restaurant.atelierdigitalgeneve.ch',
-    forfait: 'Standard — CHF 599',
-  },
-  {
-    id: 3,
-    type: 'Boutique',
-    emoji: '👗',
-    description:
-      'Pages illimitées, collections filtrables par saison, lookbook interactif, et système de réservation intégré. Le site le plus complet pour se démarquer.',
-    tags: ['Pages illimitées', 'Lookbook', 'Réservation'],
-    image: '/card-boutique.jpg',
-    overlay: 'bg-slate-50/85',
-    border: 'border-slate-200',
-    iconBg: 'bg-white/80',
-    demo: 'https://boutique.atelierdigitalgeneve.ch',
-    forfait: 'Pro — CHF 990',
-  },
+const stats = [
+  { value: '3', label: 'Sites livrés', sub: 'à Genève' },
+  { value: '7j', label: 'Délai moyen', sub: 'de livraison' },
+  { value: '100%', label: 'Satisfaction', sub: 'garantie' },
 ];
 
 export default function PortfolioPage() {
   return (
-    <div className="pt-16">
-      {/* Hero */}
-      <section className="bg-slate-900 py-20 text-center px-4">
-        <div className="max-w-3xl mx-auto">
-          <div className="inline-block bg-red-600/20 text-red-400 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">
+    <div className="pt-16 bg-white">
+
+      {/* ── Hero ── */}
+      <section className="bg-slate-900 py-20 text-center px-4 relative overflow-hidden">
+        {/* Subtle glow */}
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-red-600/10 rounded-full blur-3xl" />
+        </div>
+        <div className="relative max-w-3xl mx-auto">
+          <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 text-slate-400 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6">
+            <span className="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse" />
             Portfolio
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-5">
-            Nos réalisations
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-5 tracking-tight leading-[1.05]">
+            Des sites qui{' '}
+            <span className="text-red-500">convertissent</span>
           </h1>
-          <p className="text-slate-400 text-xl leading-relaxed">
-            Des exemples concrets de ce qu&apos;on peut créer pour votre commerce à Genève.
+          <p className="text-slate-400 text-lg md:text-xl leading-relaxed max-w-xl mx-auto">
+            Chaque réalisation est conçue pour attirer des clients,
+            pas juste pour être belle.
           </p>
         </div>
       </section>
 
-      {/* Portfolio items */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-slate-400 text-sm italic mb-8">
-            * Les sites marqués &quot;En ligne&quot; sont des exemples fictifs créés à titre de démonstration.
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {portfolioItems.map((item) => (
-              <div
-                key={item.id}
-                className="relative rounded-2xl border border-slate-200/60 overflow-hidden flex flex-col shadow-sm"
-              >
-                {/* Background image */}
-                <img
-                  src={item.image}
-                  alt=""
-                  aria-hidden="true"
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-                {/* Gradient: transparent top → white bottom */}
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent from-[15%] via-white/90 via-[45%] to-white" />
-
-                {/* Content */}
-                <div className="relative z-10 p-6 pb-4">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className={`w-14 h-14 ${item.iconBg} backdrop-blur-sm rounded-2xl flex items-center justify-center text-3xl shadow-sm`}>
-                      {item.emoji}
-                    </div>
-                    {'demo' in item ? (
-                      <span className="inline-flex items-center gap-1 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">
-                        <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse" />
-                        En ligne
-                      </span>
-                    ) : (
-                      <span className="inline-flex items-center bg-slate-900 text-white text-xs font-bold px-3 py-1 rounded-full">
-                        À venir
-                      </span>
-                    )}
-                  </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-2">{item.type}</h3>
-                  {'forfait' in item && (
-                    <p className="text-xs font-semibold text-red-600 mb-2">{item.forfait}</p>
-                  )}
-                  <p className="text-slate-700 text-sm leading-relaxed mb-4">
-                    {item.description}
-                  </p>
-                  <div className="flex flex-wrap gap-1.5 mb-5">
-                    {item.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="bg-white/80 backdrop-blur-sm text-slate-700 text-xs font-medium px-2.5 py-1 rounded-full border border-white/60"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* CTA */}
-                <div className="relative z-10 px-6 pb-6 mt-auto flex flex-col gap-2">
-                  {'demo' in item && (
-                    <Link
-                      href={item.demo!}
-                      target="_blank"
-                      className="block text-center bg-slate-900 hover:bg-slate-700 text-white font-semibold text-sm px-5 py-3 rounded-xl transition-colors"
-                    >
-                      Voir le site →
-                    </Link>
-                  )}
-                  <Link
-                    href="/contact"
-                    className="block text-center bg-red-600 hover:bg-red-700 text-white font-semibold text-sm px-5 py-3 rounded-xl transition-colors"
-                  >
-                    Je veux le même
-                  </Link>
-                </div>
+      {/* ── Stats bar ── */}
+      <section className="border-b border-slate-100 bg-white">
+        <div className="max-w-3xl mx-auto px-4">
+          <div className="grid grid-cols-3 divide-x divide-slate-100">
+            {stats.map((s) => (
+              <div key={s.label} className="py-6 text-center">
+                <div className="text-2xl md:text-3xl font-bold text-slate-900">{s.value}</div>
+                <div className="text-xs font-semibold text-slate-700 mt-0.5">{s.label}</div>
+                <div className="text-xs text-slate-400">{s.sub}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Votre projet */}
-      <section className="py-16 bg-slate-50">
-        <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-slate-900 mb-4">
+      {/* ── Cards ── */}
+      <section className="py-20 bg-[#f8f8f8]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          <div className="text-center mb-12">
+            <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-3">
+              Exemples de réalisations
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">
+              Trois commerces, trois budgets
+            </h2>
+            <p className="text-slate-500 mt-3 max-w-lg mx-auto">
+              Cliquez sur chaque site pour le visiter en direct.
+            </p>
+          </div>
+
+          <PortfolioCards />
+
+          <p className="text-center text-slate-400 text-xs mt-8">
+            * Sites de démonstration fictifs créés à titre d&apos;illustration.
+          </p>
+        </div>
+      </section>
+
+      {/* ── Process ── */}
+      <section className="py-20 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-3">Process</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">
+              De l&apos;idée au site en 4 étapes
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { n: '01', title: 'Échange gratuit', desc: '20 min par téléphone pour comprendre votre projet.' },
+              { n: '02', title: 'Devis sous 24h', desc: 'Devis fixe + première maquette. Aucune surprise.' },
+              { n: '03', title: 'Création', desc: 'Je construis votre site. Vous validez chaque étape.' },
+              { n: '04', title: 'Mise en ligne', desc: 'Votre site est live. Je soumets tout à Google.' },
+            ].map((step) => (
+              <div key={step.n} className="relative bg-slate-50 rounded-2xl p-6 border border-slate-100 group hover:border-red-100 hover:bg-red-50/30 transition-all duration-300">
+                <div className="text-4xl font-bold text-slate-100 group-hover:text-red-100 transition-colors leading-none mb-4 select-none">
+                  {step.n}
+                </div>
+                <h3 className="font-bold text-slate-900 mb-2">{step.title}</h3>
+                <p className="text-slate-500 text-sm leading-relaxed">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── CTA final ── */}
+      <section className="py-16 bg-slate-50 border-t border-slate-100">
+        <div className="max-w-2xl mx-auto px-4 text-center">
+          <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-4">Prochaine étape</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 tracking-tight">
             Votre commerce, le prochain en ligne
           </h2>
-          <p className="text-lg text-slate-500 mb-8">
-            Chaque site est conçu sur-mesure pour votre activité. Devis gratuit, livraison en 7 jours, satisfaction garantie.
+          <p className="text-slate-500 text-lg mb-8">
+            Devis gratuit · Livraison en 7 jours · Satisfaction garantie
           </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-bold text-lg px-8 py-4 rounded-xl transition-colors shadow-lg shadow-red-600/20"
-          >
-            Demander un devis gratuit
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700
+                         text-white font-bold text-lg px-8 py-4 rounded-2xl
+                         transition-all duration-200 shadow-lg shadow-red-600/20 hover:shadow-red-600/30 hover:-translate-y-0.5"
+            >
+              Demander un devis gratuit
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </Link>
+            <Link
+              href="/services"
+              className="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50
+                         text-slate-700 font-semibold text-lg px-8 py-4 rounded-2xl
+                         border border-slate-200 hover:border-slate-300 transition-all duration-200 hover:-translate-y-0.5"
+            >
+              Voir les tarifs
+            </Link>
+          </div>
         </div>
       </section>
 
