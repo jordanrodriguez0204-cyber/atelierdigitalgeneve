@@ -30,37 +30,27 @@ export default function Navbar() {
 
   useEffect(() => { setMobileOpen(false); }, [pathname]);
 
-  /* Couleurs dynamiques */
-  const textColor   = scrolled ? 'text-[#0C0B09]' : isDark ? 'text-white/85' : 'text-[#0C0B09]';
-  const textHover   = scrolled ? 'hover:text-[#0C0B09]' : isDark ? 'hover:text-white' : 'hover:text-[#0C0B09]';
+  /* Couleurs dynamiques — fond toujours clair */
+  const textColor   = 'text-[#0C0B09]';
+  const textHover   = 'hover:text-[#0C0B09]';
   const activeColor = 'text-[#C9372C]';
 
   return (
     <>
       <header
-        className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
-          scrolled
-            ? 'bg-[#FAFAF8]/90 backdrop-blur-xl border-b border-[#0C0B09]/[0.07] shadow-[0_1px_0_rgba(0,0,0,0.04)]'
-            : isDark
-              ? 'bg-transparent'
-              : 'bg-transparent'
-        }`}
+        className="fixed top-0 inset-x-0 z-50 bg-[#FAFAF8]/92 backdrop-blur-xl border-b border-[#0C0B09]/[0.07] shadow-[0_1px_0_rgba(0,0,0,0.04)]"
       >
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
           <div className="flex items-center justify-between h-[60px]">
 
             {/* ── Logo + Wordmark ── */}
             <Link href="/" className="flex items-center gap-2.5 shrink-0 group">
-              <Logo size={32} light={isDark && !scrolled} />
+              <Logo size={32} light={false} />
               <div className="hidden sm:block">
-                <span className={`text-[13px] font-semibold tracking-tight leading-none transition-colors duration-300 ${
-                  scrolled ? 'text-[#0C0B09]' : isDark ? 'text-white' : 'text-[#0C0B09]'
-                }`}>
+                <span className="text-[13px] font-semibold tracking-tight leading-none text-[#0C0B09]">
                   Atelier Digital
                 </span>
-                <span className={`block text-[10px] font-medium tracking-[0.12em] uppercase leading-none mt-0.5 transition-colors duration-300 ${
-                  scrolled ? 'text-[#C9372C]' : isDark ? 'text-white/50' : 'text-[#C9372C]'
-                }`}>
+                <span className="block text-[10px] font-medium tracking-[0.12em] uppercase leading-none mt-0.5 text-[#C9372C]">
                   Genève
                 </span>
               </div>
@@ -96,11 +86,7 @@ export default function Navbar() {
               {/* CTA desktop */}
               <Link
                 href="/contact"
-                className={`hidden md:inline-flex items-center gap-1.5 text-[12.5px] font-semibold px-4 py-2 rounded-full transition-all duration-300 ${
-                  scrolled || !isDark
-                    ? 'bg-[#0C0B09] text-white hover:bg-[#1A1917]'
-                    : 'border border-white/30 text-white hover:bg-white/10 backdrop-blur-sm'
-                }`}
+                className="hidden md:inline-flex items-center gap-1.5 text-[12.5px] font-semibold px-4 py-2 rounded-full bg-[#0C0B09] text-white hover:bg-[#1A1917] transition-all duration-200"
               >
                 Devis gratuit
                 <svg className="w-3 h-3 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -111,9 +97,7 @@ export default function Navbar() {
               {/* Mobile hamburger */}
               <button
                 onClick={() => setMobileOpen(!mobileOpen)}
-                className={`md:hidden p-2 rounded-lg transition-colors duration-200 ${
-                  scrolled || !isDark ? 'text-[#0C0B09] hover:bg-black/5' : 'text-white hover:bg-white/10'
-                }`}
+                className="md:hidden p-2 rounded-lg text-[#0C0B09] hover:bg-black/5 transition-colors duration-200"
                 aria-label="Menu"
                 aria-expanded={mobileOpen}
               >

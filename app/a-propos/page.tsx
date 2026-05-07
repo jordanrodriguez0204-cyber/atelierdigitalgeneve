@@ -169,22 +169,36 @@ export default function AProposPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-3">Mon parcours</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-8 tracking-tight">Mon histoire</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-8 tracking-tight">Tout a commencé avec un ami photographe</h2>
           </FadeIn>
+
+          {/* Story card avec citation */}
+          <FadeIn delay={0.05}>
+            <div className="bg-slate-50 rounded-3xl p-8 md:p-10 mb-8 border border-slate-100 relative overflow-hidden">
+              <div className="absolute top-6 right-8 text-[80px] font-serif text-slate-200 leading-none select-none" aria-hidden="true">&ldquo;</div>
+              <div className="relative space-y-5 text-slate-600 leading-relaxed text-lg">
+                <p>
+                  Lucas est mon ami d&apos;enfance. Passionné de photographie depuis l&apos;adolescence, il avait accumulé des centaines de clichés magnifiques — des portraits, des paysages genevois, des événements. Ses photos dormaient dans un disque dur.
+                </p>
+                <p>
+                  Un jour, il m&apos;a demandé : <span className="text-slate-900 font-medium italic">&ldquo;Tu crois que je pourrais vivre de ça un jour ?&rdquo;</span> Il n&apos;avait aucune présence en ligne, aucun moyen pour les clients de le trouver ou de voir son travail.
+                </p>
+                <p>
+                  Je lui ai créé son premier site. Un espace épuré pour exposer ses photos, une page contact pour recevoir des demandes, un référencement local pour apparaître sur Google quand quelqu&apos;un cherche un photographe à Genève. Trois semaines après la mise en ligne, il décrochait sa première commande professionnelle.
+                </p>
+              </div>
+            </div>
+          </FadeIn>
+
           <div className="space-y-5 text-slate-600 leading-relaxed text-lg">
-            <FadeIn delay={0.05}>
-              <p>
-                Atelier Digital Genève est né d&apos;une conviction simple : les petits commerces genevois méritent une présence en ligne aussi soignée que les grandes enseignes — sans en avoir le budget.
-              </p>
-            </FadeIn>
             <FadeIn delay={0.1}>
               <p>
-                Tout a commencé avec des proches. Des amis restaurateurs, des membres de la famille avec de petites boutiques, des commerçants qui avaient besoin d&apos;un site mais ne savaient pas par où commencer. Je les ai aidés. J&apos;ai appris. Je me suis amélioré.
+                Cet exemple m&apos;a convaincu d&apos;une chose : le frein pour les indépendants et les petits commerces n&apos;est pas le talent — c&apos;est la visibilité. Avoir les compétences ne suffit pas si personne ne peut vous trouver.
               </p>
             </FadeIn>
             <FadeIn delay={0.15}>
               <p>
-                Aujourd&apos;hui, je propose cette aide à tous les commerçants de Genève. Pas une agence froide et distante — un partenaire de proximité, joignable directement, qui connaît la ville et ses quartiers.
+                Depuis, j&apos;ai appliqué la même logique à des dizaines de commerces genevois. Pas une agence froide et distante — un partenaire de proximité qui comprend votre métier et vous aide à vous faire connaître dans votre quartier, votre ville.
               </p>
             </FadeIn>
           </div>
