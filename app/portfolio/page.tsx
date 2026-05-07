@@ -16,9 +16,10 @@ const portfolioItems = [
     description:
       'Site une page avec tout l\'essentiel : vos prestations et tarifs, une galerie de réalisations, et un formulaire de prise de rendez-vous. Sobre, rapide, efficace.',
     tags: ['1 page', 'Galerie', 'Rendez-vous'],
-    bg: 'bg-pink-50',
-    border: 'border-pink-100',
-    iconBg: 'bg-pink-100',
+    image: '/card-coiffeur.jpg',
+    overlay: 'bg-pink-50/85',
+    border: 'border-pink-200',
+    iconBg: 'bg-white/80',
     demo: 'https://coiffeur.atelierdigitalgeneve.ch',
     forfait: 'Starter — CHF 299',
   },
@@ -29,9 +30,10 @@ const portfolioItems = [
     description:
       '5 pages indépendantes : accueil, menu complet, galerie, à propos et réservation. Chaque page est optimisée pour Google séparément — plus de visibilité locale.',
     tags: ['5 pages', 'Menu dédié', 'SEO local'],
-    bg: 'bg-amber-50',
+    image: '/card-restaurant.jpg',
+    overlay: 'bg-amber-50/85',
     border: 'border-amber-200',
-    iconBg: 'bg-amber-100',
+    iconBg: 'bg-white/80',
     demo: 'https://restaurant.atelierdigitalgeneve.ch',
     forfait: 'Standard — CHF 599',
   },
@@ -42,9 +44,10 @@ const portfolioItems = [
     description:
       'Pages illimitées, collections filtrables par saison, lookbook interactif, et système de réservation intégré. Le site le plus complet pour se démarquer.',
     tags: ['Pages illimitées', 'Lookbook', 'Réservation'],
-    bg: 'bg-purple-50',
-    border: 'border-purple-100',
-    iconBg: 'bg-purple-100',
+    image: '/card-boutique.jpg',
+    overlay: 'bg-slate-50/85',
+    border: 'border-slate-200',
+    iconBg: 'bg-white/80',
     demo: 'https://boutique.atelierdigitalgeneve.ch',
     forfait: 'Pro — CHF 990',
   },
@@ -78,16 +81,26 @@ export default function PortfolioPage() {
             {portfolioItems.map((item) => (
               <div
                 key={item.id}
-                className={`${item.bg} rounded-2xl border ${item.border} overflow-hidden flex flex-col`}
+                className={`relative rounded-2xl border ${item.border} overflow-hidden flex flex-col`}
               >
-                {/* Header */}
-                <div className="p-6 pb-4">
+                {/* Background image */}
+                <img
+                  src={item.image}
+                  alt=""
+                  aria-hidden="true"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                {/* Color overlay */}
+                <div className={`absolute inset-0 ${item.overlay}`} />
+
+                {/* Content */}
+                <div className="relative z-10 p-6 pb-4">
                   <div className="flex items-start justify-between mb-4">
-                    <div className={`w-14 h-14 ${item.iconBg} rounded-2xl flex items-center justify-center text-3xl`}>
+                    <div className={`w-14 h-14 ${item.iconBg} backdrop-blur-sm rounded-2xl flex items-center justify-center text-3xl shadow-sm`}>
                       {item.emoji}
                     </div>
                     {'demo' in item ? (
-                      <span className="inline-flex items-center gap-1 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                      <span className="inline-flex items-center gap-1 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">
                         <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse" />
                         En ligne
                       </span>
@@ -101,14 +114,14 @@ export default function PortfolioPage() {
                   {'forfait' in item && (
                     <p className="text-xs font-semibold text-red-600 mb-2">{item.forfait}</p>
                   )}
-                  <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                  <p className="text-slate-700 text-sm leading-relaxed mb-4">
                     {item.description}
                   </p>
                   <div className="flex flex-wrap gap-1.5 mb-5">
                     {item.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="bg-white/70 text-slate-600 text-xs font-medium px-2.5 py-1 rounded-full border border-white"
+                        className="bg-white/80 backdrop-blur-sm text-slate-700 text-xs font-medium px-2.5 py-1 rounded-full border border-white/60"
                       >
                         {tag}
                       </span>
@@ -117,7 +130,7 @@ export default function PortfolioPage() {
                 </div>
 
                 {/* CTA */}
-                <div className="px-6 pb-6 mt-auto flex flex-col gap-2">
+                <div className="relative z-10 px-6 pb-6 mt-auto flex flex-col gap-2">
                   {'demo' in item && (
                     <Link
                       href={item.demo!}
