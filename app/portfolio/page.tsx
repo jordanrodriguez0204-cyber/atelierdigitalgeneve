@@ -91,7 +91,7 @@ export default function PortfolioPage() {
                   className="absolute inset-0 w-full h-full object-cover"
                 />
                 {/* Gradient: transparent top → white bottom */}
-                <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-white/60 to-white" />
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent from-[15%] via-white/90 via-[45%] to-white" />
 
                 {/* Content */}
                 <div className="relative z-10 p-6 pb-4">
