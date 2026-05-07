@@ -84,13 +84,20 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="mt-10 pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-2">
+        <div className="mt-10 pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-slate-500 text-sm">
             © {year} Atelier Digital Genève. Tous droits réservés.
           </p>
-          <p className="text-slate-600 text-xs">
-            Fait avec ❤️ à Genève, Suisse
-          </p>
+          <div className="flex items-center gap-4">
+            <Link
+              href="/mentions-legales"
+              className="text-slate-600 hover:text-slate-400 text-xs transition-colors"
+            >
+              Mentions légales & CGV
+            </Link>
+            <span className="text-slate-700 text-xs">·</span>
+            <p className="text-slate-600 text-xs">Fait avec ❤️ à Genève</p>
+          </div>
         </div>
       </div>
     </footer>
