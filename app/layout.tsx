@@ -69,6 +69,7 @@ const localBusinessSchema = {
     '@type': 'PostalAddress',
     addressLocality: 'Genève',
     addressRegion: 'GE',
+    postalCode: '1200',
     addressCountry: 'CH',
   },
   areaServed: {
