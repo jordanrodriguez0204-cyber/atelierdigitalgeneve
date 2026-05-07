@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import HeroSection from '@/components/HeroSection';
 import ProblemSolution from '@/components/ProblemSolution';
 import ServicesGrid from '@/components/ServicesGrid';
-import PortfolioGrid from '@/components/PortfolioGrid';
 import Testimonials from '@/components/Testimonials';
 import CTASection from '@/components/CTASection';
 
@@ -18,7 +17,6 @@ export default function HomePage() {
       <HeroSection />
       <ProblemSolution />
       <ServicesGrid />
-      <PortfolioGrid />
       <Testimonials />
       <CTASection />
     </>
