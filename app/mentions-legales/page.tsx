@@ -47,7 +47,6 @@ export default function MentionsLegalesPage() {
             <p><strong>Raison sociale :</strong> Atelier Digital Genève</p>
             <p><strong>Responsable :</strong> Jordan Rodriguez</p>
             <p><strong>Adresse :</strong> Genève, Suisse</p>
-            <p><strong>Téléphone :</strong> +41 76 331 61 83</p>
             <p><strong>Email :</strong> contact@atelierdigitalgeneve.ch</p>
             <p><strong>Site web :</strong> https://atelierdigitalgeneve.ch</p>
           </Section>
@@ -189,8 +188,7 @@ export default function MentionsLegalesPage() {
               Pour toute question relative aux présentes mentions légales ou CGV, contactez-nous à{' '}
               <a href="mailto:contact@atelierdigitalgeneve.ch" className="text-red-600 hover:underline">
                 contact@atelierdigitalgeneve.ch
-              </a>{' '}
-              ou au +41 76 331 61 83.
+              </a>.
             </p>
           </div>
 
