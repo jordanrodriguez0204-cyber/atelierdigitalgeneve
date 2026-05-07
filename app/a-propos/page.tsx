@@ -178,7 +178,7 @@ export default function AProposPage() {
               <div className="absolute top-6 right-8 text-[80px] font-serif text-slate-200 leading-none select-none" aria-hidden="true">&ldquo;</div>
               <div className="relative space-y-5 text-slate-600 leading-relaxed text-lg">
                 <p>
-                  Lucas est mon ami d&apos;enfance. Passionné de photographie depuis l&apos;adolescence, il avait accumulé des centaines de clichés magnifiques — des portraits, des paysages genevois, des événements. Ses photos dormaient dans un disque dur.
+                  Nouman est mon ami d&apos;enfance. Passionné de photographie depuis l&apos;adolescence, il avait accumulé des centaines de clichés magnifiques — des portraits, des paysages genevois, des événements. Ses photos dormaient dans un disque dur.
                 </p>
                 <p>
                   Un jour, il m&apos;a demandé : <span className="text-slate-900 font-medium italic">&ldquo;Tu crois que je pourrais vivre de ça un jour ?&rdquo;</span> Il n&apos;avait aucune présence en ligne, aucun moyen pour les clients de le trouver ou de voir son travail.
@@ -198,7 +198,7 @@ export default function AProposPage() {
             </FadeIn>
             <FadeIn delay={0.15}>
               <p>
-                Depuis, j&apos;ai appliqué la même logique à des dizaines de commerces genevois. Pas une agence froide et distante — un partenaire de proximité qui comprend votre métier et vous aide à vous faire connaître dans votre quartier, votre ville.
+                Depuis, j&apos;ai appliqué la même logique à des dizaines de commerces genevois. Un seul interlocuteur, joignable directement, qui prend le temps de comprendre votre métier avant de toucher au moindre code.
               </p>
             </FadeIn>
           </div>
