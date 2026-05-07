@@ -81,7 +81,7 @@ export default function PortfolioPage() {
             {portfolioItems.map((item) => (
               <div
                 key={item.id}
-                className={`relative rounded-2xl border ${item.border} overflow-hidden flex flex-col`}
+                className="relative rounded-2xl border border-slate-200/60 overflow-hidden flex flex-col shadow-sm"
               >
                 {/* Background image */}
                 <img
@@ -90,8 +90,8 @@ export default function PortfolioPage() {
                   aria-hidden="true"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
-                {/* Subtle overlay for text readability */}
-                <div className="absolute inset-0 bg-white/30" />
+                {/* Gradient: transparent top → white bottom */}
+                <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-white/60 to-white" />
 
                 {/* Content */}
                 <div className="relative z-10 p-6 pb-4">
