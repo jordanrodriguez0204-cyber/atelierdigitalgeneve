@@ -14,8 +14,8 @@ const portfolioItems = [
     type: 'Restaurant',
     emoji: '🍽️',
     description:
-      'Menu en ligne, galerie photos, formulaire de réservation, et référencement local pour attirer de nouveaux clients.',
-    tags: ['Menu', 'Réservation', 'SEO local'],
+      '5 pages indépendantes : accueil, menu complet, galerie, à propos et réservation. Chaque page est optimisée pour Google séparément — plus de visibilité locale.',
+    tags: ['5 pages', 'Menu dédié', 'SEO local'],
     bg: 'bg-amber-50',
     border: 'border-amber-200',
     iconBg: 'bg-amber-100',
@@ -27,8 +27,8 @@ const portfolioItems = [
     type: 'Coiffeur',
     emoji: '✂️',
     description:
-      "Présentation de vos services, galerie de réalisations, et prise de rendez-vous en ligne pour remplir votre agenda.",
-    tags: ['Services', 'Galerie', 'Rendez-vous'],
+      'Site une page avec tout l\'essentiel : vos prestations et tarifs, une galerie de réalisations, et un formulaire de prise de rendez-vous. Sobre, rapide, efficace.',
+    tags: ['1 page', 'Galerie', 'Rendez-vous'],
     bg: 'bg-pink-50',
     border: 'border-pink-100',
     iconBg: 'bg-pink-100',
@@ -40,8 +40,8 @@ const portfolioItems = [
     type: 'Boutique',
     emoji: '👗',
     description:
-      'Vitrine élégante pour vos collections, carte interactive, horaires et contact pour donner envie de venir en boutique.',
-    tags: ['Collections', 'Lookbook', 'Contact'],
+      'Pages illimitées, collections filtrables par saison, lookbook interactif, et système de réservation intégré. Le site le plus complet pour se démarquer.',
+    tags: ['Pages illimitées', 'Lookbook', 'Réservation'],
     bg: 'bg-purple-50',
     border: 'border-purple-100',
     iconBg: 'bg-purple-100',
