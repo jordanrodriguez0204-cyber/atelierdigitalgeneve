@@ -11,19 +11,6 @@ export const metadata: Metadata = {
 const portfolioItems = [
   {
     id: 1,
-    type: 'Restaurant',
-    emoji: '🍽️',
-    description:
-      '5 pages indépendantes : accueil, menu complet, galerie, à propos et réservation. Chaque page est optimisée pour Google séparément — plus de visibilité locale.',
-    tags: ['5 pages', 'Menu dédié', 'SEO local'],
-    bg: 'bg-amber-50',
-    border: 'border-amber-200',
-    iconBg: 'bg-amber-100',
-    demo: 'https://restaurant.atelierdigitalgeneve.ch',
-    forfait: 'Standard — CHF 599',
-  },
-  {
-    id: 2,
     type: 'Coiffeur',
     emoji: '✂️',
     description:
@@ -34,6 +21,19 @@ const portfolioItems = [
     iconBg: 'bg-pink-100',
     demo: 'https://coiffeur.atelierdigitalgeneve.ch',
     forfait: 'Starter — CHF 299',
+  },
+  {
+    id: 2,
+    type: 'Restaurant',
+    emoji: '🍽️',
+    description:
+      '5 pages indépendantes : accueil, menu complet, galerie, à propos et réservation. Chaque page est optimisée pour Google séparément — plus de visibilité locale.',
+    tags: ['5 pages', 'Menu dédié', 'SEO local'],
+    bg: 'bg-amber-50',
+    border: 'border-amber-200',
+    iconBg: 'bg-amber-100',
+    demo: 'https://restaurant.atelierdigitalgeneve.ch',
+    forfait: 'Standard — CHF 599',
   },
   {
     id: 3,
