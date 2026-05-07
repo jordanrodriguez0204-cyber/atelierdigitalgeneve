@@ -21,7 +21,7 @@ export default function CTASection() {
             </h2>
 
             <p className="text-red-100 text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
-              Demandez votre devis gratuit maintenant. Premier échange par téléphone ou vidéo, sans engagement.
+              Demandez votre devis gratuit maintenant. Premier échange par téléphone ou en présentiel à Genève, sans engagement.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

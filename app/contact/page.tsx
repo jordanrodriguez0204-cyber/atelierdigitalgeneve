@@ -65,7 +65,7 @@ export default function ContactPage() {
             Parlons de votre projet
           </h1>
           <p className="text-slate-400 text-xl leading-relaxed">
-            Premier échange gratuit. Devis envoyé sous 48h. Aucune obligation.
+            Premier échange gratuit. Devis envoyé sous 24h. Aucune obligation.
           </p>
         </div>
       </section>
@@ -154,17 +154,31 @@ export default function ContactPage() {
               </div>
 
               {/* Trust indicators */}
-              <div className="bg-slate-50 rounded-2xl p-5 border border-slate-200">
-                <p className="text-slate-500 text-sm font-medium mb-3">Ils m&apos;ont fait confiance</p>
-                <div className="flex items-center gap-1 mb-1">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <svg key={i} className="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              <div className="bg-slate-50 rounded-2xl p-5 border border-slate-200 space-y-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center shrink-0">
+                    <svg className="w-4 h-4 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
-                  ))}
+                  </div>
+                  <p className="text-slate-700 text-sm font-medium">Réponse garantie sous 24h</p>
                 </div>
-                <p className="text-slate-700 text-sm font-semibold">30+ commerces genevois</p>
-                <p className="text-slate-400 text-xs mt-0.5">100% de satisfaction client</p>
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center shrink-0">
+                    <svg className="w-4 h-4 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <p className="text-slate-700 text-sm font-medium">Devis gratuit &amp; sans engagement</p>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 bg-slate-200 rounded-lg flex items-center justify-center shrink-0">
+                    <svg className="w-4 h-4 text-slate-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <p className="text-slate-700 text-sm font-medium">Interlocuteur unique, basé à Genève</p>
+                </div>
               </div>
             </div>
 

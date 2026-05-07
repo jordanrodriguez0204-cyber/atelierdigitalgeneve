@@ -5,7 +5,7 @@ import CTASection from '@/components/CTASection';
 export const metadata: Metadata = {
   title: 'Portfolio',
   description:
-    'Notre portfolio est en construction. Nous cherchons nos premiers clients pilotes à Genève — restaurant, coiffeur, boutique, épicerie, artisan.',
+    'Découvrez nos réalisations web pour les commerces genevois : restaurant, coiffeur, boutique. Sites modernes, mobiles et optimisés Google. Devis gratuit.',
 };
 
 const portfolioItems = [
@@ -144,16 +144,16 @@ export default function PortfolioPage() {
       <section className="py-16 bg-slate-50">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-slate-900 mb-4">
-            Votre commerce sera le premier
+            Votre commerce, le prochain en ligne
           </h2>
           <p className="text-lg text-slate-500 mb-8">
-            Nos premiers clients bénéficient de tarifs préférentiels et d&apos;un suivi personnalisé. Soyez parmi les pionniers.
+            Chaque site est conçu sur-mesure pour votre activité. Devis gratuit, livraison en 7 jours, satisfaction garantie.
           </p>
           <Link
             href="/contact"
             className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-bold text-lg px-8 py-4 rounded-xl transition-colors shadow-lg shadow-red-600/20"
           >
-            Devenir client pilote
+            Demander un devis gratuit
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>

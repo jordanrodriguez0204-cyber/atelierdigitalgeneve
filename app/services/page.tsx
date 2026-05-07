@@ -38,7 +38,7 @@ const faqs = [
   {
     question: 'Puis-je modifier le contenu moi-même après la livraison ?',
     answer:
-      'Pour les forfaits Standard et Pro, nous configurons un tableau de bord simple pour modifier vos textes et photos vous-même. Pour le forfait Starter, les modifications sont incluses dans le forfait mensuel.',
+      'Oui. Les petites modifications (textes, horaires, photos, prix) sont incluses dans le forfait mensuel, sans surcoût. Pour des changements plus importants, je m\'occupe de tout — il vous suffit de m\'envoyer un message.',
   },
 ];
 
@@ -46,12 +46,12 @@ const process = [
   {
     step: '01',
     title: 'Échange gratuit',
-    description: 'On se parle 30 minutes par téléphone ou vidéo pour comprendre votre commerce et vos besoins.',
+    description: "On se parle 20-30 minutes par téléphone ou en présentiel à Genève pour comprendre votre commerce et vos besoins.",
   },
   {
     step: '02',
     title: 'Devis et maquette',
-    description: 'Je vous envoie un devis détaillé et une première maquette de votre site sous 48h.',
+    description: 'Je vous envoie un devis détaillé et une première maquette de votre site sous 24h.',
   },
   {
     step: '03',

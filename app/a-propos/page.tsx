@@ -5,7 +5,7 @@ import CTASection from '@/components/CTASection';
 export const metadata: Metadata = {
   title: 'À propos',
   description:
-    'Atelier Digital Genève — une agence née à Genève, pour Genève. Nous aidons les petits commerces genevois à se démarquer grâce à une présence en ligne soignée.',
+    'Atelier Digital Genève — je crée des sites web pour les commerces locaux de Genève. Freelance basé à Genève, disponible 7j/7, devis gratuit.',
 };
 
 const values = [
@@ -13,19 +13,19 @@ const values = [
     emoji: '🤝',
     title: 'Proximité',
     description:
-      'Nous sommes vos voisins. On se déplace, on vous rencontre, on comprend votre commerce.',
+      "Je suis votre voisin. Je me déplace, je vous rencontre, je comprends votre commerce avant d'écrire la première ligne de code.",
   },
   {
     emoji: '✅',
     title: 'Honnêteté',
     description:
-      "On vous dit ce qu'on peut faire et ce qu'on ne peut pas faire. Pas de promesses en l'air.",
+      "Je vous dis ce que je peux faire et ce que je ne peux pas faire. Pas de promesses en l'air, pas de surprises sur la facture.",
   },
   {
     emoji: '🎯',
-    title: 'Simplicité',
+    title: 'Efficacité',
     description:
-      'Des sites clairs, efficaces, faciles à comprendre pour vous et vos clients.',
+      'Des sites clairs, rapides, et efficaces. Votre site est livré en 7 jours — pas en 3 mois.',
   },
 ];
 
@@ -35,35 +35,16 @@ export default function AProposPage() {
       {/* Hero */}
       <section className="bg-slate-900 py-20 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-block bg-red-600/20 text-red-400 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">
-                À propos
-              </div>
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Une agence née à Genève, pour Genève
-              </h1>
-              <p className="text-slate-300 text-xl leading-relaxed">
-                Nous aidons les petits commerces genevois à se démarquer grâce à une présence en ligne soignée.
-              </p>
+          <div className="max-w-3xl">
+            <div className="inline-block bg-red-600/20 text-red-400 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">
+              À propos
             </div>
-
-            {/* Visual placeholder */}
-            <div className="flex justify-center lg:justify-end">
-              <div className="w-64 h-64 rounded-3xl bg-gradient-to-br from-red-600 to-red-800 flex items-center justify-center relative overflow-hidden shadow-2xl">
-                <div
-                  className="absolute inset-0 opacity-20"
-                  aria-hidden="true"
-                  style={{
-                    backgroundImage: `repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 0, transparent 50%)`,
-                    backgroundSize: '20px 20px',
-                  }}
-                />
-                <span className="text-8xl relative z-10" role="img" aria-label="Atelier Digital Genève">
-                  🏙️
-                </span>
-              </div>
-            </div>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Un développeur web genevois,<br className="hidden sm:block" /> à votre service
+            </h1>
+            <p className="text-slate-300 text-xl leading-relaxed max-w-2xl">
+              Je crée des sites web pour les commerces de Genève. Pas une grande agence froide — un interlocuteur unique, disponible, qui comprend votre quartier et vos clients.
+            </p>
           </div>
         </div>
       </section>
@@ -71,16 +52,16 @@ export default function AProposPage() {
       {/* Story */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-slate-900 mb-6">Notre histoire</h2>
+          <h2 className="text-3xl font-bold text-slate-900 mb-6">Mon histoire</h2>
           <div className="space-y-5 text-slate-600 leading-relaxed text-lg">
             <p>
-              Atelier Digital Genève est né d&apos;une conviction simple : les petits commerces genevois méritent une présence en ligne aussi soignée que les grandes enseignes.
+              Atelier Digital Genève est né d&apos;une conviction simple : les petits commerces genevois méritent une présence en ligne aussi soignée que les grandes enseignes — sans en avoir le budget.
             </p>
             <p>
-              Tout a commencé avec des proches. Des amis restaurateurs, des membres de la famille avec de petites boutiques, des particuliers qui avaient besoin d&apos;un site mais ne savaient pas par où commencer. On les a aidés. On a appris. On s&apos;est amélioré.
+              Tout a commencé avec des proches. Des amis restaurateurs, des membres de la famille avec de petites boutiques, des commerçants qui avaient besoin d&apos;un site mais ne savaient pas par où commencer. Je les ai aidés. J&apos;ai appris. Je me suis amélioré.
             </p>
             <p>
-              Aujourd&apos;hui, nous souhaitons étendre cette aide à tous les commerçants de Genève et de la région. Pas une agence froide et distante — un partenaire de proximité qui comprend vos besoins, votre quartier, et vos clients.
+              Aujourd&apos;hui, je propose cette aide à tous les commerçants de Genève. Pas une agence froide et distante — un partenaire de proximité, joignable directement, qui connaît la ville et ses quartiers.
             </p>
           </div>
         </div>
@@ -90,9 +71,9 @@ export default function AProposPage() {
       <section className="py-16 bg-slate-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-red-600 rounded-3xl p-8 md:p-12 text-white text-center">
-            <h2 className="text-3xl font-bold mb-6">Notre mission</h2>
+            <h2 className="text-3xl font-bold mb-6">Ma mission</h2>
             <p className="text-red-100 text-xl leading-relaxed max-w-2xl mx-auto">
-              Nous croyons que chaque commerce local mérite d&apos;être trouvé sur internet. Pas besoin d&apos;un budget énorme. Pas besoin de comprendre la technologie. Vous vous occupez de votre métier — nous nous occupons de votre présence en ligne.
+              Chaque commerce local mérite d&apos;être trouvé sur internet. Pas besoin d&apos;un budget énorme. Pas besoin de comprendre la technologie. Vous vous occupez de votre métier — je m&apos;occupe de votre présence en ligne.
             </p>
           </div>
         </div>
@@ -102,9 +83,9 @@ export default function AProposPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">Nos valeurs</h2>
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">Mes engagements</h2>
             <p className="text-lg text-slate-500 max-w-xl mx-auto">
-              Ce qui guide notre travail au quotidien avec chaque client.
+              Ce qui guide mon travail avec chaque client.
             </p>
           </div>
 
@@ -122,14 +103,37 @@ export default function AProposPage() {
         </div>
       </section>
 
-      {/* Why us */}
+      {/* Why me */}
       <section className="py-20 bg-slate-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-slate-900 rounded-3xl p-8 md:p-12 text-white">
-            <h2 className="text-3xl font-bold mb-6">Pourquoi nous choisir</h2>
-            <p className="text-slate-300 text-xl leading-relaxed">
-              Nous démarrons, et c&apos;est une force. Nos premiers clients bénéficient de tarifs préférentiels, d&apos;une attention maximale, et d&apos;un suivi personnalisé. Vous n&apos;êtes pas un numéro de dossier — vous êtes un partenaire.
-            </p>
+            <h2 className="text-3xl font-bold mb-6">Pourquoi travailler avec moi</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-slate-300 text-lg leading-relaxed">
+              <div className="flex items-start gap-3">
+                <span className="text-red-400 mt-1 shrink-0">✓</span>
+                <span>Un seul interlocuteur du début à la fin</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-red-400 mt-1 shrink-0">✓</span>
+                <span>Site livré en 7 jours, garanti</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-red-400 mt-1 shrink-0">✓</span>
+                <span>Tarifs fixes, sans surprises</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-red-400 mt-1 shrink-0">✓</span>
+                <span>Disponible par téléphone, 7j/7</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-red-400 mt-1 shrink-0">✓</span>
+                <span>Basé à Genève, je connais votre marché</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-red-400 mt-1 shrink-0">✓</span>
+                <span>Satisfaction garantie ou je retravaille</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -141,7 +145,7 @@ export default function AProposPage() {
             Travaillons ensemble
           </h2>
           <p className="text-lg text-slate-500 mb-8">
-            Un premier échange par téléphone ou vidéo, gratuit et sans engagement.
+            Un premier échange par téléphone, gratuit et sans engagement. Je vous réponds sous 24h.
           </p>
           <Link
             href="/contact"
