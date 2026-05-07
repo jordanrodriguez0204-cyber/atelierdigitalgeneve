@@ -181,7 +181,7 @@ export default function AProposPage() {
                   Nouman est mon ami d&apos;enfance. Passionné de photographie depuis l&apos;adolescence, il avait accumulé des centaines de clichés magnifiques — des portraits, des paysages genevois, des événements. Ses photos dormaient dans un disque dur.
                 </p>
                 <p>
-                  Un jour, il m&apos;a demandé : <span className="text-slate-900 font-medium italic">&ldquo;Tu crois que je pourrais vivre de ça un jour ?&rdquo;</span> Il n&apos;avait aucune présence en ligne, aucun moyen pour les clients de le trouver ou de voir son travail.
+                  Un jour, il m&apos;a demandé : <span className="text-slate-900 font-medium italic">&ldquo;Tu crois que je pourrais vivre de ça un jour ?&rdquo;</span>{' '}Il n&apos;avait aucune présence en ligne, aucun moyen pour les clients de le trouver ou de voir son travail.
                 </p>
                 <p>
                   Je lui ai créé son premier site. Un espace épuré pour exposer ses photos, une page contact pour recevoir des demandes, un référencement local pour apparaître sur Google quand quelqu&apos;un cherche un photographe à Genève. Trois semaines après la mise en ligne, il décrochait sa première commande professionnelle.
