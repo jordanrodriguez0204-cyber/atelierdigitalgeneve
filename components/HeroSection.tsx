@@ -1,9 +1,16 @@
 import Link from 'next/link';
 
 const stats = [
-  { value: 'Genève', label: 'Basé à Genève' },
-  { value: '7 jours', label: 'Sites livrés en 7 jours' },
-  { value: 'Gratuit', label: 'Devis gratuit' },
+  { value: '3', label: 'Sites livrés à Genève' },
+  { value: '7j', label: 'Délai de livraison' },
+  { value: '100%', label: 'Satisfaction client' },
+];
+
+const techBadges = [
+  { label: 'Next.js' },
+  { label: 'Google-ready' },
+  { label: 'Mobile-first' },
+  { label: 'Hébergement Suisse' },
 ];
 
 export default function HeroSection() {
@@ -35,15 +42,15 @@ export default function HeroSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 text-amber-800 text-sm font-medium px-3 py-1.5 rounded-full mb-6">
-            <span>✨</span>
-            <span>Nouvelle agence genevoise</span>
+          <div className="inline-flex items-center gap-2 bg-green-50 border border-green-200 text-green-800 text-sm font-medium px-3 py-1.5 rounded-full mb-6">
+            <span className="w-2 h-2 bg-green-500 rounded-full inline-block animate-pulse" />
+            <span>Disponible — 2 créneaux restants ce mois</span>
           </div>
 
           {/* Main Heading */}
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-6">
             Votre commerce mérite d&apos;être{' '}
-            <span className="relative">
+            <span className="relative inline-block">
               <span className="text-red-600">trouvé</span>
               <svg
                 className="absolute -bottom-2 left-0 w-full"
@@ -71,33 +78,53 @@ export default function HeroSection() {
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 mb-16">
+          <div className="flex flex-col sm:flex-row gap-4 mb-10">
             <Link
-              href="/portfolio"
+              href="/contact"
               className="inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold text-lg px-8 py-4 rounded-xl transition-all duration-200 shadow-lg shadow-red-600/20 hover:shadow-red-600/30 hover:-translate-y-0.5"
             >
-              Voir mes réalisations
+              Demander un devis gratuit
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </Link>
             <Link
-              href="/contact"
+              href="/portfolio"
               className="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-900 font-semibold text-lg px-8 py-4 rounded-xl border-2 border-slate-200 hover:border-slate-300 transition-all duration-200 hover:-translate-y-0.5"
             >
-              Demander un devis gratuit
+              Voir les réalisations
             </Link>
           </div>
 
+          {/* Social proof line */}
+          <p className="text-sm text-slate-400 mb-10">
+            <span className="text-slate-600 font-medium">Restaurant, coiffeur, boutique</span> — des commerces genevois déjà en ligne avec nous.
+          </p>
+
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-6 max-w-lg">
+          <div className="flex flex-wrap gap-8 mb-10">
             {stats.map((stat) => (
-              <div key={stat.label} className="text-center sm:text-left">
-                <div className="text-2xl md:text-3xl font-extrabold text-slate-900 mb-1">
+              <div key={stat.label}>
+                <div className="text-2xl md:text-3xl font-bold text-slate-900 mb-0.5">
                   {stat.value}
                 </div>
                 <div className="text-sm text-slate-500 font-medium">{stat.label}</div>
               </div>
+            ))}
+          </div>
+
+          {/* Tech badges */}
+          <div className="flex flex-wrap gap-2">
+            {techBadges.map((badge) => (
+              <span
+                key={badge.label}
+                className="inline-flex items-center gap-1.5 bg-slate-100 text-slate-600 text-xs font-medium px-3 py-1.5 rounded-full"
+              >
+                <svg className="w-3.5 h-3.5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                {badge.label}
+              </span>
             ))}
           </div>
         </div>
