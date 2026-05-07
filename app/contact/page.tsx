@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import ContactForm from '@/components/ContactForm';
 import CalendlyEmbed from '@/components/CalendlyEmbed';
+import FadeIn from '@/components/FadeIn';
 
 export const metadata: Metadata = {
   title: 'Contact — Devis gratuit',
@@ -54,74 +55,70 @@ const contactInfo = [
 
 export default function ContactPage() {
   return (
-    <div className="pt-16">
-      {/* Hero */}
-      <section className="bg-slate-900 py-20 text-center px-4">
-        <div className="max-w-3xl mx-auto">
-          <div className="inline-block bg-red-600/20 text-red-400 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">
-            Gratuit & Sans engagement
+    <div className="pt-16 bg-white">
+
+      {/* ── Hero ── */}
+      <section className="bg-slate-900 py-20 text-center px-4 relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-red-600/10 rounded-full blur-3xl" />
+        </div>
+        <div className="relative max-w-3xl mx-auto">
+          <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 text-slate-400 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6">
+            <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
+            Gratuit &amp; Sans engagement
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-5">
-            Parlons de votre projet
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-5 tracking-tight leading-[1.05]">
+            Parlons de{' '}
+            <span className="text-red-500">votre projet</span>
           </h1>
-          <p className="text-slate-400 text-xl leading-relaxed">
+          <p className="text-slate-400 text-lg md:text-xl leading-relaxed max-w-xl mx-auto">
             Premier échange gratuit. Devis envoyé sous 24h. Aucune obligation.
           </p>
         </div>
       </section>
 
-      {/* Calendly */}
-      <section className="py-16 bg-slate-50">
+      {/* ── Calendly ── */}
+      <section className="py-20 bg-[#f8f8f8]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10">
-            <div className="inline-block bg-red-50 text-red-600 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">
-              Réservation directe
-            </div>
-            <h2 className="text-3xl font-bold text-slate-900 mb-3">
+          <FadeIn className="text-center mb-10">
+            <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-3">Réservation directe</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-3">
               Choisissez un créneau
             </h2>
             <p className="text-slate-500 text-lg max-w-xl mx-auto">
               Appel téléphonique de 20 min ou rencontre à Genève — choisissez ce qui vous convient.
             </p>
-          </div>
-          <CalendlyEmbed />
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <CalendlyEmbed />
+          </FadeIn>
         </div>
       </section>
 
-      {/* Contact section */}
-      <section className="py-20 bg-white">
+      {/* ── Contact section ── */}
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+
             {/* Left: Info */}
-            <div className="lg:col-span-2 space-y-8">
+            <FadeIn from="left" className="lg:col-span-2 space-y-8">
               <div>
-                <h2 className="text-2xl font-bold text-slate-900 mb-4">
+                <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-3">Déroulement</p>
+                <h2 className="text-2xl font-bold text-slate-900 mb-6 tracking-tight">
                   Comment ça se passe ?
                 </h2>
                 <div className="space-y-4">
                   {[
-                    {
-                      step: '1',
-                      text: 'Vous m\'envoyez ce formulaire (ou m\'appelez directement)',
-                    },
-                    {
-                      step: '2',
-                      text: 'Je vous rappelle dans les 24h pour un échange de 20-30 min',
-                    },
-                    {
-                      step: '3',
-                      text: 'Je vous envoie un devis détaillé et une maquette',
-                    },
-                    {
-                      step: '4',
-                      text: 'Si ça vous convient, on démarre — votre site en ligne en 7 jours',
-                    },
+                    { step: '1', text: "Vous m'envoyez ce formulaire (ou m'appelez directement)" },
+                    { step: '2', text: 'Je vous rappelle dans les 24h pour un échange de 20-30 min' },
+                    { step: '3', text: 'Je vous envoie un devis détaillé et une maquette' },
+                    { step: '4', text: 'Si ça vous convient, on démarre — votre site en ligne en 7 jours' },
                   ].map((item) => (
                     <div key={item.step} className="flex items-start gap-3">
                       <div className="w-7 h-7 bg-red-600 text-white rounded-full flex items-center justify-center text-sm font-bold shrink-0 mt-0.5">
                         {item.step}
                       </div>
-                      <p className="text-slate-600 leading-relaxed">{item.text}</p>
+                      <p className="text-slate-600 leading-relaxed text-sm">{item.text}</p>
                     </div>
                   ))}
                 </div>
@@ -154,38 +151,29 @@ export default function ContactPage() {
               </div>
 
               {/* Trust indicators */}
-              <div className="bg-slate-50 rounded-2xl p-5 border border-slate-200 space-y-3">
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center shrink-0">
-                    <svg className="w-4 h-4 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
+              <div className="bg-[#f8f8f8] rounded-2xl p-5 border border-slate-100 space-y-3">
+                {[
+                  { bg: 'bg-green-100', color: 'text-green-600', text: 'Réponse garantie sous 24h' },
+                  { bg: 'bg-red-100', color: 'text-red-600', text: 'Devis gratuit & sans engagement' },
+                  { bg: 'bg-slate-200', color: 'text-slate-600', text: 'Interlocuteur unique, basé à Genève' },
+                ].map((item) => (
+                  <div key={item.text} className="flex items-center gap-3">
+                    <div className={`w-8 h-8 ${item.bg} rounded-lg flex items-center justify-center shrink-0`}>
+                      <svg className={`w-4 h-4 ${item.color}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <p className="text-slate-700 text-sm font-medium">{item.text}</p>
                   </div>
-                  <p className="text-slate-700 text-sm font-medium">Réponse garantie sous 24h</p>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center shrink-0">
-                    <svg className="w-4 h-4 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <p className="text-slate-700 text-sm font-medium">Devis gratuit &amp; sans engagement</p>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-slate-200 rounded-lg flex items-center justify-center shrink-0">
-                    <svg className="w-4 h-4 text-slate-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <p className="text-slate-700 text-sm font-medium">Interlocuteur unique, basé à Genève</p>
-                </div>
+                ))}
               </div>
-            </div>
+            </FadeIn>
 
             {/* Right: Form */}
-            <div className="lg:col-span-3">
-              <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm">
-                <h2 className="text-2xl font-bold text-slate-900 mb-2">
+            <FadeIn from="right" delay={0.1} className="lg:col-span-3">
+              <div className="bg-white rounded-3xl border border-slate-100 p-8 shadow-[0_4px_32px_rgba(0,0,0,0.07)]">
+                <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Formulaire de contact</p>
+                <h2 className="text-2xl font-bold text-slate-900 mb-2 tracking-tight">
                   Demander un devis gratuit
                 </h2>
                 <p className="text-slate-500 text-sm mb-6">
@@ -193,7 +181,8 @@ export default function ContactPage() {
                 </p>
                 <ContactForm />
               </div>
-            </div>
+            </FadeIn>
+
           </div>
         </div>
       </section>

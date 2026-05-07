@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import ServicesGrid from '@/components/ServicesGrid';
 import CTASection from '@/components/CTASection';
+import FadeIn from '@/components/FadeIn';
 
 const faqSchema = {
   '@context': 'https://schema.org',
@@ -73,12 +74,12 @@ const faqs = [
   {
     question: 'Est-ce que je garde la propriété de mon site ?',
     answer:
-      'Absolument. Votre site vous appartient à 100%. Si vous décidez d\'arrêter l\'hébergement mensuel, je vous transmets tous les fichiers de votre site.',
+      "Absolument. Votre site vous appartient à 100%. Si vous décidez d'arrêter l'hébergement mensuel, je vous transmets tous les fichiers de votre site.",
   },
   {
-    question: 'Que comprend l\'hébergement mensuel ?',
+    question: "Que comprend l'hébergement mensuel ?",
     answer:
-      'L\'hébergement mensuel inclut : le nom de domaine (.ch ou .com), l\'hébergement sécurisé avec HTTPS, les mises à jour techniques, le support par email, et les petites modifications de contenu (textes, horaires, etc.).',
+      "L'hébergement mensuel inclut : le nom de domaine (.ch ou .com), l'hébergement sécurisé avec HTTPS, les mises à jour techniques, le support par email, et les petites modifications de contenu (textes, horaires, etc.).",
   },
   {
     question: 'Est-ce que vous pouvez reprendre mon site existant ?',
@@ -88,12 +89,12 @@ const faqs = [
   {
     question: 'Le site sera-t-il visible sur Google ?',
     answer:
-      'Oui ! Chaque site est optimisé pour le référencement local à Genève (SEO local). Je soumets votre site à Google et configure votre fiche Google My Business si vous ne l\'avez pas encore.',
+      "Oui ! Chaque site est optimisé pour le référencement local à Genève (SEO local). Je soumets votre site à Google et configure votre fiche Google My Business si vous ne l'avez pas encore.",
   },
   {
     question: 'Puis-je modifier le contenu moi-même après la livraison ?',
     answer:
-      'Oui. Les petites modifications (textes, horaires, photos, prix) sont incluses dans le forfait mensuel, sans surcoût. Pour des changements plus importants, je m\'occupe de tout — il vous suffit de m\'envoyer un message.',
+      "Oui. Les petites modifications (textes, horaires, photos, prix) sont incluses dans le forfait mensuel, sans surcoût. Pour des changements plus importants, je m'occupe de tout — il vous suffit de m'envoyer un message.",
   },
 ];
 
@@ -122,93 +123,107 @@ const process = [
 
 export default function ServicesPage() {
   return (
-    <div className="pt-16">
+    <div className="pt-16 bg-white">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      {/* Hero */}
-      <section className="bg-slate-900 py-20 text-center px-4">
-        <div className="max-w-3xl mx-auto">
-          <div className="inline-block bg-red-600/20 text-red-400 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">
+
+      {/* ── Hero ── */}
+      <section className="bg-slate-900 py-20 text-center px-4 relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-red-600/10 rounded-full blur-3xl" />
+        </div>
+        <div className="relative max-w-3xl mx-auto">
+          <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 text-slate-400 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6">
+            <span className="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse" />
             Tarifs clairs
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-5">
-            Services & Forfaits
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-5 tracking-tight leading-[1.05]">
+            Services &{' '}
+            <span className="text-red-500">Forfaits</span>
           </h1>
-          <p className="text-slate-400 text-xl leading-relaxed">
+          <p className="text-slate-400 text-lg md:text-xl leading-relaxed max-w-xl mx-auto">
             Des forfaits adaptés à chaque commerce genevois. Pas de frais cachés, tout est inclus.
           </p>
         </div>
       </section>
 
-      {/* Services grid */}
+      {/* ── Services grid ── */}
       <ServicesGrid />
 
-      {/* Process */}
-      <section className="py-20 bg-slate-50">
+      {/* ── Process ── */}
+      <section className="py-24 bg-[#f8f8f8]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">Comment ça marche ?</h2>
+          <FadeIn className="text-center mb-14">
+            <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-3">Process</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-4">
+              Comment ça marche ?
+            </h2>
             <p className="text-lg text-slate-500 max-w-xl mx-auto">
               Un processus simple et transparent, de la première discussion à la mise en ligne.
             </p>
-          </div>
+          </FadeIn>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {process.map((step) => (
-              <div key={step.step} className="bg-white rounded-2xl p-6 border border-slate-200 text-center">
-                <div className="w-12 h-12 bg-red-600 text-white rounded-xl flex items-center justify-center font-bold text-lg mx-auto mb-4">
-                  {step.step}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {process.map((step, i) => (
+              <FadeIn key={step.step} delay={i * 0.08}>
+                <div className="relative bg-white rounded-2xl p-6 border border-slate-100 shadow-sm group hover:border-red-100 hover:bg-red-50/30 transition-all duration-300 h-full">
+                  <div className="text-4xl font-bold text-slate-100 group-hover:text-red-100 transition-colors leading-none mb-4 select-none">
+                    {step.step}
+                  </div>
+                  <h3 className="font-bold text-slate-900 mb-2 tracking-tight">{step.title}</h3>
+                  <p className="text-slate-500 text-sm leading-relaxed">{step.description}</p>
                 </div>
-                <h3 className="font-bold text-slate-900 mb-2">{step.title}</h3>
-                <p className="text-slate-500 text-sm leading-relaxed">{step.description}</p>
-              </div>
+              </FadeIn>
             ))}
           </div>
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="py-20 bg-white">
+      {/* ── FAQ ── */}
+      <section className="py-24 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">Questions fréquentes</h2>
-          </div>
-          <div className="space-y-4">
-            {faqs.map((faq) => (
-              <details
-                key={faq.question}
-                className="group bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden"
-              >
-                <summary className="flex items-center justify-between px-6 py-4 cursor-pointer list-none font-semibold text-slate-900 hover:bg-slate-100 transition-colors">
-                  {faq.question}
-                  <svg
-                    className="w-5 h-5 text-slate-400 transition-transform group-open:rotate-180"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </summary>
-                <div className="px-6 pb-4 pt-2 text-slate-600 leading-relaxed border-t border-slate-200">
-                  {faq.answer}
-                </div>
-              </details>
+          <FadeIn className="text-center mb-12">
+            <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-3">FAQ</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">
+              Questions fréquentes
+            </h2>
+          </FadeIn>
+
+          <div className="space-y-3">
+            {faqs.map((faq, i) => (
+              <FadeIn key={faq.question} delay={i * 0.05}>
+                <details className="group bg-[#f8f8f8] rounded-2xl border border-slate-100 overflow-hidden">
+                  <summary className="flex items-center justify-between px-6 py-4 cursor-pointer list-none font-semibold text-slate-900 hover:bg-slate-100 transition-colors gap-4">
+                    <span>{faq.question}</span>
+                    <svg
+                      className="w-5 h-5 text-slate-400 transition-transform duration-300 group-open:rotate-180 shrink-0"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </summary>
+                  <div className="px-6 pb-5 pt-2 text-slate-600 leading-relaxed border-t border-slate-100 text-sm">
+                    {faq.answer}
+                  </div>
+                </details>
+              </FadeIn>
             ))}
           </div>
 
-          <div className="text-center mt-10">
+          <FadeIn delay={0.3} className="text-center mt-10">
             <p className="text-slate-500 mb-4">Vous avez d&apos;autres questions ?</p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-2xl transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-red-600/20"
             >
               Contactez-moi
             </Link>
-          </div>
+          </FadeIn>
         </div>
       </section>
 

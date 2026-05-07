@@ -1,4 +1,7 @@
+'use client';
+
 import Link from 'next/link';
+import { motion, type Variants } from 'framer-motion';
 
 const guarantees = [
   {
@@ -23,7 +26,7 @@ const guarantees = [
     description:
       "Je travaille jusqu'à ce que vous soyez 100% satisfait. Des révisions illimitées pendant la phase de création, sans surcoût.",
     color: 'text-slate-700',
-    bg: 'bg-slate-50',
+    bg: 'bg-slate-100',
   },
   {
     icon: (
@@ -63,75 +66,117 @@ const demos = [
   },
 ];
 
+const containerVariants: Variants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.1 } },
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 28 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
+  },
+};
+
 export default function Testimonials() {
   return (
-    <section className="py-20 bg-slate-50">
+    <section className="py-24 bg-[#f8f8f8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* ── Guarantees ── */}
-        <div className="text-center mb-14">
-          <div className="inline-block bg-red-50 text-red-600 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">
+        <motion.div
+          className="text-center mb-14"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
+        >
+          <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-3">
             Mes engagements
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-4">
             Ce que je vous garantis
           </h2>
           <p className="text-lg text-slate-500 max-w-xl mx-auto">
             Des engagements clairs, tenus à chaque projet.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-24"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-60px' }}
+        >
           {guarantees.map((g) => (
-            <div
+            <motion.div
               key={g.title}
-              className="bg-white rounded-2xl p-7 border border-slate-200 shadow-sm"
+              variants={itemVariants}
+              whileHover={{ y: -6, transition: { duration: 0.22, ease: 'easeOut' } }}
+              className="bg-white rounded-3xl p-7 border border-slate-100 shadow-[0_2px_24px_rgba(0,0,0,0.06)] hover:shadow-[0_16px_48px_rgba(0,0,0,0.10)] transition-shadow duration-500"
             >
-              <div className={`w-12 h-12 ${g.bg} ${g.color} rounded-xl flex items-center justify-center mb-5`}>
+              <div className={`w-12 h-12 ${g.bg} ${g.color} rounded-2xl flex items-center justify-center mb-5`}>
                 {g.icon}
               </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">{g.title}</h3>
+              <h3 className="text-lg font-bold text-slate-900 mb-2 tracking-tight">{g.title}</h3>
               <p className="text-slate-500 text-sm leading-relaxed">{g.description}</p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* ── Live demos ── */}
-        <div className="text-center mb-10">
-          <div className="inline-block bg-slate-200 text-slate-600 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">
+        <motion.div
+          className="text-center mb-10"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
+        >
+          <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-3">
             Sites en ligne
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-4">
             Découvrez les réalisations
           </h2>
           <p className="text-lg text-slate-500 max-w-xl mx-auto">
             Trois exemples concrets — cliquez pour visiter les sites.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-60px' }}
+        >
           {demos.map((d) => (
-            <a
+            <motion.a
               key={d.name}
               href={d.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:border-red-300 hover:shadow-md transition-all duration-200 flex items-center gap-4"
+              variants={itemVariants}
+              whileHover={{ y: -5, transition: { duration: 0.22, ease: 'easeOut' } }}
+              className="group bg-white rounded-3xl p-6 border border-slate-100 shadow-[0_2px_24px_rgba(0,0,0,0.06)] hover:shadow-[0_16px_48px_rgba(0,0,0,0.10)] hover:border-red-100 transition-all duration-300 flex items-center gap-4"
             >
-              <div className="w-14 h-14 bg-slate-50 rounded-xl flex items-center justify-center text-2xl shrink-0 group-hover:bg-red-50 transition-colors">
+              <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center text-2xl shrink-0 group-hover:bg-red-50 transition-colors duration-300">
                 {d.emoji}
               </div>
               <div className="min-w-0">
                 <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-0.5">
                   {d.type}
                 </p>
-                <p className="font-bold text-slate-900 group-hover:text-red-600 transition-colors">
+                <p className="font-bold text-slate-900 group-hover:text-red-600 transition-colors duration-200 tracking-tight">
                   {d.name}
                 </p>
                 <p className="text-xs text-slate-400 mt-0.5">{d.forfait}</p>
               </div>
               <svg
-                className="w-5 h-5 text-slate-300 group-hover:text-red-500 ml-auto shrink-0 transition-colors"
+                className="w-5 h-5 text-slate-200 group-hover:text-red-400 ml-auto shrink-0 transition-colors duration-200"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -139,11 +184,17 @@ export default function Testimonials() {
               >
                 <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
-            </a>
+            </motion.a>
           ))}
-        </div>
+        </motion.div>
 
-        <div className="text-center">
+        <motion.div
+          className="text-center"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.55, delay: 0.3 }}
+        >
           <Link
             href="/portfolio"
             className="inline-flex items-center gap-2 text-red-600 font-semibold hover:text-red-700 transition-colors text-sm"
@@ -153,7 +204,7 @@ export default function Testimonials() {
               <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
           </Link>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
