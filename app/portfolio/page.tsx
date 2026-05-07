@@ -90,8 +90,8 @@ export default function PortfolioPage() {
                   aria-hidden="true"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
-                {/* Color overlay */}
-                <div className={`absolute inset-0 ${item.overlay}`} />
+                {/* Subtle overlay for text readability */}
+                <div className="absolute inset-0 bg-white/30" />
 
                 {/* Content */}
                 <div className="relative z-10 p-6 pb-4">
