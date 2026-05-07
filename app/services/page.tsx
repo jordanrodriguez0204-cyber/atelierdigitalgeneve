@@ -3,6 +3,61 @@ import Link from 'next/link';
 import ServicesGrid from '@/components/ServicesGrid';
 import CTASection from '@/components/CTASection';
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Combien de temps faut-il pour créer mon site ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Selon le forfait, entre 5 et 14 jours ouvrables. Le forfait Starter est livré en 5 jours, le forfait Standard en 7 jours, et le forfait Pro en 14 jours.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Est-ce que je garde la propriété de mon site ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "Absolument. Votre site vous appartient à 100%. Si vous décidez d'arrêter l'hébergement mensuel, je vous transmets tous les fichiers de votre site.",
+      },
+    },
+    {
+      '@type': 'Question',
+      name: "Que comprend l'hébergement mensuel ?",
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "L'hébergement mensuel inclut : le nom de domaine (.ch ou .com), l'hébergement sécurisé avec HTTPS, les mises à jour techniques, le support par email, et les petites modifications de contenu (textes, horaires, etc.).",
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Est-ce que vous pouvez reprendre mon site existant ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "Oui, je peux reprendre et moderniser votre site existant. Contactez-moi pour un audit gratuit de votre site actuel.",
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Le site sera-t-il visible sur Google ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "Oui ! Chaque site est optimisé pour le référencement local à Genève (SEO local). Je soumets votre site à Google et configure votre fiche Google My Business si vous ne l'avez pas encore.",
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Puis-je modifier le contenu moi-même après la livraison ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "Oui. Les petites modifications (textes, horaires, photos, prix) sont incluses dans le forfait mensuel, sans surcoût. Pour des changements plus importants, je m'occupe de tout — il vous suffit de m'envoyer un message.",
+      },
+    },
+  ],
+};
+
 export const metadata: Metadata = {
   title: 'Services & Tarifs',
   description:
@@ -68,6 +123,10 @@ const process = [
 export default function ServicesPage() {
   return (
     <div className="pt-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       {/* Hero */}
       <section className="bg-slate-900 py-20 text-center px-4">
         <div className="max-w-3xl mx-auto">

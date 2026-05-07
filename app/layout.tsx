@@ -56,6 +56,72 @@ export const metadata: Metadata = {
   },
 };
 
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'Atelier Digital Genève',
+  description:
+    'Création de sites web modernes pour les commerces de Genève. Rapide, professionnel, fait pour attirer de nouveaux clients.',
+  url: 'https://atelierdigitalgeneve.ch',
+  telephone: '+41763316183',
+  email: 'contact@atelierdigitalgeneve.ch',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Genève',
+    addressRegion: 'GE',
+    addressCountry: 'CH',
+  },
+  areaServed: {
+    '@type': 'City',
+    name: 'Genève',
+  },
+  priceRange: 'CHF 299 – CHF 990',
+  currenciesAccepted: 'CHF',
+  paymentAccepted: 'Virement bancaire',
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '09:00',
+      closes: '18:00',
+    },
+  ],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Forfaits création de sites web',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        name: 'Forfait Starter',
+        description: 'Site web une page, mobile responsive, formulaire de contact, livré en 5 jours.',
+        price: '299',
+        priceCurrency: 'CHF',
+      },
+      {
+        '@type': 'Offer',
+        name: 'Forfait Standard',
+        description: "Site web jusqu'à 5 pages, SEO local Genève, galerie photos, livré en 7 jours.",
+        price: '599',
+        priceCurrency: 'CHF',
+      },
+      {
+        '@type': 'Offer',
+        name: 'Forfait Pro',
+        description: 'Site web pages illimitées, réservation en ligne, blog, livré en 14 jours.',
+        price: '990',
+        priceCurrency: 'CHF',
+      },
+    ],
+  },
+};
+
+const webSiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Atelier Digital Genève',
+  url: 'https://atelierdigitalgeneve.ch',
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -64,6 +130,15 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${inter.variable} ${plusJakarta.variable} h-full antialiased`}>
       <head>
+        {/* Schema.org — LocalBusiness + WebSite */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
+        />
         {/* Google Analytics — chargé après l'interactivité pour ne pas ralentir la page */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
