@@ -3,122 +3,179 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { motion, AnimatePresence } from 'framer-motion';
 import Logo from '@/components/Logo';
 
 const navLinks = [
-  { href: '/', label: 'Accueil' },
   { href: '/services', label: 'Services' },
   { href: '/portfolio', label: 'Portfolio' },
   { href: '/a-propos', label: 'À propos' },
-  { href: '/contact', label: 'Contact' },
 ];
 
+/* Pages dont le hero est sombre — la navbar reste blanche jusqu'au scroll */
+const DARK_HERO_PAGES = ['/services', '/portfolio', '/a-propos', '/contact'];
+
 export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
 
+  const isDark = DARK_HERO_PAGES.some((p) => pathname === p || pathname.startsWith(p + '/'));
+
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 10);
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  useEffect(() => {
-    setMobileOpen(false);
-  }, [pathname]);
+  useEffect(() => { setMobileOpen(false); }, [pathname]);
+
+  /* Couleurs dynamiques */
+  const textColor   = scrolled ? 'text-[#0C0B09]' : isDark ? 'text-white/85' : 'text-[#0C0B09]';
+  const textHover   = scrolled ? 'hover:text-[#0C0B09]' : isDark ? 'hover:text-white' : 'hover:text-[#0C0B09]';
+  const activeColor = 'text-[#C9372C]';
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 bg-white transition-shadow duration-200 ${
-        isScrolled ? 'shadow-md' : 'shadow-sm'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 shrink-0">
-            <Logo size={36} />
-            <span className="font-bold text-base text-slate-900 hidden sm:block">
-              Atelier Digital <span className="text-red-600">Genève</span>
-            </span>
-          </Link>
+    <>
+      <header
+        className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+          scrolled
+            ? 'bg-[#FAFAF8]/90 backdrop-blur-xl border-b border-[#0C0B09]/[0.07] shadow-[0_1px_0_rgba(0,0,0,0.04)]'
+            : isDark
+              ? 'bg-transparent'
+              : 'bg-transparent'
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+          <div className="flex items-center justify-between h-[60px]">
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-150 ${
-                  pathname === link.href
-                    ? 'text-red-600 bg-red-50'
-                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-
-          {/* CTA Button */}
-          <div className="hidden md:flex items-center gap-3">
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors duration-150"
-            >
-              Devis gratuit
+            {/* ── Logo + Wordmark ── */}
+            <Link href="/" className="flex items-center gap-2.5 shrink-0 group">
+              <Logo size={32} light={isDark && !scrolled} />
+              <div className="hidden sm:block">
+                <span className={`text-[13px] font-semibold tracking-tight leading-none transition-colors duration-300 ${
+                  scrolled ? 'text-[#0C0B09]' : isDark ? 'text-white' : 'text-[#0C0B09]'
+                }`}>
+                  Atelier Digital
+                </span>
+                <span className={`block text-[10px] font-medium tracking-[0.12em] uppercase leading-none mt-0.5 transition-colors duration-300 ${
+                  scrolled ? 'text-[#C9372C]' : isDark ? 'text-white/50' : 'text-[#C9372C]'
+                }`}>
+                  Genève
+                </span>
+              </div>
             </Link>
-          </div>
 
-          {/* Mobile menu button */}
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden p-2 rounded-md text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors"
-            aria-label="Menu"
-            aria-expanded={mobileOpen}
-          >
-            {mobileOpen ? (
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            ) : (
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            )}
-          </button>
-        </div>
-      </div>
+            {/* ── Desktop nav ── */}
+            <nav className="hidden md:flex items-center gap-1">
+              {navLinks.map((link) => {
+                const isActive = pathname === link.href;
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={`relative px-3.5 py-2 text-[13px] font-medium transition-colors duration-200 ${
+                      isActive ? activeColor : `${textColor} ${textHover} opacity-80 hover:opacity-100`
+                    }`}
+                  >
+                    {link.label}
+                    {isActive && (
+                      <motion.span
+                        layoutId="nav-indicator"
+                        className="absolute bottom-0.5 left-3.5 right-3.5 h-px bg-[#C9372C] rounded-full"
+                        transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                      />
+                    )}
+                  </Link>
+                );
+              })}
+            </nav>
 
-      {/* Mobile Menu */}
-      {mobileOpen && (
-        <div className="md:hidden border-t border-slate-200 bg-white">
-          <nav className="px-4 py-3 space-y-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`block px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                  pathname === link.href
-                    ? 'text-red-600 bg-red-50'
-                    : 'text-slate-700 hover:bg-slate-50'
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
-            <div className="pt-2">
+            {/* ── CTA + Mobile toggle ── */}
+            <div className="flex items-center gap-3">
+              {/* CTA desktop */}
               <Link
                 href="/contact"
-                className="block text-center bg-red-600 hover:bg-red-700 text-white text-sm font-semibold px-4 py-2.5 rounded-lg transition-colors"
+                className={`hidden md:inline-flex items-center gap-1.5 text-[12.5px] font-semibold px-4 py-2 rounded-full transition-all duration-300 ${
+                  scrolled || !isDark
+                    ? 'bg-[#0C0B09] text-white hover:bg-[#1A1917]'
+                    : 'border border-white/30 text-white hover:bg-white/10 backdrop-blur-sm'
+                }`}
               >
                 Devis gratuit
+                <svg className="w-3 h-3 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
               </Link>
+
+              {/* Mobile hamburger */}
+              <button
+                onClick={() => setMobileOpen(!mobileOpen)}
+                className={`md:hidden p-2 rounded-lg transition-colors duration-200 ${
+                  scrolled || !isDark ? 'text-[#0C0B09] hover:bg-black/5' : 'text-white hover:bg-white/10'
+                }`}
+                aria-label="Menu"
+                aria-expanded={mobileOpen}
+              >
+                <div className="w-5 flex flex-col gap-[5px]">
+                  <motion.span
+                    animate={mobileOpen ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
+                    transition={{ duration: 0.25 }}
+                    className="block h-[1.5px] bg-current rounded-full"
+                  />
+                  <motion.span
+                    animate={mobileOpen ? { opacity: 0, scaleX: 0 } : { opacity: 1, scaleX: 1 }}
+                    transition={{ duration: 0.2 }}
+                    className="block h-[1.5px] bg-current rounded-full"
+                  />
+                  <motion.span
+                    animate={mobileOpen ? { rotate: -45, y: -7 } : { rotate: 0, y: 0 }}
+                    transition={{ duration: 0.25 }}
+                    className="block h-[1.5px] bg-current rounded-full"
+                  />
+                </div>
+              </button>
             </div>
-          </nav>
+          </div>
         </div>
-      )}
-    </header>
+      </header>
+
+      {/* ── Mobile Menu ── */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+            className="fixed inset-x-0 top-[60px] z-40 bg-[#FAFAF8]/96 backdrop-blur-xl border-b border-[#0C0B09]/[0.07] md:hidden"
+          >
+            <nav className="max-w-7xl mx-auto px-5 py-5 flex flex-col gap-1">
+              {[{ href: '/', label: 'Accueil' }, ...navLinks].map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`block px-3 py-3 text-[15px] font-medium rounded-xl transition-colors duration-150 ${
+                    pathname === link.href
+                      ? 'text-[#C9372C] bg-[#C9372C]/6'
+                      : 'text-[#0C0B09] hover:bg-black/4'
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <div className="pt-3 mt-1 border-t border-[#0C0B09]/[0.07]">
+                <Link
+                  href="/contact"
+                  className="block text-center bg-[#0C0B09] text-white text-[14px] font-semibold px-5 py-3 rounded-xl transition-colors hover:bg-[#1A1917]"
+                >
+                  Demander un devis gratuit
+                </Link>
+              </div>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 }

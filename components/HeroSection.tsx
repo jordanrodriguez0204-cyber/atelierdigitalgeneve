@@ -3,116 +3,177 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
+/* ── Animation variants ── */
+const ease = [0.22, 1, 0.36, 1] as [number, number, number, number];
+
+/* Reveal ligne par ligne — le span monte depuis sous un masque invisible */
+const lineReveal = {
+  hidden: { y: '105%' },
+  visible: (i: number) => ({
+    y: 0,
+    transition: { duration: 1.0, ease, delay: 0.15 + i * 0.10 },
+  }),
+};
+
+/* Fade simple pour les éléments secondaires */
+const fadeUp = {
+  hidden: { opacity: 0, y: 18 },
+  visible: (i: number) => ({
+    opacity: 1, y: 0,
+    transition: { duration: 0.75, ease, delay: 0.52 + i * 0.09 },
+  }),
+};
+
 const stats = [
-  { value: '3', label: 'Sites livrés à Genève' },
-  { value: '7j', label: 'Délai de livraison' },
+  { value: '3',    label: 'Sites livrés à Genève' },
+  { value: '7j',   label: 'Délai garanti' },
   { value: '100%', label: 'Satisfaction client' },
 ];
 
-const techBadges = ['Next.js', 'Google-ready', 'Mobile-first', 'Hébergement Suisse'];
-
-const container = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.1 } },
-};
-
-const item = {
-  hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] } },
-};
+/* Lignes du titre principal */
+const headlineLines = ["Votre commerce", "mérite d'être", "trouvé."];
 
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-white pt-24 pb-20 lg:pt-32 lg:pb-28">
-      {/* Background */}
-      <div className="absolute inset-0 -z-10" aria-hidden="true">
-        <div className="absolute inset-y-0 right-0 w-1/2 bg-[#f8f8f8]" />
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-red-50 rounded-full blur-3xl opacity-40 translate-x-1/2 -translate-y-1/4" />
-        <svg className="absolute right-0 top-0 h-full w-1/2 opacity-20" viewBox="0 0 400 600" fill="none" preserveAspectRatio="xMinYMin slice">
-          <g stroke="#E2E8F0" strokeWidth="1">
-            {Array.from({ length: 8 }).map((_, i) => <line key={`h${i}`} x1="0" y1={i * 80} x2="400" y2={i * 80} />)}
-            {Array.from({ length: 6 }).map((_, i) => <line key={`v${i}`} x1={i * 80} y1="0" x2={i * 80} y2="600" />)}
-          </g>
-        </svg>
+    <section className="relative min-h-[93vh] flex flex-col justify-between overflow-hidden bg-[#FAFAF8]">
+
+      {/* ── Atmosphère — glow très subtil en haut à droite ── */}
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+        <div
+          className="absolute top-0 right-0 w-[640px] h-[640px] opacity-[0.22] translate-x-1/3 -translate-y-1/4"
+          style={{
+            background: 'radial-gradient(circle, rgba(201,55,44,0.18) 0%, transparent 65%)',
+            filter: 'blur(60px)',
+          }}
+        />
+        {/* Grain très subtil */}
+        <div
+          className="absolute inset-0 opacity-[0.025]"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
+            backgroundSize: '240px 240px',
+            mixBlendMode: 'multiply',
+          }}
+        />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div className="max-w-3xl" variants={container} initial="hidden" animate="visible">
+      {/* ── Contenu principal ── */}
+      <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 w-full flex-1 flex flex-col justify-center pt-32 pb-16">
+        <div className="max-w-4xl">
 
           {/* Badge disponibilité */}
-          <motion.div variants={item}>
-            <div className="inline-flex items-center gap-2 bg-green-50 border border-green-200 text-green-800 text-sm font-medium px-3 py-1.5 rounded-full mb-6">
-              <span className="w-2 h-2 bg-green-500 rounded-full inline-block animate-pulse" />
-              <span>Disponible — 2 créneaux restants ce mois</span>
-            </div>
+          <motion.div
+            custom={0} variants={fadeUp} initial="hidden" animate="visible"
+            className="mb-8"
+          >
+            <span className="inline-flex items-center gap-2 border border-[#0C0B09]/[0.10] text-[#4A453F] text-[11px] font-semibold tracking-[0.14em] uppercase px-3.5 py-1.5 rounded-full">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+              Disponible — 2 créneaux ce mois
+            </span>
           </motion.div>
 
-          {/* Heading */}
-          <motion.h1 variants={item} className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-6 tracking-tight">
-            Votre commerce mérite d&apos;être{' '}
-            <span className="relative inline-block">
-              <span className="text-red-600">trouvé</span>
-              <svg className="absolute -bottom-2 left-0 w-full" height="8" viewBox="0 0 200 8" fill="none" aria-hidden="true">
-                <path d="M2 6C40 2 80 1 100 2C120 3 160 5 198 6" stroke="#DC2626" strokeWidth="3" strokeLinecap="round" opacity="0.6" />
-              </svg>
-            </span>{' '}
-            sur internet
-          </motion.h1>
+          {/* ── Headline — reveal ligne par ligne ── */}
+          <h1 className="text-[clamp(52px,9vw,108px)] font-bold text-[#0C0B09] mb-8">
+            {headlineLines.map((line, i) => (
+              <span key={i} className="clip-line" style={{ display: 'block', lineHeight: 1.02 }}>
+                <motion.span
+                  className="block"
+                  custom={i}
+                  variants={lineReveal}
+                  initial="hidden"
+                  animate="visible"
+                >
+                  {/* Dernier mot "trouvé." en accent */}
+                  {i === 2 ? (
+                    <span className="text-[#C9372C]">trouvé.</span>
+                  ) : line}
+                </motion.span>
+              </span>
+            ))}
+          </h1>
 
-          {/* Subtitle */}
-          <motion.p variants={item} className="text-xl md:text-2xl text-slate-500 leading-relaxed mb-10 max-w-2xl">
-            Je crée des sites web modernes pour les commerces de Genève.{' '}
-            <strong className="text-slate-700 font-semibold">Rapide, professionnel,</strong> fait pour attirer de nouveaux clients.
+          {/* Sous-titre */}
+          <motion.p
+            custom={0} variants={fadeUp} initial="hidden" animate="visible"
+            className="text-[18px] md:text-[20px] text-[#8C837A] leading-relaxed max-w-xl mb-10"
+          >
+            Je crée des sites web pour les commerces de Genève.{' '}
+            <span className="text-[#4A453F] font-medium">Rapide, professionnel,</span>{' '}
+            fait pour attirer de nouveaux clients.
           </motion.p>
 
           {/* CTAs */}
-          <motion.div variants={item} className="flex flex-col sm:flex-row gap-4 mb-8">
+          <motion.div
+            custom={1} variants={fadeUp} initial="hidden" animate="visible"
+            className="flex flex-col sm:flex-row items-start sm:items-center gap-3"
+          >
+            {/* Primaire — dark editorial */}
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold text-lg px-8 py-4 rounded-2xl transition-all duration-200 shadow-lg shadow-red-600/20 hover:shadow-red-600/30 hover:-translate-y-0.5"
+              className="group inline-flex items-center gap-2.5 bg-[#0C0B09] hover:bg-[#1C1B18]
+                         text-white text-[14px] font-semibold tracking-tight
+                         px-7 py-3.5 rounded-full
+                         transition-all duration-300
+                         shadow-[0_1px_2px_rgba(0,0,0,0.12),0_4px_16px_rgba(0,0,0,0.10)]
+                         hover:shadow-[0_2px_4px_rgba(0,0,0,0.14),0_8px_28px_rgba(0,0,0,0.16)]
+                         hover:-translate-y-0.5"
             >
               Demander un devis gratuit
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <svg
+                className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5"
+                fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}
+              >
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </Link>
+
+            {/* Secondaire — ghost */}
             <Link
               href="/portfolio"
-              className="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-900 font-semibold text-lg px-8 py-4 rounded-2xl border-2 border-slate-200 hover:border-slate-300 transition-all duration-200 hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 text-[14px] font-medium text-[#4A453F]
+                         hover:text-[#0C0B09] transition-colors duration-200 px-2 py-3.5 group"
             >
               Voir les réalisations
+              <svg
+                className="w-3.5 h-3.5 opacity-50 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-0.5"
+                fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
             </Link>
           </motion.div>
+        </div>
+      </div>
 
-          {/* Social proof */}
-          <motion.p variants={item} className="text-sm text-slate-400 mb-10">
-            <span className="text-slate-600 font-medium">Restaurant, coiffeur, boutique</span> — des commerces genevois déjà en ligne.
-          </motion.p>
-
-          {/* Stats */}
-          <motion.div variants={item} className="flex flex-wrap gap-8 mb-10 pb-10 border-b border-slate-100">
+      {/* ── Stats — bande editoriale en bas ── */}
+      <motion.div
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease, delay: 0.9 }}
+        className="relative border-t border-[#0C0B09]/[0.07]"
+      >
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+          <div className="flex items-stretch divide-x divide-[#0C0B09]/[0.07]">
             {stats.map((stat) => (
-              <div key={stat.label}>
-                <div className="text-2xl md:text-3xl font-bold text-slate-900 mb-0.5">{stat.value}</div>
-                <div className="text-sm text-slate-500 font-medium">{stat.label}</div>
+              <div key={stat.label} className="flex-1 py-5 px-4 sm:px-8 first:pl-0">
+                <div className="text-[22px] sm:text-[26px] font-bold text-[#0C0B09] tracking-tight leading-none mb-1">
+                  {stat.value}
+                </div>
+                <div className="text-[11px] font-medium text-[#8C837A] tracking-[0.08em] uppercase leading-tight">
+                  {stat.label}
+                </div>
               </div>
             ))}
-          </motion.div>
-
-          {/* Tech badges */}
-          <motion.div variants={item} className="flex flex-wrap gap-2">
-            {techBadges.map((badge) => (
-              <span key={badge} className="inline-flex items-center gap-1.5 bg-slate-100 text-slate-600 text-xs font-medium px-3 py-1.5 rounded-full">
-                <svg className="w-3.5 h-3.5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                </svg>
-                {badge}
-              </span>
-            ))}
-          </motion.div>
-
-        </motion.div>
-      </div>
+            {/* Mention sociale */}
+            <div className="hidden lg:flex flex-1 items-center py-5 px-8">
+              <p className="text-[12px] text-[#8C837A] leading-snug max-w-[180px]">
+                Restaurant, coiffeur, boutique —{' '}
+                <span className="text-[#4A453F] font-medium">des commerces genevois déjà en ligne.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </motion.div>
     </section>
   );
 }
