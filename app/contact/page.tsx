@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import ContactForm from '@/components/ContactForm';
+import CalendlyEmbed from '@/components/CalendlyEmbed';
 
 export const metadata: Metadata = {
   title: 'Contact — Devis gratuit',
@@ -66,6 +67,24 @@ export default function ContactPage() {
           <p className="text-slate-400 text-xl leading-relaxed">
             Premier échange gratuit. Devis envoyé sous 48h. Aucune obligation.
           </p>
+        </div>
+      </section>
+
+      {/* Calendly */}
+      <section className="py-16 bg-slate-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <div className="inline-block bg-red-50 text-red-600 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">
+              Réservation directe
+            </div>
+            <h2 className="text-3xl font-bold text-slate-900 mb-3">
+              Choisissez un créneau
+            </h2>
+            <p className="text-slate-500 text-lg max-w-xl mx-auto">
+              Appel téléphonique de 20 min ou rencontre à Genève — choisissez ce qui vous convient.
+            </p>
+          </div>
+          <CalendlyEmbed />
         </div>
       </section>
 
