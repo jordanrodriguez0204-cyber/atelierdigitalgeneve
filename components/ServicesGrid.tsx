@@ -71,7 +71,7 @@ export default function ServicesGrid() {
           <div className="inline-block bg-red-50 text-red-600 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">
             Forfaits
           </div>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
             Des tarifs transparents, sans surprises
           </h2>
           <p className="text-lg text-slate-500 max-w-2xl mx-auto">

@@ -16,7 +16,7 @@ export default function CTASection() {
               <span>Prêt à vous lancer ?</span>
             </div>
 
-            <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-5 leading-tight">
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-5">
               Votre site web en ligne<br className="hidden sm:block" /> en moins de 7 jours
             </h2>
 

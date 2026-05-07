@@ -40,7 +40,7 @@ export default function AProposPage() {
               <div className="inline-block bg-red-600/20 text-red-400 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">
                 À propos
               </div>
-              <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-6">
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Une agence née à Genève, pour Genève
               </h1>
               <p className="text-slate-300 text-xl leading-relaxed">
@@ -71,7 +71,7 @@ export default function AProposPage() {
       {/* Story */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-extrabold text-slate-900 mb-6">Notre histoire</h2>
+          <h2 className="text-3xl font-bold text-slate-900 mb-6">Notre histoire</h2>
           <div className="space-y-5 text-slate-600 leading-relaxed text-lg">
             <p>
               Atelier Digital Genève est né d&apos;une conviction simple : les petits commerces genevois méritent une présence en ligne aussi soignée que les grandes enseignes.
@@ -90,7 +90,7 @@ export default function AProposPage() {
       <section className="py-16 bg-slate-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-red-600 rounded-3xl p-8 md:p-12 text-white text-center">
-            <h2 className="text-3xl font-extrabold mb-6">Notre mission</h2>
+            <h2 className="text-3xl font-bold mb-6">Notre mission</h2>
             <p className="text-red-100 text-xl leading-relaxed max-w-2xl mx-auto">
               Nous croyons que chaque commerce local mérite d&apos;être trouvé sur internet. Pas besoin d&apos;un budget énorme. Pas besoin de comprendre la technologie. Vous vous occupez de votre métier — nous nous occupons de votre présence en ligne.
             </p>
@@ -102,7 +102,7 @@ export default function AProposPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <h2 className="text-3xl font-extrabold text-slate-900 mb-4">Nos valeurs</h2>
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">Nos valeurs</h2>
             <p className="text-lg text-slate-500 max-w-xl mx-auto">
               Ce qui guide notre travail au quotidien avec chaque client.
             </p>
@@ -126,7 +126,7 @@ export default function AProposPage() {
       <section className="py-20 bg-slate-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-slate-900 rounded-3xl p-8 md:p-12 text-white">
-            <h2 className="text-3xl font-extrabold mb-6">Pourquoi nous choisir</h2>
+            <h2 className="text-3xl font-bold mb-6">Pourquoi nous choisir</h2>
             <p className="text-slate-300 text-xl leading-relaxed">
               Nous démarrons, et c&apos;est une force. Nos premiers clients bénéficient de tarifs préférentiels, d&apos;une attention maximale, et d&apos;un suivi personnalisé. Vous n&apos;êtes pas un numéro de dossier — vous êtes un partenaire.
             </p>
@@ -137,7 +137,7 @@ export default function AProposPage() {
       {/* CTA */}
       <section className="py-16 bg-white text-center px-4">
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-3xl font-extrabold text-slate-900 mb-4">
+          <h2 className="text-3xl font-bold text-slate-900 mb-4">
             Travaillons ensemble
           </h2>
           <p className="text-lg text-slate-500 mb-8">

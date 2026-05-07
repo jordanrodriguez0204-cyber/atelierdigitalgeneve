@@ -59,7 +59,7 @@ export default function PortfolioPage() {
           <div className="inline-block bg-red-600/20 text-red-400 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">
             Portfolio
           </div>
-          <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-5">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-5">
             Nos réalisations
           </h1>
           <p className="text-slate-400 text-xl leading-relaxed">
@@ -143,7 +143,7 @@ export default function PortfolioPage() {
       {/* Votre projet */}
       <section className="py-16 bg-slate-50">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-extrabold text-slate-900 mb-4">
+          <h2 className="text-3xl font-bold text-slate-900 mb-4">
             Votre commerce sera le premier
           </h2>
           <p className="text-lg text-slate-500 mb-8">

@@ -41,7 +41,7 @@ export default function HeroSection() {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 leading-tight tracking-tight mb-6">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-6">
             Votre commerce mérite d&apos;être{' '}
             <span className="relative">
               <span className="text-red-600">trouvé</span>
@@ -65,7 +65,7 @@ export default function HeroSection() {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-xl md:text-2xl text-slate-500 leading-relaxed mb-10 max-w-2xl">
+          <p className="text-xl md:text-2xl text-slate-500 leading-[1.7] mb-10 max-w-2xl">
             Je crée des sites web modernes pour les commerces de Genève.{' '}
             <strong className="text-slate-700 font-semibold">Rapide, professionnel,</strong> et fait pour attirer de nouveaux clients.
           </p>

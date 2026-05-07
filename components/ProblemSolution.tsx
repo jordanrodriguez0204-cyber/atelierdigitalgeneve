@@ -15,7 +15,7 @@ export default function ProblemSolution() {
               <div className="inline-block bg-red-50 text-red-600 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">
                 Le problème
               </div>
-              <h2 className="text-2xl font-bold text-slate-900 mb-4">
+              <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
                 Sans site web, vous êtes invisible
               </h2>
               <p className="text-slate-500 text-lg leading-relaxed mb-6">
@@ -50,7 +50,7 @@ export default function ProblemSolution() {
               <div className="inline-block bg-white/20 text-white text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">
                 La solution
               </div>
-              <h2 className="text-2xl font-bold text-white mb-4">
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
                 Votre présence en ligne de A à Z
               </h2>
               <p className="text-red-100 text-lg leading-relaxed mb-6">

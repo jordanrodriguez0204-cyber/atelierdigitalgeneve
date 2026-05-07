@@ -60,7 +60,7 @@ export default function ContactPage() {
           <div className="inline-block bg-red-600/20 text-red-400 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">
             Gratuit & Sans engagement
           </div>
-          <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-5">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-5">
             Parlons de votre projet
           </h1>
           <p className="text-slate-400 text-xl leading-relaxed">
@@ -76,7 +76,7 @@ export default function ContactPage() {
             {/* Left: Info */}
             <div className="lg:col-span-2 space-y-8">
               <div>
-                <h2 className="text-2xl font-extrabold text-slate-900 mb-4">
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">
                   Comment ça se passe ?
                 </h2>
                 <div className="space-y-4">
@@ -152,7 +152,7 @@ export default function ContactPage() {
             {/* Right: Form */}
             <div className="lg:col-span-3">
               <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm">
-                <h2 className="text-2xl font-extrabold text-slate-900 mb-2">
+                <h2 className="text-2xl font-bold text-slate-900 mb-2">
                   Demander un devis gratuit
                 </h2>
                 <p className="text-slate-500 text-sm mb-6">

@@ -74,7 +74,7 @@ export default function ServicesPage() {
           <div className="inline-block bg-red-600/20 text-red-400 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4">
             Tarifs clairs
           </div>
-          <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-5">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-5">
             Services & Forfaits
           </h1>
           <p className="text-slate-400 text-xl leading-relaxed">
@@ -90,7 +90,7 @@ export default function ServicesPage() {
       <section className="py-20 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <h2 className="text-3xl font-extrabold text-slate-900 mb-4">Comment ça marche ?</h2>
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">Comment ça marche ?</h2>
             <p className="text-lg text-slate-500 max-w-xl mx-auto">
               Un processus simple et transparent, de la première discussion à la mise en ligne.
             </p>
@@ -114,7 +114,7 @@ export default function ServicesPage() {
       <section className="py-20 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-extrabold text-slate-900 mb-4">Questions fréquentes</h2>
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">Questions fréquentes</h2>
           </div>
           <div className="space-y-4">
             {faqs.map((faq) => (
