@@ -64,6 +64,13 @@ const demos = [
     forfait: 'Pro — CHF 990',
     href: 'https://boutique.atelierdigitalgeneve.ch',
   },
+  {
+    emoji: '🎂',
+    type: 'Pâtisserie',
+    name: 'Cocina de Chanyz',
+    forfait: 'Sur mesure',
+    href: 'https://cocina-de-chanyz.vercel.app',
+  },
 ];
 
 const containerVariants: Variants = {
@@ -142,12 +149,12 @@ export default function Testimonials() {
             Découvrez les réalisations
           </h2>
           <p className="text-lg text-slate-500 max-w-xl mx-auto">
-            Trois exemples concrets — cliquez pour visiter les sites.
+            Cliquez sur chaque site pour le visiter en direct.
           </p>
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"

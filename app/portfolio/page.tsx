@@ -10,9 +10,25 @@ export const metadata: Metadata = {
 };
 
 const stats = [
-  { value: '3', label: 'Sites livrés', sub: 'à Genève' },
+  { value: '4', label: 'Sites livrés', sub: 'à Genève' },
   { value: '7j', label: 'Délai moyen', sub: 'de livraison' },
   { value: '100%', label: 'Satisfaction', sub: 'garantie' },
+];
+
+const particuliers = [
+  {
+    name: 'Cocina de Chanyz',
+    type: 'Pâtisserie & Cuisine maison',
+    emoji: '🎂',
+    href: 'https://cocina-de-chanyz.vercel.app',
+    bullets: [
+      'Formulaire de devis avec option livraison',
+      'Galerie de gâteaux filtrée par catégorie',
+      'Section spécialités péruviennes',
+      'Envoi de devis par email (Resend)',
+      'WhatsApp flottant',
+    ],
+  },
 ];
 
 export default function PortfolioPage() {
@@ -73,6 +89,174 @@ export default function PortfolioPage() {
           </div>
 
           <PortfolioCards />
+        </div>
+      </section>
+
+      {/* ── Particuliers & Associations ── */}
+      <section className="py-20 bg-white border-t border-slate-100">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          <div className="text-center mb-12">
+            <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-3">
+              Au-delà des forfaits
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">
+              Particuliers &amp; Associations
+            </h2>
+            <p className="text-slate-500 mt-3 max-w-lg mx-auto">
+              Des projets sur mesure pour celles et ceux qui ne rentrent pas
+              dans une grille de tarifs standard.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6">
+            {particuliers.map((p) => (
+              <div
+                key={p.name}
+                className="group relative flex flex-col overflow-hidden rounded-[20px] bg-white
+                           shadow-[0_2px_24px_rgba(0,0,0,0.07)] ring-1 ring-black/[0.06]
+                           hover:shadow-[0_24px_64px_rgba(0,0,0,0.13)] hover:ring-black/[0.09]
+                           transition-shadow duration-500"
+              >
+                {/* ── Image zone — placeholder élégant ── */}
+                <div className="relative h-[280px] overflow-hidden">
+
+                  {/* Gradient placeholder */}
+                  <div
+                    className="absolute inset-0"
+                    style={{
+                      background:
+                        'linear-gradient(135deg, #fdf2f8 0%, #fce7f3 35%, #fbcfe8 70%, #f9a8d4 100%)',
+                    }}
+                  />
+
+                  {/* Subtle pattern overlay */}
+                  <div
+                    className="absolute inset-0 opacity-[0.18]"
+                    style={{
+                      backgroundImage:
+                        'radial-gradient(circle at 1px 1px, rgba(0,0,0,0.18) 1px, transparent 0)',
+                      backgroundSize: '24px 24px',
+                    }}
+                  />
+
+                  {/* Centered emoji + name */}
+                  <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
+                    <span className="text-6xl mb-3 drop-shadow-sm">{p.emoji}</span>
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-rose-900/55 mb-1.5">
+                      Projet sur mesure
+                    </p>
+                    <p className="text-[20px] font-bold tracking-tight text-rose-950/85">
+                      {p.name}
+                    </p>
+                  </div>
+
+                  {/* Soft scrim only at top + bottom for badge legibility */}
+                  <div
+                    className="absolute inset-0 pointer-events-none"
+                    style={{
+                      background:
+                        'linear-gradient(to bottom, rgba(0,0,0,0.18) 0%, transparent 25%, transparent 80%, rgba(0,0,0,0.10) 100%)',
+                    }}
+                  />
+
+                  {/* Top-right: En ligne badge */}
+                  <div className="absolute top-3.5 right-3.5 z-10">
+                    <span className="inline-flex items-center gap-1.5 text-[10px] font-medium tracking-wide text-white bg-black/35 backdrop-blur-md border border-white/15 px-2.5 py-1 rounded-full">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                      En ligne
+                    </span>
+                  </div>
+
+                  {/* Top-left: Sur mesure tag */}
+                  <div className="absolute top-3.5 left-3.5 z-10">
+                    <span className="inline-flex items-center gap-1.5 text-[9.5px] font-semibold uppercase tracking-[0.16em] text-white bg-black/35 backdrop-blur-md border border-white/15 px-2.5 py-[4.5px] rounded-full">
+                      Sur mesure
+                    </span>
+                  </div>
+
+                  {/* External link pill bottom-right */}
+                  <div className="absolute bottom-4 right-4 z-10">
+                    <a
+                      href={p.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Visiter le site ${p.name}`}
+                      className="flex items-center justify-center w-9 h-9 rounded-xl
+                                 bg-white/85 backdrop-blur-md border border-white/40
+                                 text-rose-900/70 hover:bg-white hover:text-rose-900
+                                 transition-all duration-200"
+                    >
+                      <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+
+                {/* ── Content zone ── */}
+                <div className="flex flex-col flex-1 px-5 pt-5 pb-5">
+
+                  <div className="flex items-start justify-between mb-4">
+                    <div>
+                      <h3 className="text-[15px] font-semibold text-slate-900 tracking-tight leading-tight">
+                        {p.type}
+                      </h3>
+                      <p className="text-slate-400 text-[11.5px] font-medium mt-[3px]">
+                        Tarif établi sur devis
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="h-px bg-slate-100 mb-4" />
+
+                  <ul className="flex-1 space-y-[10px] mb-5">
+                    {p.bullets.map((b) => (
+                      <li key={b} className="flex items-start gap-[10px] text-[13px] text-slate-600 leading-snug">
+                        <span className="mt-[5px] shrink-0 w-3 flex items-center">
+                          <span className="block w-2.5 h-[1.5px] bg-slate-300 rounded-full" />
+                        </span>
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="h-px bg-slate-100 mb-4" />
+
+                  <div className="space-y-1.5">
+                    <a
+                      href={p.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group/btn flex items-center justify-between w-full
+                                 bg-slate-900 hover:bg-red-600
+                                 text-white text-[13px] font-medium tracking-tight
+                                 py-[11px] px-4 rounded-xl
+                                 transition-colors duration-300"
+                    >
+                      <span>Voir le site</span>
+                      <svg
+                        className="w-3.5 h-3.5 transition-transform duration-200 group-hover/btn:translate-x-1"
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      </svg>
+                    </a>
+
+                    <Link
+                      href="/contact"
+                      className="flex items-center justify-center w-full
+                                 text-slate-400 hover:text-slate-600
+                                 text-[11.5px] font-medium tracking-wide
+                                 py-2 transition-colors duration-200"
+                    >
+                      Demander un projet sur mesure&nbsp;→
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

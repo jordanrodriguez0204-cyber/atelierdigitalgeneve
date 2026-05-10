@@ -6,6 +6,7 @@ import Link from 'next/link';
 const items = [
   {
     id: 1,
+    category: 'commerce' as const,
     type: 'Coiffeur',
     forfait: 'Starter',
     price: 'CHF 299',
@@ -22,6 +23,7 @@ const items = [
   },
   {
     id: 2,
+    category: 'commerce' as const,
     type: 'Restaurant',
     forfait: 'Standard',
     price: 'CHF 599',
@@ -38,6 +40,7 @@ const items = [
   },
   {
     id: 3,
+    category: 'commerce' as const,
     type: 'Boutique',
     forfait: 'Pro',
     price: 'CHF 990',
@@ -52,7 +55,34 @@ const items = [
     popular: false,
     isDemo: true,
   },
+  {
+    id: 4,
+    category: 'particulier' as const,
+    type: 'Pâtisserie & Cuisine maison',
+    forfait: 'Sur mesure',
+    price: 'Sur mesure',
+    monthly: '',
+    image: '/card-cocina.jpg',
+    demo: 'https://cocina-de-chanyz.vercel.app',
+    bullets: [
+      'Formulaire de devis avec option livraison',
+      'Galerie de gâteaux filtrée par catégorie',
+      'Section spécialités péruviennes',
+      'Envoi de devis par email (Resend)',
+      'WhatsApp flottant',
+    ],
+    popular: false,
+    isDemo: false,
+    name: 'Cocina de Chanyz',
+  },
 ];
+
+// Cards rendered in the main commerce grid (only the standard forfaits)
+const commerceItems = items.filter((i) => i.category === 'commerce');
+
+// Exported so the portfolio page can render the Particuliers section
+// from the same source of truth.
+export const particulierItems = items.filter((i) => i.category === 'particulier');
 
 const containerVariants: Variants = {
   hidden: {},
@@ -69,7 +99,7 @@ const cardVariants: Variants = {
 };
 
 export default function PortfolioCards() {
-  const hasDemo = items.some((i) => i.isDemo);
+  const hasDemo = commerceItems.some((i) => i.isDemo);
   return (
     <>
     <motion.div
@@ -79,7 +109,7 @@ export default function PortfolioCards() {
       whileInView="visible"
       viewport={{ once: true, margin: '-80px' }}
     >
-      {items.map((item) => (
+      {commerceItems.map((item) => (
         <motion.div
           key={item.id}
           variants={cardVariants}
