@@ -73,10 +73,6 @@ export default function PortfolioPage() {
           </div>
 
           <PortfolioCards />
-
-          <p className="text-center text-slate-400 text-xs mt-8">
-            * Sites de démonstration fictifs créés à titre d&apos;illustration.
-          </p>
         </div>
       </section>
 

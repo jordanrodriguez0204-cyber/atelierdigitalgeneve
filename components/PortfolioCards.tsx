@@ -18,6 +18,7 @@ const items = [
       'Prise de rendez-vous en ligne',
     ],
     popular: false,
+    isDemo: true,
   },
   {
     id: 2,
@@ -33,6 +34,7 @@ const items = [
       'Formulaire de réservation',
     ],
     popular: true,
+    isDemo: true,
   },
   {
     id: 3,
@@ -48,6 +50,7 @@ const items = [
       'Réservation & catalogue avancés',
     ],
     popular: false,
+    isDemo: true,
   },
 ];
 
@@ -66,7 +69,9 @@ const cardVariants: Variants = {
 };
 
 export default function PortfolioCards() {
+  const hasDemo = items.some((i) => i.isDemo);
   return (
+    <>
     <motion.div
       className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6"
       variants={containerVariants}
@@ -118,12 +123,18 @@ export default function PortfolioCards() {
               </div>
             )}
 
-            {/* Top-right: En ligne badge — frosted glass */}
+            {/* Top-right: badge En ligne / Démo */}
             <div className="absolute top-3.5 right-3.5 z-10">
-              <span className="inline-flex items-center gap-1.5 text-[10px] font-medium tracking-wide text-white/88 bg-black/18 backdrop-blur-md border border-white/10 px-2.5 py-1 rounded-full">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                En ligne
-              </span>
+              {item.isDemo ? (
+                <span className="inline-flex items-center gap-1.5 text-[10px] font-medium tracking-wide text-white/75 bg-black/18 backdrop-blur-md border border-white/10 px-2.5 py-1 rounded-full">
+                  Démo *
+                </span>
+              ) : (
+                <span className="inline-flex items-center gap-1.5 text-[10px] font-medium tracking-wide text-white/88 bg-black/18 backdrop-blur-md border border-white/10 px-2.5 py-1 rounded-full">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  En ligne
+                </span>
+              )}
             </div>
 
             {/* Bottom overlay — price + forfait + external link */}
@@ -232,5 +243,11 @@ export default function PortfolioCards() {
         </motion.div>
       ))}
     </motion.div>
+    {hasDemo && (
+      <p className="text-center text-slate-400 text-xs mt-8">
+        * Sites de démonstration fictifs créés à titre d&apos;illustration.
+      </p>
+    )}
+    </>
   );
 }
