@@ -6,7 +6,7 @@ import FadeIn from '@/components/FadeIn';
 export const metadata: Metadata = {
   title: 'À propos',
   description:
-    'Atelier Digital Genève — je crée des sites web pour les commerces locaux de Genève. Freelance basé à Genève, disponible 7j/7, devis gratuit.',
+    'Atelier Digital Genève. Je crée des sites web pour les commerces locaux de Genève. Freelance basé à Genève, disponible 7j/7, devis gratuit.',
 };
 
 const values = [
@@ -26,7 +26,7 @@ const values = [
     emoji: '🎯',
     title: 'Efficacité',
     description:
-      'Des sites clairs, rapides, et efficaces. Votre site est livré en 7 jours — pas en 3 mois.',
+      'Des sites clairs, rapides, et efficaces. Votre site est livré en 7 jours, pas en 3 mois.',
   },
 ];
 
@@ -51,7 +51,7 @@ export default function AProposPage() {
                 Un développeur web genevois,<br className="hidden sm:block" /> à votre service
               </h1>
               <p className="text-slate-300 text-xl leading-relaxed max-w-2xl">
-                Je crée des sites web pour les commerces de Genève. Pas une grande agence froide — un interlocuteur unique, disponible, qui comprend votre quartier et vos clients.
+                Je crée des sites web pour les commerces de Genève. Pas une grande agence froide. Un interlocuteur unique, disponible, qui comprend votre quartier et vos clients.
               </p>
             </div>
 
@@ -178,7 +178,7 @@ export default function AProposPage() {
               <div className="absolute top-6 right-8 text-[80px] font-serif text-slate-200 leading-none select-none" aria-hidden="true">&ldquo;</div>
               <div className="relative space-y-5 text-slate-600 leading-relaxed text-lg">
                 <p>
-                  Nouman est mon ami d&apos;enfance. Passionné de photographie depuis l&apos;adolescence, il avait accumulé des centaines de clichés magnifiques — des portraits, des paysages genevois, des événements. Ses photos dormaient dans un disque dur.
+                  Nouman est mon ami d&apos;enfance. Passionné de photographie depuis l&apos;adolescence, il avait accumulé des centaines de clichés magnifiques : des portraits, des paysages genevois, des événements. Ses photos dormaient dans un disque dur.
                 </p>
                 <p>
                   Un jour, il m&apos;a demandé : <span className="text-slate-900 font-medium italic">&ldquo;Tu crois que je pourrais vivre de ça un jour ?&rdquo;</span>{' '}Il n&apos;avait aucune présence en ligne, aucun moyen pour les clients de le trouver ou de voir son travail.
@@ -193,7 +193,7 @@ export default function AProposPage() {
           <div className="space-y-5 text-slate-600 leading-relaxed text-lg">
             <FadeIn delay={0.1}>
               <p>
-                Cet exemple m&apos;a convaincu d&apos;une chose : le frein pour les indépendants et les petits commerces n&apos;est pas le talent — c&apos;est la visibilité. Avoir les compétences ne suffit pas si personne ne peut vous trouver.
+                Cet exemple m&apos;a convaincu d&apos;une chose : le frein pour les indépendants et les petits commerces n&apos;est pas le talent. C&apos;est la visibilité. Avoir les compétences ne suffit pas si personne ne peut vous trouver.
               </p>
             </FadeIn>
             <FadeIn delay={0.15}>
@@ -216,7 +216,7 @@ export default function AProposPage() {
               <div className="relative">
                 <h2 className="text-3xl font-bold mb-6 tracking-tight">Ma mission</h2>
                 <p className="text-red-100 text-xl leading-relaxed max-w-2xl mx-auto">
-                  Chaque commerce local mérite d&apos;être trouvé sur internet. Pas besoin d&apos;un budget énorme. Pas besoin de comprendre la technologie. Vous vous occupez de votre métier — je m&apos;occupe de votre présence en ligne.
+                  Chaque commerce local mérite d&apos;être trouvé sur internet. Pas besoin d&apos;un budget énorme. Pas besoin de comprendre la technologie. Vous vous occupez de votre métier. Je m&apos;occupe de votre présence en ligne.
                 </p>
               </div>
             </div>

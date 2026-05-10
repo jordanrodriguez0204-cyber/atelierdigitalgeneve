@@ -91,7 +91,7 @@ export default function ProblemSolution() {
                 Votre présence en ligne de A à Z
               </h3>
               <p className="text-slate-400 leading-relaxed mb-7">
-                Je m&apos;occupe de tout — design, textes, mise en ligne. Vous vous concentrez sur votre commerce.
+                Je m&apos;occupe de tout : design, textes, mise en ligne. Vous vous concentrez sur votre commerce.
               </p>
               <ul className="space-y-3">
                 {solutions.map((s) => (

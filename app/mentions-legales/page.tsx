@@ -94,15 +94,15 @@ export default function MentionsLegalesPage() {
             <ul className="list-none space-y-2 mt-2">
               <li className="flex gap-3">
                 <span className="text-red-600 font-bold shrink-0">Starter</span>
-                <span>CHF 299 (création) + CHF 29/mois (hébergement) — site une page</span>
+                <span>CHF 299 (création) + CHF 29/mois (hébergement) · site une page</span>
               </li>
               <li className="flex gap-3">
                 <span className="text-red-600 font-bold shrink-0">Standard</span>
-                <span>CHF 599 (création) + CHF 49/mois (hébergement) — jusqu&apos;à 5 pages</span>
+                <span>CHF 599 (création) + CHF 49/mois (hébergement) · jusqu&apos;à 5 pages</span>
               </li>
               <li className="flex gap-3">
                 <span className="text-red-600 font-bold shrink-0">Pro</span>
-                <span>CHF 990 (création) + CHF 79/mois (hébergement) — pages illimitées</span>
+                <span>CHF 990 (création) + CHF 79/mois (hébergement) · pages illimitées</span>
               </li>
             </ul>
             <p className="mt-3">

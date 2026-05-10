@@ -24,7 +24,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Atelier Digital Genève — Sites web pour commerces locaux',
+    default: 'Atelier Digital Genève · Sites web pour commerces locaux',
     template: '%s | Atelier Digital Genève',
   },
   description:
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'fr_CH',
     siteName: 'Atelier Digital Genève',
-    title: 'Atelier Digital Genève — Sites web pour commerces locaux',
+    title: 'Atelier Digital Genève · Sites web pour commerces locaux',
     description:
       'Je crée des sites web modernes pour les commerces de Genève. Rapide, professionnel, et fait pour attirer de nouveaux clients.',
   },

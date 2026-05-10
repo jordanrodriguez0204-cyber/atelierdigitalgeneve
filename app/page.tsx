@@ -6,7 +6,7 @@ import Testimonials from '@/components/Testimonials';
 import CTASection from '@/components/CTASection';
 
 export const metadata: Metadata = {
-  title: 'Atelier Digital Genève — Sites web pour commerces locaux',
+  title: 'Atelier Digital Genève · Sites web pour commerces locaux',
   description:
     'Je crée des sites web modernes pour les commerces de Genève. Rapide, professionnel, et fait pour attirer de nouveaux clients. Devis gratuit.',
 };

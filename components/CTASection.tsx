@@ -67,7 +67,7 @@ export default function CTASection() {
             transition={{ duration: 0.7, ease, delay: 0.32 }}
             className="text-[17px] text-white/45 leading-relaxed max-w-xl mb-12"
           >
-            Premier échange gratuit — par téléphone ou en présentiel à Genève.
+            Premier échange gratuit, par téléphone ou en présentiel à Genève.
             Devis fixe, aucune surprise sur la facture.
           </motion.p>
 
@@ -124,7 +124,7 @@ export default function CTASection() {
                 <div className="w-1 h-1 rounded-full bg-[#C9372C]" />
                 <span className="text-[13px] font-medium text-white/60">
                   {item.label}
-                  <span className="text-white/30 ml-1.5">— {item.sub}</span>
+                  <span className="text-white/30 ml-1.5">· {item.sub}</span>
                 </span>
               </div>
             ))}

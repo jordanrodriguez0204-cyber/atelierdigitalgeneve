@@ -29,7 +29,7 @@ export async function POST(request: Request) {
     await resend.emails.send({
       from: 'Atelier Digital Genève <noreply@mail.atelierdigitalgeneve.ch>',
       to: 'contact@atelierdigitalgeneve.ch',
-      subject: `Nouvelle demande de ${nom}${nom_commerce ? ` — ${nom_commerce}` : ''}`,
+      subject: `Nouvelle demande de ${nom}${nom_commerce ? ` · ${nom_commerce}` : ''}`,
       html: `
         <h2>Nouvelle demande de contact</h2>
         <p><strong>Nom :</strong> ${nom}</p>

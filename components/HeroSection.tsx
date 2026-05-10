@@ -68,7 +68,7 @@ export default function HeroSection() {
           >
             <span className="inline-flex items-center gap-2 border border-[#0C0B09]/[0.10] text-[#4A453F] text-[11px] font-semibold tracking-[0.14em] uppercase px-3.5 py-1.5 rounded-full">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-              Disponible — 2 créneaux ce mois
+              Disponible · 2 créneaux ce mois
             </span>
           </motion.div>
 
@@ -167,8 +167,8 @@ export default function HeroSection() {
             {/* Mention sociale */}
             <div className="hidden lg:flex flex-1 items-center py-5 px-8">
               <p className="text-[12px] text-[#8C837A] leading-snug max-w-[180px]">
-                Restaurant, coiffeur, boutique —{' '}
-                <span className="text-[#4A453F] font-medium">des commerces genevois déjà en ligne.</span>
+                Restaurant, coiffeur, boutique.{' '}
+                <span className="text-[#4A453F] font-medium">Des commerces genevois déjà en ligne.</span>
               </p>
             </div>
           </div>

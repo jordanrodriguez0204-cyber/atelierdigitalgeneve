@@ -36,7 +36,7 @@ const guarantees = [
     ),
     title: 'Un interlocuteur unique',
     description:
-      "Pas de chef de projet, pas d'intermédiaire. Vous avez mon numéro direct et je réponds sous 24h — toujours.",
+      "Pas de chef de projet, pas d'intermédiaire. Vous avez mon numéro direct et je réponds sous 24h, toujours.",
     color: 'text-red-600',
     bg: 'bg-red-50',
   },
@@ -47,21 +47,21 @@ const demos = [
     emoji: '🍽️',
     type: 'Restaurant',
     name: 'Bistrot du Lac',
-    forfait: 'Standard — CHF 599',
+    forfait: 'Standard · CHF 599',
     href: 'https://restaurant.atelierdigitalgeneve.ch',
   },
   {
     emoji: '✂️',
     type: 'Coiffeur',
     name: 'Studio Nuance',
-    forfait: 'Starter — CHF 299',
+    forfait: 'Starter · CHF 299',
     href: 'https://coiffeur.atelierdigitalgeneve.ch',
   },
   {
     emoji: '👗',
     type: 'Boutique',
     name: 'Elara',
-    forfait: 'Pro — CHF 990',
+    forfait: 'Pro · CHF 990',
     href: 'https://boutique.atelierdigitalgeneve.ch',
   },
   {

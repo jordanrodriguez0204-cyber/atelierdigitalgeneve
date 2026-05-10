@@ -4,7 +4,7 @@ import CalendlyEmbed from '@/components/CalendlyEmbed';
 import FadeIn from '@/components/FadeIn';
 
 export const metadata: Metadata = {
-  title: 'Contact — Devis gratuit',
+  title: 'Contact · Devis gratuit',
   description:
     'Demandez votre devis gratuit pour la création de votre site web à Genève. Réponse sous 24h. Premier échange gratuit et sans engagement.',
 };
@@ -86,7 +86,7 @@ export default function ContactPage() {
               Choisissez un créneau
             </h2>
             <p className="text-slate-500 text-lg max-w-xl mx-auto">
-              Appel téléphonique de 20 min ou rencontre à Genève — choisissez ce qui vous convient.
+              Appel téléphonique de 20 min ou rencontre à Genève. Choisissez ce qui vous convient.
             </p>
           </FadeIn>
           <FadeIn delay={0.1}>
@@ -112,7 +112,7 @@ export default function ContactPage() {
                     { step: '1', text: "Vous m'envoyez ce formulaire (ou m'appelez directement)" },
                     { step: '2', text: 'Je vous rappelle dans les 24h pour un échange de 20-30 min' },
                     { step: '3', text: 'Je vous envoie un devis détaillé et une maquette' },
-                    { step: '4', text: 'Si ça vous convient, on démarre — votre site en ligne en 7 jours' },
+                    { step: '4', text: 'Si ça vous convient, on démarre. Votre site en ligne en 7 jours' },
                   ].map((item) => (
                     <div key={item.step} className="flex items-start gap-3">
                       <div className="w-7 h-7 bg-red-600 text-white rounded-full flex items-center justify-center text-sm font-bold shrink-0 mt-0.5">

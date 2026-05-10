@@ -53,7 +53,7 @@ const faqSchema = {
       name: 'Puis-je modifier le contenu moi-même après la livraison ?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: "Oui. Les petites modifications (textes, horaires, photos, prix) sont incluses dans le forfait mensuel, sans surcoût. Pour des changements plus importants, je m'occupe de tout — il vous suffit de m'envoyer un message.",
+        text: "Oui. Les petites modifications (textes, horaires, photos, prix) sont incluses dans le forfait mensuel, sans surcoût. Pour des changements plus importants, je m'occupe de tout. Il vous suffit de m'envoyer un message.",
       },
     },
   ],
@@ -94,7 +94,7 @@ const faqs = [
   {
     question: 'Puis-je modifier le contenu moi-même après la livraison ?',
     answer:
-      "Oui. Les petites modifications (textes, horaires, photos, prix) sont incluses dans le forfait mensuel, sans surcoût. Pour des changements plus importants, je m'occupe de tout — il vous suffit de m'envoyer un message.",
+      "Oui. Les petites modifications (textes, horaires, photos, prix) sont incluses dans le forfait mensuel, sans surcoût. Pour des changements plus importants, je m'occupe de tout. Il vous suffit de m'envoyer un message.",
   },
 ];
 

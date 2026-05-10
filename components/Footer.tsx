@@ -9,10 +9,10 @@ const navLinks = [
 ];
 
 const demos = [
-  { href: 'https://restaurant.atelierdigitalgeneve.ch', label: 'Restaurant — Standard' },
-  { href: 'https://coiffeur.atelierdigitalgeneve.ch',   label: 'Coiffeur — Starter' },
-  { href: 'https://boutique.atelierdigitalgeneve.ch',   label: 'Boutique — Pro' },
-  { href: 'https://cocina-de-chanyz.vercel.app',        label: 'Cocina de Chanyz — Sur mesure' },
+  { href: 'https://restaurant.atelierdigitalgeneve.ch', label: 'Restaurant · Standard' },
+  { href: 'https://coiffeur.atelierdigitalgeneve.ch',   label: 'Coiffeur · Starter' },
+  { href: 'https://boutique.atelierdigitalgeneve.ch',   label: 'Boutique · Pro' },
+  { href: 'https://cocina-de-chanyz.vercel.app',        label: 'Cocina de Chanyz · Sur mesure' },
 ];
 
 export default function Footer() {
