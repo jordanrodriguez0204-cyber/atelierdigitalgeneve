@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 const stats = [
-  { value: '4', label: 'Sites livrés', sub: 'à Genève' },
+  { value: '5', label: 'Sites livrés', sub: 'à Genève' },
   { value: '7j', label: 'Délai moyen', sub: 'de livraison' },
   { value: '100%', label: 'Satisfaction', sub: 'garantie' },
 ];
@@ -81,7 +81,7 @@ export default function PortfolioPage() {
               Exemples de réalisations
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">
-              Trois commerces, trois budgets
+              Des commerces, des budgets
             </h2>
             <p className="text-slate-500 mt-3 max-w-lg mx-auto">
               Cliquez sur chaque site pour le visiter en direct.

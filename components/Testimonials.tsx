@@ -71,6 +71,13 @@ const demos = [
     forfait: 'Sur mesure',
     href: 'https://cocina-de-chanyz.vercel.app',
   },
+  {
+    emoji: '🍜',
+    type: 'Restaurant asiatique',
+    name: 'Les Amis',
+    forfait: 'Standard · CHF 599',
+    href: 'https://les-amis-asia-dinner-website.vercel.app',
+  },
 ];
 
 const containerVariants: Variants = {
@@ -154,7 +161,7 @@ export default function Testimonials() {
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"

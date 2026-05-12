@@ -75,6 +75,26 @@ const items = [
     isDemo: false,
     name: 'Cocina de Chanyz',
   },
+  {
+    id: 5,
+    category: 'commerce' as const,
+    type: 'Restaurant asiatique',
+    forfait: 'Standard',
+    price: 'CHF 599',
+    monthly: '49',
+    // Pas d'image carte pour l'instant — placeholder gradient + emoji.
+    image: '',
+    placeholder: { emoji: '🍜', gradient: 'from-rose-900 via-red-800 to-amber-900' },
+    demo: 'https://les-amis-asia-dinner-website.vercel.app',
+    bullets: [
+      '5 pages optimisées Google',
+      'Menu détaillé avec photos',
+      'Réservation de table en ligne',
+    ],
+    popular: false,
+    isDemo: false,
+    name: 'Les Amis',
+  },
 ];
 
 // Cards rendered in the main commerce grid (only the standard forfaits)
@@ -103,7 +123,7 @@ export default function PortfolioCards() {
   return (
     <>
     <motion.div
-      className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6"
+      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6"
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
@@ -125,14 +145,42 @@ export default function PortfolioCards() {
           {/* ── Image zone ── */}
           <div className="relative h-[280px] overflow-hidden">
 
-            {/* Photo */}
-            <img
-              src={item.image}
-              alt={`Exemple site ${item.type}`}
-              className="absolute inset-0 w-full h-full object-cover
-                         transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]
-                         group-hover:scale-[1.04]"
-            />
+            {/* Photo OU placeholder gradient si aucune image dispo */}
+            {item.image ? (
+              <img
+                src={item.image}
+                alt={`Exemple site ${item.type}`}
+                className="absolute inset-0 w-full h-full object-cover
+                           transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]
+                           group-hover:scale-[1.04]"
+              />
+            ) : (
+              <div
+                className={`absolute inset-0 flex flex-col items-center justify-center text-center px-6
+                            bg-gradient-to-br ${item.placeholder?.gradient ?? 'from-slate-700 via-slate-800 to-slate-900'}
+                            transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]
+                            group-hover:scale-[1.04]`}
+              >
+                {/* Subtle dot pattern overlay */}
+                <div
+                  className="absolute inset-0 opacity-[0.10]"
+                  style={{
+                    backgroundImage:
+                      'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.5) 1px, transparent 0)',
+                    backgroundSize: '22px 22px',
+                  }}
+                  aria-hidden="true"
+                />
+                <span className="relative text-6xl mb-3 drop-shadow-sm">
+                  {item.placeholder?.emoji ?? '🌐'}
+                </span>
+                {item.name && (
+                  <p className="relative text-[20px] font-bold tracking-tight text-white/95">
+                    {item.name}
+                  </p>
+                )}
+              </div>
+            )}
 
             {/* Intelligent scrim — dark only where text sits, image stays visible above */}
             <div
