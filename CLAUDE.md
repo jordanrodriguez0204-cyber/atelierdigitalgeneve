@@ -36,12 +36,14 @@ git push perso main        # Push vers GitHub
 ## Architecture
 
 ### Pages
-- `/` — Landing (Hero, ProblemSolution, ServicesGrid, PortfolioGrid, Testimonials, CTA)
+- `/` — Landing (Hero, ProblemSolution, ServicesGrid, Testimonials, CTA)
 - `/services` — 3 forfaits Starter CHF 299 / Standard CHF 599 / Pro CHF 990 + FAQ
-- `/portfolio` — Exemples de sites. Ajouter `demo` (URL) et `forfait` à un item pour afficher badge "En ligne" + bouton
+- `/realisations` — Page portfolio narrative : vrais projets clients (filtrables par secteur), sites de démonstration, stats, process. Source de vérité dans `lib/realisations.ts`
+- `/realisations/[slug]` — Page détail / case study, générée pour les projets ayant un `caseStudy: {…}` dans `lib/realisations.ts`. Sinon `notFound()`
 - `/a-propos` — Page honnête sur l'agence
 - `/contact` — `ContactForm` component
 - `/api/contact` — Route POST : sauvegarde Supabase + email Resend. Contient `export const dynamic = 'force-dynamic'` (obligatoire pour éviter l'erreur Resend au build)
+- `/portfolio` — redirige 301 vers `/realisations` (legacy)
 
 ### Flux formulaire
 `ContactForm.tsx` (client) → `POST /api/contact` → table `leads` Supabase + email Resend → `contact@atelierdigitalgeneve.ch`
@@ -67,7 +69,7 @@ Chaque demo est un projet Next.js indépendant avec sa propre bannière `DemoBan
 | Coiffeur | `~/coiffeur-demo` *(à créer)* | `coiffeur.atelierdigitalgeneve.ch` | Starter CHF 299 |
 | Boutique | `~/boutique-demo` *(à créer)* | `boutique.atelierdigitalgeneve.ch` | Pro CHF 990 |
 
-Pour ajouter une demo dans le portfolio : ajouter `demo` et `forfait` à l'item dans `app/portfolio/page.tsx`.
+Pour ajouter une demo ou un projet client dans la page Réalisations : ajouter une entrée dans `realisations[]` (clients) ou `demos[]` (démos) dans `lib/realisations.ts`. Mockups à poser dans `public/realisations/{slug}-{desktop,mobile}.png`.
 
 ## DNS (Infomaniak)
 

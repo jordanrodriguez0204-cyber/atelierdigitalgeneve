@@ -8,12 +8,12 @@ import Logo from '@/components/Logo';
 
 const navLinks = [
   { href: '/services', label: 'Services' },
-  { href: '/portfolio', label: 'Portfolio' },
+  { href: '/realisations', label: 'Réalisations' },
   { href: '/a-propos', label: 'À propos' },
 ];
 
 /* Pages dont le hero est sombre — la navbar reste blanche jusqu'au scroll */
-const DARK_HERO_PAGES = ['/services', '/portfolio', '/a-propos', '/contact'];
+const DARK_HERO_PAGES = ['/services', '/realisations', '/a-propos', '/contact'];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);

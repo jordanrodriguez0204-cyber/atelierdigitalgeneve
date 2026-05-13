@@ -57,6 +57,37 @@ export default function RealisationsPage() {
         </div>
       </section>
 
+      {/* ── Stats bar ── */}
+      <section className="border-b border-slate-100 bg-white">
+        <div className="mx-auto max-w-3xl px-4">
+          <div className="grid grid-cols-3 divide-x divide-slate-100">
+            <div className="py-6 text-center">
+              <div className="text-2xl font-bold text-slate-900 md:text-3xl">
+                {realisations.length + demos.length}
+              </div>
+              <div className="mt-0.5 text-xs font-semibold text-slate-700">
+                Sites livrés
+              </div>
+              <div className="text-xs text-slate-400">à Genève</div>
+            </div>
+            <div className="py-6 text-center">
+              <div className="text-2xl font-bold text-slate-900 md:text-3xl">7j</div>
+              <div className="mt-0.5 text-xs font-semibold text-slate-700">
+                Délai moyen
+              </div>
+              <div className="text-xs text-slate-400">de livraison</div>
+            </div>
+            <div className="py-6 text-center">
+              <div className="text-2xl font-bold text-slate-900 md:text-3xl">100%</div>
+              <div className="mt-0.5 text-xs font-semibold text-slate-700">
+                Satisfaction
+              </div>
+              <div className="text-xs text-slate-400">garantie</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── Section Réalisations clients ── */}
       <section className="bg-[#f8f8f8] py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -121,6 +152,40 @@ export default function RealisationsPage() {
           </div>
         </section>
       )}
+
+      {/* ── Process ── */}
+      <section className="border-t border-slate-100 bg-white py-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-14 text-center">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-slate-400">
+              Process
+            </p>
+            <h2 className="text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
+              De l&apos;idée au site en 4 étapes
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { n: '01', title: 'Échange gratuit', desc: '20 min par téléphone pour comprendre votre projet.' },
+              { n: '02', title: 'Devis sous 24h', desc: 'Devis fixe + première maquette. Aucune surprise.' },
+              { n: '03', title: 'Création', desc: 'Je construis votre site. Vous validez chaque étape.' },
+              { n: '04', title: 'Mise en ligne', desc: 'Votre site est live. Je soumets tout à Google.' },
+            ].map((step) => (
+              <div
+                key={step.n}
+                className="group relative rounded-2xl border border-slate-100 bg-slate-50 p-6 transition-all duration-300 hover:border-red-100 hover:bg-red-50/30"
+              >
+                <div className="mb-4 select-none text-4xl font-bold leading-none text-slate-100 transition-colors group-hover:text-red-100">
+                  {step.n}
+                </div>
+                <h3 className="mb-2 font-bold text-slate-900">{step.title}</h3>
+                <p className="text-sm leading-relaxed text-slate-500">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ── CTA final ── */}
       <section className="border-t border-slate-100 bg-slate-50 py-16">
