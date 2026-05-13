@@ -129,7 +129,7 @@ export default function HeroSection() {
 
             {/* Secondaire — ghost */}
             <Link
-              href="/portfolio"
+              href="/realisations"
               className="inline-flex items-center gap-2 text-[14px] font-medium text-[#4A453F]
                          hover:text-[#0C0B09] transition-colors duration-200 px-2 py-3.5 group"
             >
