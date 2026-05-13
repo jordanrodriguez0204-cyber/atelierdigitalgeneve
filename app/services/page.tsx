@@ -2,7 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import ServicesGrid from '@/components/ServicesGrid';
 import CTASection from '@/components/CTASection';
-import FadeIn from '@/components/FadeIn';
+import SectionLabel from '@/components/visual/SectionLabel';
+import TrimMarks from '@/components/visual/TrimMarks';
 
 const faqSchema = {
   '@context': 'https://schema.org',
@@ -37,7 +38,7 @@ const faqSchema = {
       name: 'Est-ce que vous pouvez reprendre mon site existant ?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: "Oui, je peux reprendre et moderniser votre site existant. Contactez-moi pour un audit gratuit de votre site actuel.",
+        text: 'Oui, je peux reprendre et moderniser votre site existant. Contactez-moi pour un audit gratuit de votre site actuel.',
       },
     },
     {
@@ -98,132 +99,176 @@ const faqs = [
   },
 ];
 
-const process = [
-  {
-    step: '01',
-    title: 'Échange gratuit',
-    description: "On se parle 20-30 minutes par téléphone ou en présentiel à Genève pour comprendre votre commerce et vos besoins.",
-  },
-  {
-    step: '02',
-    title: 'Devis et maquette',
-    description: 'Je vous envoie un devis détaillé et une première maquette de votre site sous 24h.',
-  },
-  {
-    step: '03',
-    title: 'Création du site',
-    description: 'Je crée votre site avec vos textes, vos photos, et votre identité. Vous validez chaque étape.',
-  },
-  {
-    step: '04',
-    title: 'Mise en ligne',
-    description: 'Votre site est mis en ligne, soumis à Google, et votre domaine est configuré.',
-  },
-];
-
 export default function ServicesPage() {
   return (
-    <div className="pt-16 bg-white">
+    <div className="bg-white pt-16">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      {/* ── Hero ── */}
-      <section className="bg-slate-900 py-20 text-center px-4 relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-red-600/10 rounded-full blur-3xl" />
+      {/* ── Hero éditorial ── */}
+      <section className="relative overflow-hidden bg-[#0C0B09] px-4 py-24">
+        <TrimMarks inset={20} size={16} color="text-white/20" />
+
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+          <div className="absolute left-1/2 top-0 h-[300px] w-[600px] -translate-x-1/2 rounded-full bg-[#7B1616]/12 blur-3xl" />
         </div>
-        <div className="relative max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 text-slate-400 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6">
-            <span className="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse" />
-            Tarifs clairs
-          </div>
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-5 tracking-tight leading-[1.05]">
-            Services &{' '}
-            <span className="text-red-500">Forfaits</span>
-          </h1>
-          <p className="text-slate-400 text-lg md:text-xl leading-relaxed max-w-xl mx-auto">
-            Des forfaits adaptés à chaque commerce genevois. Pas de frais cachés, tout est inclus.
+
+        <div className="relative mx-auto max-w-3xl text-center">
+          <p className="folio mb-6 text-white/35">
+            TARIFS 2026 — Atelier Digital Genève
           </p>
+
+          <SectionLabel variant="dark" className="justify-center">
+            Services &amp; Forfaits
+          </SectionLabel>
+
+          <h1
+            className="mt-6 text-[clamp(40px,7vw,72px)] font-bold tracking-[-0.025em] text-white"
+            style={{ fontFamily: 'var(--font-serif)', lineHeight: 1.02 }}
+          >
+            Trois forfaits,{' '}
+            <span className="italic text-[#E8B4B4]" style={{ fontWeight: 500 }}>
+              zéro surprise
+            </span>
+            <span className="text-[#7B1616]">.</span>
+          </h1>
+
+          <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-white/60 md:text-xl">
+            Des forfaits adaptés à chaque commerce genevois. Tout est inclus,
+            tout est dit.
+          </p>
+
+          <span
+            className="construction-line mx-auto mt-8 block"
+            style={{ filter: 'brightness(1.4)' }}
+          />
         </div>
       </section>
 
-      {/* ── Services grid ── */}
+      {/* ── Grille des 3 fiches ── */}
       <ServicesGrid />
 
-      {/* ── Process ── */}
-      <section className="py-24 bg-[#f8f8f8]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn className="text-center mb-14">
-            <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-3">Process</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-4">
-              Comment ça marche ?
+      {/* ── Process — chiffres serif XL en filigrane (cohérence /realisations) ── */}
+      <section className="border-t border-slate-100 bg-white py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <header className="mb-14 max-w-2xl">
+            <SectionLabel number="01">Process</SectionLabel>
+            <h2
+              className="mt-4 text-3xl tracking-tight text-slate-900 md:text-4xl"
+              style={{ fontFamily: 'var(--font-serif)', fontWeight: 600 }}
+            >
+              Comment ça marche
             </h2>
-            <p className="text-lg text-slate-500 max-w-xl mx-auto">
-              Un processus simple et transparent, de la première discussion à la mise en ligne.
+            <span className="construction-line mt-4 block" />
+            <p className="mt-5 text-slate-500">
+              Un processus simple et transparent, de la première discussion à
+              la mise en ligne<span className="accent-square ml-1" />
             </p>
-          </FadeIn>
+          </header>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {process.map((step, i) => (
-              <FadeIn key={step.step} delay={i * 0.08}>
-                <div className="relative bg-white rounded-2xl p-6 border border-slate-100 shadow-sm group hover:border-red-100 hover:bg-red-50/30 transition-all duration-300 h-full">
-                  <div className="text-4xl font-bold text-slate-100 group-hover:text-red-100 transition-colors leading-none mb-4 select-none">
-                    {step.step}
-                  </div>
-                  <h3 className="font-bold text-slate-900 mb-2 tracking-tight">{step.title}</h3>
-                  <p className="text-slate-500 text-sm leading-relaxed">{step.description}</p>
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { n: '01', title: 'Échange gratuit', desc: 'On se parle 20-30 min par téléphone ou en présentiel à Genève pour comprendre votre commerce.' },
+              { n: '02', title: 'Devis et maquette', desc: 'Je vous envoie un devis détaillé et une première maquette sous 24h.' },
+              { n: '03', title: 'Création du site', desc: 'Je crée votre site avec vos textes, vos photos, votre identité. Vous validez chaque étape.' },
+              { n: '04', title: 'Mise en ligne', desc: 'Votre site est mis en ligne, soumis à Google, et votre domaine est configuré.' },
+            ].map((step) => (
+              <div
+                key={step.n}
+                className="group relative overflow-hidden rounded-2xl border border-slate-100 bg-[#FAFAF8]/40 p-6 transition-colors duration-300 hover:border-[#7B1616]/15 hover:bg-[#7B1616]/[0.025]"
+              >
+                <span
+                  aria-hidden="true"
+                  className="pointer-events-none absolute -right-2 -top-6 select-none text-[110px] leading-none text-slate-100 transition-colors duration-500 group-hover:text-[#7B1616]/15"
+                  style={{ fontFamily: 'var(--font-serif)', fontWeight: 600 }}
+                >
+                  {step.n}
+                </span>
+
+                <div className="relative">
+                  <p className="label-serif text-[12px]">Étape {step.n}</p>
+                  <h3 className="mt-3 text-[17px] font-bold text-slate-900">
+                    {step.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-500">
+                    {step.desc}
+                  </p>
                 </div>
-              </FadeIn>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── FAQ ── */}
-      <section className="py-24 bg-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn className="text-center mb-12">
-            <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-3">FAQ</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">
+      {/* ── FAQ — feuillet annexe Q.01 / Q.02 ── */}
+      <section className="grain border-t border-slate-100 bg-[#FAFAF8] py-24">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <header className="mb-12 text-center">
+            <SectionLabel className="justify-center">
+              Feuillet annexe
+            </SectionLabel>
+            <h2
+              className="mt-4 text-3xl tracking-tight text-slate-900 md:text-4xl"
+              style={{ fontFamily: 'var(--font-serif)', fontWeight: 600 }}
+            >
               Questions fréquentes
             </h2>
-          </FadeIn>
+            <span className="construction-line mx-auto mt-4 block" />
+          </header>
 
-          <div className="space-y-3">
-            {faqs.map((faq, i) => (
-              <FadeIn key={faq.question} delay={i * 0.05}>
-                <details className="group bg-[#f8f8f8] rounded-2xl border border-slate-100 overflow-hidden">
-                  <summary className="flex items-center justify-between px-6 py-4 cursor-pointer list-none font-semibold text-slate-900 hover:bg-slate-100 transition-colors gap-4">
-                    <span>{faq.question}</span>
+          {/* Trim line en haut du feuillet */}
+          <div className="trim-line mb-2 w-full" />
+
+          <div className="divide-y divide-[#0C0B09]/[0.08]">
+            {faqs.map((faq, i) => {
+              const num = `Q.${String(i + 1).padStart(2, '0')}`;
+              return (
+                <details key={faq.question} className="group">
+                  <summary className="flex cursor-pointer list-none items-baseline gap-4 py-5 transition-colors hover:bg-white/40">
+                    <span
+                      className="shrink-0 text-[13px] italic text-[#7B1616]"
+                      style={{ fontFamily: 'var(--font-serif)' }}
+                    >
+                      {num}
+                    </span>
+                    <span className="flex-1 text-[16px] font-semibold leading-snug text-slate-900">
+                      {faq.question}
+                    </span>
                     <svg
-                      className="w-5 h-5 text-slate-400 transition-transform duration-300 group-open:rotate-180 shrink-0"
+                      className="h-4 w-4 shrink-0 text-slate-400 transition-transform duration-300 group-open:rotate-180"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
                       strokeWidth={2}
+                      aria-hidden="true"
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                     </svg>
                   </summary>
-                  <div className="px-6 pb-5 pt-2 text-slate-600 leading-relaxed border-t border-slate-100 text-sm">
+                  <p className="pb-5 pl-12 pr-8 text-[14.5px] leading-relaxed text-slate-600">
                     {faq.answer}
-                  </div>
+                  </p>
                 </details>
-              </FadeIn>
-            ))}
+              );
+            })}
           </div>
 
-          <FadeIn delay={0.3} className="text-center mt-10">
-            <p className="text-slate-500 mb-4">Vous avez d&apos;autres questions ?</p>
+          {/* Trim line en bas */}
+          <div className="trim-line mt-2 w-full" />
+
+          <div className="mt-10 text-center">
+            <p className="mb-4 text-slate-500">
+              Vous avez d&apos;autres questions&nbsp;?
+            </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-2xl transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-red-600/20"
+              className="inline-flex items-center gap-2 rounded-2xl bg-[#7B1616] px-6 py-3 font-semibold text-white shadow-lg shadow-[#7B1616]/20 transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#5C1010]"
             >
               Contactez-moi
             </Link>
-          </FadeIn>
+          </div>
         </div>
       </section>
 

@@ -13,12 +13,14 @@ interface SecteurFilterProps {
 }
 
 /**
- * Barre de filtres "pills" pour la grille de réalisations.
+ * Barre de filtres pour la grille de réalisations.
  *
- * - Pattern `role="tablist"` pour l'accessibilité (annonce un groupe d'onglets,
- *   navigable au clavier avec flèches gauche/droite par défaut grâce au focus
- *   séquentiel des boutons).
- * - Filtre client-side : pas de routing. Le parent gère l'état.
+ * Style "onglets d'index" éditorial : pas de pills modernes, mais des
+ * libellés alignés sur une ligne de base avec hairline, et un soulignement
+ * épais bourgogne pour l'onglet actif. Le compteur est en label-serif
+ * italique pour le côté annotation manuscrite.
+ *
+ * Pattern accessibilité `role="tablist"`. Navigation clavier via tab natif.
  */
 export default function SecteurFilter({
   options,
@@ -27,41 +29,69 @@ export default function SecteurFilter({
   counts,
 }: SecteurFilterProps) {
   return (
-    <div
-      role="tablist"
-      aria-label="Filtrer par secteur"
-      className="flex flex-wrap items-center gap-2"
-    >
-      {options.map((opt) => {
-        const isActive = opt === selected;
-        const count = counts?.[opt];
-        return (
-          <button
-            key={opt}
-            type="button"
-            role="tab"
-            aria-selected={isActive}
-            aria-controls="realisations-grid"
-            onClick={() => onSelect(opt)}
-            className={`inline-flex items-center gap-1.5 rounded-full border px-4 py-2 text-[12.5px] font-medium tracking-tight transition-all duration-200 ${
-              isActive
-                ? 'border-slate-900 bg-slate-900 text-white shadow-sm'
-                : 'border-slate-200 bg-white text-slate-600 hover:border-slate-300 hover:text-slate-900'
-            }`}
-          >
-            {opt}
-            {typeof count === 'number' && count > 0 && (
+    <div className="relative">
+      {/* Trait de coupe de base — passe sous tous les onglets */}
+      <div className="hairline-b absolute inset-x-0 bottom-0 border-[#0C0B09]/[0.08]" />
+
+      <div
+        role="tablist"
+        aria-label="Filtrer par secteur"
+        className="relative flex flex-wrap items-end gap-x-8 gap-y-2"
+      >
+        {options.map((opt, idx) => {
+          const isActive = opt === selected;
+          const count = counts?.[opt];
+          const num = String(idx + 1).padStart(2, '0');
+          return (
+            <button
+              key={opt}
+              type="button"
+              role="tab"
+              aria-selected={isActive}
+              aria-controls="realisations-grid"
+              onClick={() => onSelect(opt)}
+              className={`group relative -mb-px flex items-baseline gap-2 pb-3 pt-1 text-[13px] tracking-tight transition-colors duration-200 ${
+                isActive
+                  ? 'text-[#0C0B09]'
+                  : 'text-slate-500 hover:text-[#0C0B09]'
+              }`}
+            >
+              {/* Numéro d'onglet en label-serif italique */}
               <span
-                className={`text-[10.5px] tabular-nums ${
-                  isActive ? 'text-white/60' : 'text-slate-400'
+                className={`text-[11px] italic transition-opacity duration-200 ${
+                  isActive ? 'text-[#7B1616]' : 'text-slate-300 group-hover:text-slate-400'
                 }`}
+                style={{ fontFamily: 'var(--font-serif)' }}
+                aria-hidden="true"
               >
-                {count}
+                {num}
               </span>
-            )}
-          </button>
-        );
-      })}
+
+              {/* Libellé */}
+              <span className="font-medium">{opt}</span>
+
+              {/* Compteur */}
+              {typeof count === 'number' && count > 0 && (
+                <span
+                  className={`text-[10.5px] tabular-nums ${
+                    isActive ? 'text-[#7B1616]/70' : 'text-slate-300'
+                  }`}
+                >
+                  ({count})
+                </span>
+              )}
+
+              {/* Soulignement actif — 2px bourgogne, par-dessus la hairline */}
+              <span
+                aria-hidden="true"
+                className={`absolute inset-x-0 bottom-0 h-[2px] bg-[#7B1616] transition-transform duration-200 ${
+                  isActive ? 'scale-x-100' : 'scale-x-0'
+                }`}
+              />
+            </button>
+          );
+        })}
+      </div>
     </div>
   );
 }

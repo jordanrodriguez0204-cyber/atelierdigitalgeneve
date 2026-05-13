@@ -3,6 +3,18 @@
 import { useState } from 'react';
 import type { ContactFormData } from '@/lib/types';
 
+/**
+ * Formulaire de contact — refonte phase 4 DA "fiche de prise de RDV".
+ *
+ * - Inputs avec underline-only (pas de borders complètes, pas de coins
+ *   arrondis) — donne le sentiment d'une fiche papier qu'on remplit au stylo.
+ * - Labels en small caps tracés (.label utility).
+ * - Focus en bourgogne (cohérence brand).
+ * - Bouton submit traité comme un tampon : encadré bourgogne, légère rotation
+ *   au hover comme si on appuyait.
+ * - Logique React intacte (state, fetch /api/contact, success/error states).
+ */
+
 const commerceTypes = [
   'Restaurant / Café',
   'Coiffure / Beauté',
@@ -24,6 +36,12 @@ const initialFormData: ContactFormData = {
 };
 
 type FormStatus = 'idle' | 'loading' | 'success' | 'error';
+
+const fieldClass =
+  'w-full bg-transparent border-0 border-b border-[#0C0B09]/15 rounded-none px-0 py-3 text-[15px] text-[#0C0B09] placeholder-slate-400 transition-colors focus:outline-none focus:border-[#7B1616]';
+
+const labelClass =
+  'block text-[10.5px] font-semibold uppercase tracking-[0.16em] text-slate-500 mb-1.5';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState<ContactFormData>(initialFormData);
@@ -66,45 +84,53 @@ export default function ContactForm() {
 
   if (status === 'success') {
     return (
-      <div className="bg-green-50 border border-green-200 rounded-2xl p-8 text-center">
-        <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+      <div className="rounded-2xl border border-emerald-200/60 bg-emerald-50/40 p-10 text-center">
+        <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-emerald-100">
           <svg
-            className="w-8 h-8 text-green-600"
+            className="h-7 w-7 text-emerald-700"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
             strokeWidth={2.5}
+            aria-hidden="true"
           >
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-xl font-bold text-slate-900 mb-2">Demande reçue !</h3>
-        <p className="text-slate-600 mb-6">
+        <h3
+          className="text-2xl text-slate-900"
+          style={{ fontFamily: 'var(--font-serif)', fontWeight: 600 }}
+        >
+          Demande reçue
+          <span className="text-[#7B1616]">.</span>
+        </h3>
+        <p className="mx-auto mt-3 max-w-sm text-slate-600">
           Votre demande a bien été reçue. Jordan vous contactera dans les 24h.
         </p>
         <button
           onClick={() => setStatus('idle')}
-          className="text-red-600 hover:underline text-sm font-medium"
+          className="mt-6 text-[13px] font-medium italic text-[#7B1616] underline-offset-4 hover:underline"
+          style={{ fontFamily: 'var(--font-serif)' }}
         >
-          Envoyer un autre message
+          Envoyer un autre message →
         </button>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5" noValidate>
-      {/* Error message */}
+    <form onSubmit={handleSubmit} className="space-y-7" noValidate>
+      {/* Erreur */}
       {status === 'error' && (
-        <div className="bg-red-50 border border-red-200 text-red-700 rounded-xl px-4 py-3 text-sm">
+        <div className="rounded-xl border border-rose-200/70 bg-rose-50/40 px-4 py-3 text-sm text-rose-800">
           {errorMessage}
         </div>
       )}
 
       {/* Nom */}
       <div>
-        <label htmlFor="nom" className="block text-sm font-medium text-slate-700 mb-1.5">
-          Nom complet <span className="text-red-500">*</span>
+        <label htmlFor="nom" className={labelClass}>
+          Nom complet <span className="text-[#7B1616]">*</span>
         </label>
         <input
           type="text"
@@ -114,13 +140,13 @@ export default function ContactForm() {
           onChange={handleChange}
           required
           placeholder="Jean Dupont"
-          className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent text-slate-900 placeholder-slate-400 transition"
+          className={fieldClass}
         />
       </div>
 
       {/* Nom du commerce */}
       <div>
-        <label htmlFor="nom_commerce" className="block text-sm font-medium text-slate-700 mb-1.5">
+        <label htmlFor="nom_commerce" className={labelClass}>
           Nom du commerce
         </label>
         <input
@@ -130,14 +156,14 @@ export default function ContactForm() {
           value={formData.nom_commerce}
           onChange={handleChange}
           placeholder="Le Bistrot du Parc"
-          className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent text-slate-900 placeholder-slate-400 transition"
+          className={fieldClass}
         />
       </div>
 
       {/* Email */}
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1.5">
-          Email <span className="text-red-500">*</span>
+        <label htmlFor="email" className={labelClass}>
+          Email <span className="text-[#7B1616]">*</span>
         </label>
         <input
           type="email"
@@ -147,13 +173,13 @@ export default function ContactForm() {
           onChange={handleChange}
           required
           placeholder="jean@moncommerce.ch"
-          className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent text-slate-900 placeholder-slate-400 transition"
+          className={fieldClass}
         />
       </div>
 
-      {/* Telephone */}
+      {/* Téléphone */}
       <div>
-        <label htmlFor="telephone" className="block text-sm font-medium text-slate-700 mb-1.5">
+        <label htmlFor="telephone" className={labelClass}>
           Téléphone
         </label>
         <input
@@ -163,13 +189,13 @@ export default function ContactForm() {
           value={formData.telephone}
           onChange={handleChange}
           placeholder="+41 79 123 45 67"
-          className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent text-slate-900 placeholder-slate-400 transition"
+          className={fieldClass}
         />
       </div>
 
       {/* Type de commerce */}
       <div>
-        <label htmlFor="commerce_type" className="block text-sm font-medium text-slate-700 mb-1.5">
+        <label htmlFor="commerce_type" className={labelClass}>
           Type de commerce
         </label>
         <select
@@ -177,7 +203,11 @@ export default function ContactForm() {
           name="commerce_type"
           value={formData.commerce_type}
           onChange={handleChange}
-          className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent text-slate-900 transition bg-white"
+          className={`${fieldClass} appearance-none bg-[length:14px_14px] bg-[right_0_center] bg-no-repeat pr-8`}
+          style={{
+            backgroundImage:
+              'url("data:image/svg+xml;utf8,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%237B1616%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27><polyline points=%276 9 12 15 18 9%27/></svg>")',
+          }}
         >
           <option value="">Sélectionnez votre activité</option>
           {commerceTypes.map((type) => (
@@ -190,7 +220,7 @@ export default function ContactForm() {
 
       {/* Message */}
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-1.5">
+        <label htmlFor="message" className={labelClass}>
           Message
         </label>
         <textarea
@@ -199,59 +229,54 @@ export default function ContactForm() {
           value={formData.message}
           onChange={handleChange}
           rows={4}
-          placeholder="Décrivez votre projet, vos besoins, vos questions..."
-          className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent text-slate-900 placeholder-slate-400 transition resize-none"
+          placeholder="Décrivez votre projet, vos besoins, vos questions…"
+          className={`${fieldClass} resize-none`}
         />
       </div>
 
-      {/* Submit */}
-      <button
-        type="submit"
-        disabled={status === 'loading'}
-        className="w-full bg-red-600 hover:bg-red-700 disabled:bg-red-400 disabled:cursor-not-allowed text-white font-semibold py-4 px-6 rounded-xl transition-all duration-150 flex items-center justify-center gap-2 shadow-md hover:shadow-lg shadow-red-600/20"
-      >
-        {status === 'loading' ? (
-          <>
-            <svg className="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">
-              <circle
-                className="opacity-25"
-                cx="12"
-                cy="12"
-                r="10"
-                stroke="currentColor"
-                strokeWidth="4"
-              />
-              <path
-                className="opacity-75"
-                fill="currentColor"
-                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
-              />
-            </svg>
-            Envoi en cours...
-          </>
-        ) : (
-          <>
-            Envoyer ma demande
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2.5}
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
-              />
-            </svg>
-          </>
-        )}
-      </button>
+      {/* Bouton submit — traité comme un tampon */}
+      <div className="pt-2">
+        <button
+          type="submit"
+          disabled={status === 'loading'}
+          className="group/stamp relative inline-flex w-full items-center justify-center gap-3 rounded-xl border-2 border-[#7B1616] bg-[#7B1616] px-6 py-4 text-[14px] font-semibold uppercase tracking-[0.16em] text-white shadow-[0_4px_18px_rgba(123,22,22,0.22)] transition-all duration-200 hover:rotate-[-0.6deg] hover:bg-[#5C1010] disabled:cursor-not-allowed disabled:bg-[#7B1616]/60"
+        >
+          {status === 'loading' ? (
+            <>
+              <svg
+                className="h-5 w-5 animate-spin"
+                fill="none"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <circle
+                  className="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                />
+                <path
+                  className="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
+                />
+              </svg>
+              Envoi en cours…
+            </>
+          ) : (
+            <>
+              Envoyer ma demande
+              <span className="accent-square" style={{ background: 'white' }} />
+            </>
+          )}
+        </button>
 
-      <p className="text-slate-400 text-xs text-center">
-        Gratuit, sans engagement. Jordan vous répond sous 24h.
-      </p>
+        <p className="folio mt-3 text-center text-[10px]">
+          Gratuit · Sans engagement · Réponse sous 24h
+        </p>
+      </div>
     </form>
   );
 }
