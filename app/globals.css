@@ -31,6 +31,8 @@
   /* ── Fonts ── */
   --font-sans:    var(--font-inter), system-ui, -apple-system, sans-serif;
   --font-display: var(--font-jakarta), system-ui, -apple-system, sans-serif;
+  /* Serif éditorial — pour drop-caps, watermarks, kickers, chiffres atelier */
+  --font-serif:   var(--font-fraunces), 'Iowan Old Style', Cambria, Georgia, serif;
 }
 
 /* ═══════════════════════════════════
@@ -96,14 +98,20 @@
 }
 
 /* ═══════════════════════════════════
-   UTILITIES
+   UTILITIES — DA atelier / éditorial
+   Ces utilities sont la colonne vertébrale de la DA. Chaque page peut en
+   composer une partie pour sa propre identité. Voir aussi `components/visual/`.
 ═══════════════════════════════════ */
 @layer utilities {
-  /* Grain overlay — appliqué via className="grain" sur une section */
-  .grain {
+  /* ── Grain papier — overlay subtil pour fonds clairs ──
+     Appliqué via className="grain" sur une section. Le .grain-strong augmente
+     l'opacité pour les sections où l'on veut vraiment sentir le papier. */
+  .grain,
+  .grain-strong {
     position: relative;
   }
-  .grain::after {
+  .grain::after,
+  .grain-strong::after {
     content: '';
     position: absolute;
     inset: 0;
@@ -111,23 +119,117 @@
     background-image:
       url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
     background-size: 200px 200px;
-    opacity: 0.025;
     mix-blend-mode: multiply;
     z-index: 1;
     border-radius: inherit;
   }
+  .grain::after        { opacity: 0.025; }
+  .grain-strong::after { opacity: 0.055; }
 
-  /* Mask reveal — wrapper pour les animations de texte */
+  /* ── Mask reveal — wrapper pour les animations de texte (Hero) ── */
   .clip-line {
     overflow: hidden;
     display: block;
   }
 
-  /* Label premium — uppercase très tracké */
+  /* ── Label éditorial — uppercase très tracké ── */
   .label {
     font-size: 0.6875rem;     /* 11px */
     font-weight: 600;
     letter-spacing: 0.15em;
     text-transform: uppercase;
+  }
+
+  /* Variante serif italique du label, pour les kickers "Sect. 01" */
+  .label-serif {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 0.875rem;     /* 14px */
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--color-brand);
+  }
+
+  /* ── Hairline — bordure 0.5px ── */
+  .hairline { border-width: 0.5px; }
+  .hairline-t { border-top-width: 0.5px; }
+  .hairline-b { border-bottom-width: 0.5px; }
+
+  /* ── Drop-cap — lettrine serif bourgogne ──
+     Applique sur un <p> dont la première lettre doit être agrandie.
+     Idéal pour les pages éditoriales (À propos, case studies). */
+  .drop-cap::first-letter {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    font-size: 4.5em;
+    line-height: 0.85;
+    float: left;
+    margin: 0.08em 0.12em 0 0;
+    color: var(--color-brand);
+    /* Subtile correction d'optique sur les lettres ouvertes (A, V, W) */
+    text-rendering: optimizeLegibility;
+  }
+
+  /* ── Construction line — trait sous H2 type plan d'architecte ──
+     Plein bourgogne sur ~3rem puis pointillés qui s'évanouissent. */
+  .construction-line {
+    display: inline-block;
+    width: 5rem;
+    height: 1px;
+    background:
+      linear-gradient(to right,
+        var(--color-brand) 0,
+        var(--color-brand) 2.4rem,
+        transparent 2.4rem),
+      repeating-linear-gradient(to right,
+        var(--color-brand) 0,
+        var(--color-brand) 2px,
+        transparent 2px,
+        transparent 5px);
+    background-repeat: no-repeat;
+    background-size: 100% 100%, calc(100% - 2.4rem) 100%;
+    background-position: 0 0, 2.4rem 0;
+  }
+
+  /* ── Carré accent bourgogne (echo du logo papier) ──
+     Petit bloc 5px×5px à placer en fin de phrase comme un point final.
+     Posé sur le baseline pour que la base du carré s'aligne sur la base
+     des lettres — typographiquement c'est la position d'un point. */
+  .accent-square {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background-color: var(--color-brand);
+    vertical-align: baseline;
+    /* Léger ajustement optique : un carré au baseline pur paraît un peu
+       trop haut visuellement par rapport à un point arrondi. On le descend
+       de 0.5px pour que le centre optique se cale comme un vrai point. */
+    margin-bottom: -0.5px;
+  }
+
+  /* ── Numéro de planche / référence en pied de page ── */
+  .folio {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 0.6875rem;
+    letter-spacing: 0.02em;
+    color: var(--color-ink-muted);
+  }
+
+  /* ── Faux trait de coupe (pointillé "découper ici") ──
+     S'applique en bordure haute ou basse d'une section. */
+  .trim-line {
+    background-image: linear-gradient(
+      to right,
+      var(--color-ink-muted) 0,
+      var(--color-ink-muted) 3px,
+      transparent 3px,
+      transparent 8px
+    );
+    background-size: 8px 1px;
+    background-repeat: repeat-x;
+    height: 1px;
+    opacity: 0.4;
   }
 }

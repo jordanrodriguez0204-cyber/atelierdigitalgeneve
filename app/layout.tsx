@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
+import { Inter, Plus_Jakarta_Sans, Fraunces } from 'next/font/google';
 import Script from 'next/script';
 import './globals.css';
 import Navbar from '@/components/Navbar';
@@ -19,6 +19,18 @@ const plusJakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
   variable: '--font-jakarta',
   weight: ['500', '600', '700', '800'],
+  display: 'swap',
+});
+
+// Serif éditorial pour les moments "atelier" :
+// drop-caps, watermarks, kickers de section, chiffres 01/02/03 en grand.
+// Fraunces est variable (axes opsz, wght, soft) et fait écho au caractère
+// du monogramme ADG papier (sérif débossé, ductus chaud, italique élégante).
+const fraunces = Fraunces({
+  subsets: ['latin'],
+  variable: '--font-fraunces',
+  weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
   display: 'swap',
 });
 
@@ -129,7 +141,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={`${inter.variable} ${plusJakarta.variable} h-full antialiased`}>
+    <html lang="fr" className={`${inter.variable} ${plusJakarta.variable} ${fraunces.variable} h-full antialiased`}>
       <head>
         {/* Schema.org — LocalBusiness + WebSite */}
         <script
