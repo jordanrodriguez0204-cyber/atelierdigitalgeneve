@@ -19,7 +19,7 @@ export default function Logo({ className = '', size = 36, light = false }: LogoP
       <rect width="36" height="36" rx="8" fill={light ? 'rgba(255,255,255,0.10)' : '#0C0B09'} />
 
       {/* Accent rouge — barre verticale fine */}
-      <rect x="5" y="5" width="3" height="26" rx="1.5" fill="#C9372C" />
+      <rect x="5" y="5" width="3" height="26" rx="1.5" fill="#7B1616" />
 
       {/* Monogramme "A" — tracé géométrique */}
       {/* Jambe gauche */}

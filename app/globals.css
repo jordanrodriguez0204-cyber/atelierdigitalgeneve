@@ -1,9 +1,25 @@
 @import "tailwindcss";
 
 @theme {
-  /* ── Brand ── */
-  --color-brand:     #C9372C;   /* red plus profond, moins agressif */
-  --color-brand-dim: #A82E23;
+  /* ── Brand (bourgogne ADG — depuis le 2026-05-13) ── */
+  --color-brand:     #7B1616;   /* burgundy main, depth + craft */
+  --color-brand-dim: #5C1010;   /* burgundy darker (hover / accent profond) */
+
+  /* ── Tailwind red-* palette override ──
+     On redessine red-* autour du bourgogne pour que toutes les classes
+     existantes (bg-red-600, hover:bg-red-700, text-red-500…) basculent
+     automatiquement sur la nouvelle DA, sans toucher aux composants. */
+  --color-red-50:  #FAF1F1;
+  --color-red-100: #F4DCDC;
+  --color-red-200: #E8B4B4;
+  --color-red-300: #D88080;
+  --color-red-400: #C24F4F;
+  --color-red-500: #A02828;
+  --color-red-600: #7B1616;   /* = --color-brand */
+  --color-red-700: #5C1010;   /* = --color-brand-dim */
+  --color-red-800: #4A0D0D;
+  --color-red-900: #380A0A;
+  --color-red-950: #220606;
 
   /* ── Warm neutrals ── */
   --color-ink:       #0C0B09;   /* near-black chaud */
@@ -74,7 +90,7 @@
 
   /* ── Premium selection color ── */
   ::selection {
-    background-color: rgba(201, 55, 44, 0.13);
+    background-color: rgba(123, 22, 22, 0.13);
     color: #0C0B09;
   }
 }

@@ -1,0 +1,30 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="700" fill="#F5F1EA"/>
+  <!-- Construction Lines -->
+  <g opacity="0.6">
+    <line x1="320" y1="190" x2="980" y2="190" stroke="#D9D1C7" stroke-width="1"/>
+    <line x1="320" y1="420" x2="980" y2="420" stroke="#D9D1C7" stroke-width="1"/>
+  </g>
+  <!-- ADG Monogram -->
+  <g fill="#7B1616">
+    <!-- A -->
+    <path d="M400 420 L470 190 L510 190 L440 420 Z"/>
+    <!-- Crossbar — ligature with the D -->
+    <rect x="450" y="313" width="75" height="8" fill="#7B1616"/>
+    <!-- D -->
+    <path d="M525 190 H590 C680 190 730 235 730 305 C730 375 680 420 590 420 H525 V190 Z M565 220 V390 H588 C650 390 688 355 688 305 C688 255 650 220 588 220 H565 Z"/>
+    <!-- G -->
+    <g transform="translate(85, 0)">
+      <path d="M885 250 C860 225 830 212 795 212 C735 212 690 250 690 305 C690 360 735 398 795 398 C825 398 850 390 870 375 V335 H810 V305 H915 V420 H885 V395 C860 415 830 425 790 425 C705 425 645 370 645 305 C645 240 705 185 790 185 C840 185 880 200 910 230 L885 250 Z"/>
+    </g>
+  </g>
+  <!-- Artisan details -->
+  <line x1="995" y1="190" x2="1025" y2="160" stroke="#CDBEAF" stroke-width="1.5"/>
+  <line x1="390" y1="420" x2="360" y2="450" stroke="#CDBEAF" stroke-width="1.5"/>
+  <rect x="362" y="446" width="8" height="8" fill="#7B1616"/>
+  <!-- Text -->
+  <text x="600" y="535" text-anchor="middle" fill="#7B1616" font-size="42" letter-spacing="14" font-family="Helvetica, Arial, sans-serif">ATELIER DIGITAL</text>
+  <line x1="575" y1="565" x2="625" y2="565" stroke="#7B1616" stroke-width="2"/>
+  <text x="600" y="610" text-anchor="middle" fill="#7B1616" font-size="26" letter-spacing="10" font-family="Helvetica, Arial, sans-serif">GENÈVE</text>
+</svg>

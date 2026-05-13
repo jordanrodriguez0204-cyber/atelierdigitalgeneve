@@ -85,7 +85,7 @@ export default function HeroSection() {
                 >
                   {/* Dernier mot "trouvé." en accent */}
                   {i === 2 ? (
-                    <span className="text-[#C9372C]">trouvé.</span>
+                    <span className="text-[#7B1616]">trouvé.</span>
                   ) : line}
                 </motion.span>
               </span>

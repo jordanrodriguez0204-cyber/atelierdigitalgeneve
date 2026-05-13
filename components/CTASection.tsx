@@ -121,7 +121,7 @@ export default function CTASection() {
           >
             {trustItems.map((item) => (
               <div key={item.label} className="flex items-center gap-2.5">
-                <div className="w-1 h-1 rounded-full bg-[#C9372C]" />
+                <div className="w-1 h-1 rounded-full bg-[#7B1616]" />
                 <span className="text-[13px] font-medium text-white/60">
                   {item.label}
                   <span className="text-white/30 ml-1.5">· {item.sub}</span>

@@ -33,7 +33,7 @@ export default function Navbar() {
   /* Couleurs dynamiques — fond toujours clair */
   const textColor   = 'text-[#0C0B09]';
   const textHover   = 'hover:text-[#0C0B09]';
-  const activeColor = 'text-[#C9372C]';
+  const activeColor = 'text-[#7B1616]';
 
   return (
     <>
@@ -50,7 +50,7 @@ export default function Navbar() {
                 <span className="text-[13px] font-semibold tracking-tight leading-none text-[#0C0B09]">
                   Atelier Digital
                 </span>
-                <span className="block text-[10px] font-medium tracking-[0.12em] uppercase leading-none mt-0.5 text-[#C9372C]">
+                <span className="block text-[10px] font-medium tracking-[0.12em] uppercase leading-none mt-0.5 text-[#7B1616]">
                   Genève
                 </span>
               </div>
@@ -72,7 +72,7 @@ export default function Navbar() {
                     {isActive && (
                       <motion.span
                         layoutId="nav-indicator"
-                        className="absolute bottom-0.5 left-3.5 right-3.5 h-px bg-[#C9372C] rounded-full"
+                        className="absolute bottom-0.5 left-3.5 right-3.5 h-px bg-[#7B1616] rounded-full"
                         transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                       />
                     )}
@@ -141,7 +141,7 @@ export default function Navbar() {
                   href={link.href}
                   className={`block px-3 py-3 text-[15px] font-medium rounded-xl transition-colors duration-150 ${
                     pathname === link.href
-                      ? 'text-[#C9372C] bg-[#C9372C]/6'
+                      ? 'text-[#7B1616] bg-[#7B1616]/6'
                       : 'text-[#0C0B09] hover:bg-black/4'
                   }`}
                 >
