@@ -66,7 +66,7 @@ export default function Testimonials() {
       <section className="border-t border-slate-100 bg-white py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <header className="mb-14 max-w-2xl">
-            <SectionLabel number="02">Mes engagements</SectionLabel>
+            <SectionLabel number="03">Mes engagements</SectionLabel>
             <h2
               className="mt-4 text-3xl tracking-tight text-slate-900 md:text-4xl"
               style={{ fontFamily: 'var(--font-serif)', fontWeight: 600 }}
@@ -120,7 +120,7 @@ export default function Testimonials() {
       <section className="grain border-t border-slate-100 bg-[#FAFAF8] py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <header className="mb-12 max-w-2xl">
-            <SectionLabel number="03">Sites en ligne</SectionLabel>
+            <SectionLabel number="04">Sites en ligne</SectionLabel>
             <h2
               className="mt-4 text-3xl tracking-tight text-slate-900 md:text-4xl"
               style={{ fontFamily: 'var(--font-serif)', fontWeight: 600 }}

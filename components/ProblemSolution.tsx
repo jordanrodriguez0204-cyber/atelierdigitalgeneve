@@ -30,7 +30,7 @@ export default function ProblemSolution() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <header className="mb-14 max-w-2xl">
-          <SectionLabel number="01">Pourquoi agir maintenant</SectionLabel>
+          <SectionLabel number="02">Pourquoi agir maintenant</SectionLabel>
           <h2
             className="mt-4 text-3xl tracking-tight text-slate-900 md:text-4xl"
             style={{ fontFamily: 'var(--font-serif)', fontWeight: 600 }}
