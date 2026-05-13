@@ -1,225 +1,231 @@
-'use client';
-
 import Link from 'next/link';
-import { motion, type Variants } from 'framer-motion';
+import SectionLabel from '@/components/visual/SectionLabel';
+
+/**
+ * Section Engagements + teaser portfolio sur la home — refonte DA atelier.
+ *
+ * Server Component (drop framer-motion).
+ *
+ * Bloc 1 — "Mes engagements" : 3 cards style Process avec chiffres XL Fraunces
+ *   en filigrane, drop des icônes décoratives.
+ * Bloc 2 — Teaser portfolio : 3 mini-cards (au lieu des 5 d'avant) puis CTA
+ *   forte vers /realisations. Élimine le doublon avec la page Réalisations.
+ *
+ * Le nom "Testimonials" est historique — il n'y a pas de témoignages dedans.
+ * Renommer impliquerait de toucher l'import dans `app/page.tsx`. On le laisse
+ * pour ne pas multiplier les changements.
+ */
 
 const guarantees = [
   {
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
     title: 'Livré en 7 jours',
     description:
       "Votre site est en ligne en une semaine. Pas de mois d'attente, pas de projets qui traînent. Je m'engage sur un délai précis.",
-    color: 'text-red-600',
-    bg: 'bg-red-50',
   },
   {
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-      </svg>
-    ),
     title: 'Satisfaction garantie',
     description:
       "Je travaille jusqu'à ce que vous soyez 100% satisfait. Des révisions illimitées pendant la phase de création, sans surcoût.",
-    color: 'text-slate-700',
-    bg: 'bg-slate-100',
   },
   {
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.95V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-      </svg>
-    ),
     title: 'Un interlocuteur unique',
     description:
       "Pas de chef de projet, pas d'intermédiaire. Vous avez mon numéro direct et je réponds sous 24h, toujours.",
-    color: 'text-red-600',
-    bg: 'bg-red-50',
   },
 ];
 
-const demos = [
+/** Teaser : on garde 3 démos (les forfaits officiels Starter / Standard / Pro)
+ *  pour rester court. Les 2 autres (Cocina, Les Amis) restent dans /realisations. */
+const teaserDemos = [
   {
-    emoji: '🍽️',
-    type: 'Restaurant',
+    sect: 'RESTAURATION',
     name: 'Bistrot du Lac',
-    forfait: 'Standard · CHF 599',
+    forfait: 'Standard',
     href: 'https://restaurant.atelierdigitalgeneve.ch',
   },
   {
-    emoji: '✂️',
-    type: 'Coiffeur',
-    name: 'Studio Nuance',
-    forfait: 'Starter · CHF 299',
+    sect: 'BEAUTÉ & BIEN-ÊTRE',
+    name: 'Salon Émeraude',
+    forfait: 'Starter',
     href: 'https://coiffeur.atelierdigitalgeneve.ch',
   },
   {
-    emoji: '👗',
-    type: 'Boutique',
-    name: 'Elara',
-    forfait: 'Pro · CHF 990',
+    sect: 'COMMERCE',
+    name: 'Atelier Maison',
+    forfait: 'Pro',
     href: 'https://boutique.atelierdigitalgeneve.ch',
-  },
-  {
-    emoji: '🎂',
-    type: 'Pâtisserie',
-    name: 'Cocina de Chanyz',
-    forfait: 'Sur mesure',
-    href: 'https://cocina-de-chanyz.vercel.app',
-  },
-  {
-    emoji: '🍜',
-    type: 'Restaurant asiatique',
-    name: 'Les Amis',
-    forfait: 'Standard · CHF 599',
-    href: 'https://les-amis-asia-dinner-website.vercel.app',
   },
 ];
 
-const containerVariants: Variants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.1 } },
-};
-
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 28 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
-  },
-};
-
 export default function Testimonials() {
   return (
-    <section className="py-24 bg-[#f8f8f8]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        {/* ── Guarantees ── */}
-        <motion.div
-          className="text-center mb-14"
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
-        >
-          <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-3">
-            Mes engagements
-          </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-4">
-            Ce que je vous garantis
-          </h2>
-          <p className="text-lg text-slate-500 max-w-xl mx-auto">
-            Des engagements clairs, tenus à chaque projet.
-          </p>
-        </motion.div>
-
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-24"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-60px' }}
-        >
-          {guarantees.map((g) => (
-            <motion.div
-              key={g.title}
-              variants={itemVariants}
-              whileHover={{ y: -6, transition: { duration: 0.22, ease: 'easeOut' } }}
-              className="bg-white rounded-3xl p-7 border border-slate-100 shadow-[0_2px_24px_rgba(0,0,0,0.06)] hover:shadow-[0_16px_48px_rgba(0,0,0,0.10)] transition-shadow duration-500"
+    <>
+      {/* ════════════════════════════════════════════════════════════════
+          Bloc 1 — Mes engagements
+          ════════════════════════════════════════════════════════════════ */}
+      <section className="border-t border-slate-100 bg-white py-24">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <header className="mb-14 max-w-2xl">
+            <SectionLabel number="02">Mes engagements</SectionLabel>
+            <h2
+              className="mt-4 text-3xl tracking-tight text-slate-900 md:text-4xl"
+              style={{ fontFamily: 'var(--font-serif)', fontWeight: 600 }}
             >
-              <div className={`w-12 h-12 ${g.bg} ${g.color} rounded-2xl flex items-center justify-center mb-5`}>
-                {g.icon}
-              </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2 tracking-tight">{g.title}</h3>
-              <p className="text-slate-500 text-sm leading-relaxed">{g.description}</p>
-            </motion.div>
-          ))}
-        </motion.div>
+              Ce que je vous garantis
+              <span className="text-[#7B1616]">.</span>
+            </h2>
+            <span className="construction-line mt-4 block" />
+            <p className="mt-5 text-slate-500">
+              Des engagements clairs, tenus à chaque projet
+              <span className="accent-square ml-1" />
+            </p>
+          </header>
 
-        {/* ── Live demos ── */}
-        <motion.div
-          className="text-center mb-10"
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
-        >
-          <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-3">
-            Sites en ligne
-          </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-4">
-            Découvrez les réalisations
-          </h2>
-          <p className="text-lg text-slate-500 max-w-xl mx-auto">
-            Cliquez sur chaque site pour le visiter en direct.
-          </p>
-        </motion.div>
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
+            {guarantees.map((g, idx) => {
+              const num = String(idx + 1).padStart(2, '0');
+              return (
+                <div
+                  key={g.title}
+                  className="group relative overflow-hidden rounded-2xl border border-slate-100 bg-[#FAFAF8]/40 p-7 transition-colors duration-300 hover:border-[#7B1616]/15 hover:bg-[#7B1616]/[0.025]"
+                >
+                  {/* Chiffre serif XL en filigrane */}
+                  <span
+                    aria-hidden="true"
+                    className="pointer-events-none absolute -right-2 -top-6 select-none text-[110px] leading-none text-slate-100 transition-colors duration-500 group-hover:text-[#7B1616]/15"
+                    style={{ fontFamily: 'var(--font-serif)', fontWeight: 600 }}
+                  >
+                    {num}
+                  </span>
 
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-60px' }}
-        >
-          {demos.map((d) => (
-            <motion.a
-              key={d.name}
-              href={d.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              variants={itemVariants}
-              whileHover={{ y: -5, transition: { duration: 0.22, ease: 'easeOut' } }}
-              className="group bg-white rounded-3xl p-6 border border-slate-100 shadow-[0_2px_24px_rgba(0,0,0,0.06)] hover:shadow-[0_16px_48px_rgba(0,0,0,0.10)] hover:border-red-100 transition-all duration-300 flex items-center gap-4"
+                  <div className="relative">
+                    <p className="label-serif text-[12px]">Engagement {num}</p>
+                    <h3 className="mt-3 text-[18px] font-bold tracking-tight text-slate-900">
+                      {g.title}
+                    </h3>
+                    <p className="mt-2 text-[14px] leading-relaxed text-slate-500">
+                      {g.description}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════════════════════════
+          Bloc 2 — Teaser portfolio (vers /realisations)
+          ════════════════════════════════════════════════════════════════ */}
+      <section className="grain border-t border-slate-100 bg-[#FAFAF8] py-24">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <header className="mb-12 max-w-2xl">
+            <SectionLabel number="03">Sites en ligne</SectionLabel>
+            <h2
+              className="mt-4 text-3xl tracking-tight text-slate-900 md:text-4xl"
+              style={{ fontFamily: 'var(--font-serif)', fontWeight: 600 }}
             >
-              <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center text-2xl shrink-0 group-hover:bg-red-50 transition-colors duration-300">
-                {d.emoji}
-              </div>
-              <div className="min-w-0">
-                <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-0.5">
-                  {d.type}
-                </p>
-                <p className="font-bold text-slate-900 group-hover:text-red-600 transition-colors duration-200 tracking-tight">
-                  {d.name}
-                </p>
-                <p className="text-xs text-slate-400 mt-0.5">{d.forfait}</p>
-              </div>
+              Un aperçu de l&apos;atelier
+              <span className="text-[#7B1616]">.</span>
+            </h2>
+            <span className="construction-line mt-4 block" />
+            <p className="mt-5 text-slate-500">
+              Trois sites en production, à l&apos;échelle des forfaits. Le book
+              complet vit sur la page Réalisations.
+            </p>
+          </header>
+
+          {/* Mini-cards éditoriales — pas de mockups image ici (réservés à /realisations),
+              juste des plaques typographiques propres. */}
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 lg:gap-5">
+            {teaserDemos.map((d, idx) => {
+              const num = String(idx + 1).padStart(2, '0');
+              return (
+                <a
+                  key={d.name}
+                  href={d.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative flex flex-col rounded-2xl bg-white p-6 ring-1 ring-black/[0.06] shadow-[0_2px_24px_rgba(0,0,0,0.05)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_48px_rgba(0,0,0,0.10)] hover:ring-[#7B1616]/15"
+                >
+                  {/* Trim marks dans les coins */}
+                  <span className="pointer-events-none absolute left-2.5 top-2.5 h-2.5 w-2.5 border-l border-t border-[#0C0B09]/15" />
+                  <span className="pointer-events-none absolute right-2.5 top-2.5 h-2.5 w-2.5 border-r border-t border-[#0C0B09]/15" />
+                  <span className="pointer-events-none absolute bottom-2.5 left-2.5 h-2.5 w-2.5 border-b border-l border-[#0C0B09]/15" />
+                  <span className="pointer-events-none absolute bottom-2.5 right-2.5 h-2.5 w-2.5 border-b border-r border-[#0C0B09]/15" />
+
+                  <p
+                    className="text-[12px] italic text-[#7B1616]"
+                    style={{ fontFamily: 'var(--font-serif)' }}
+                  >
+                    {num}
+                  </p>
+
+                  <p className="mt-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-400">
+                    Sect. {d.sect}
+                  </p>
+
+                  <h3
+                    className="mt-3 text-[20px] leading-tight tracking-tight text-slate-900 transition-colors group-hover:text-[#7B1616]"
+                    style={{ fontFamily: 'var(--font-serif)', fontWeight: 600 }}
+                  >
+                    {d.name}
+                  </h3>
+
+                  <p
+                    className="mt-1 text-[12px] italic text-slate-500"
+                    style={{ fontFamily: 'var(--font-serif)' }}
+                  >
+                    Forfait {d.forfait}
+                  </p>
+
+                  {/* Indicateur de lien externe */}
+                  <span className="mt-5 flex items-center justify-between border-t border-[#0C0B09]/[0.08] pt-3 text-[11px] font-medium uppercase tracking-[0.12em] text-slate-400 transition-colors group-hover:text-[#7B1616]">
+                    <span>Voir le site</span>
+                    <svg
+                      className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={1.75}
+                      aria-hidden="true"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
+                    </svg>
+                  </span>
+                </a>
+              );
+            })}
+          </div>
+
+          {/* CTA forte vers /realisations */}
+          <div className="mt-12 text-center">
+            <Link
+              href="/realisations"
+              className="group inline-flex items-center gap-3 rounded-2xl border border-[#0C0B09]/15 bg-white px-7 py-4 text-[15px] font-medium tracking-tight text-[#0C0B09] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#7B1616] hover:bg-[#7B1616] hover:text-white"
+            >
+              <span>Voir toutes les réalisations</span>
               <svg
-                className="w-5 h-5 text-slate-200 group-hover:text-red-400 ml-auto shrink-0 transition-colors duration-200"
+                className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
                 strokeWidth={2}
+                aria-hidden="true"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
-            </motion.a>
-          ))}
-        </motion.div>
-
-        <motion.div
-          className="text-center"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.55, delay: 0.3 }}
-        >
-          <Link
-            href="/portfolio"
-            className="inline-flex items-center gap-2 text-red-600 font-semibold hover:text-red-700 transition-colors text-sm"
-          >
-            Voir tous les détails du portfolio
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
-          </Link>
-        </motion.div>
-      </div>
-    </section>
+            </Link>
+            <p className="folio mt-4 text-[10px]">
+              Réalisations clients · Sites de démonstration · Process complet
+            </p>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
