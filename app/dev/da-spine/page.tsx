@@ -26,7 +26,10 @@ export default function DaSpinePage() {
         {/* ── En-tête de la page démo ── */}
         <header>
           <p className="folio mb-3">DOC. 2026.05.13 · Démo DA — Phase 1</p>
-          <h1 className="text-5xl font-bold tracking-tight text-[#0C0B09]">
+          <h1
+            className="text-5xl tracking-tight text-[#0C0B09]"
+            style={{ fontFamily: 'var(--font-serif)', fontWeight: 600 }}
+          >
             Squelette commun
           </h1>
           <p className="mt-4 max-w-xl text-slate-600">

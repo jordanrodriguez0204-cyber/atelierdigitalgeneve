@@ -93,7 +93,10 @@ export default async function RealisationDetailPage({ params }: RouteParams) {
             <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-red-500" />
             {project.secteur}
           </div>
-          <h1 className="mb-5 text-4xl font-bold leading-[1.05] tracking-tight text-white md:text-6xl">
+          <h1
+            className="mb-5 text-4xl font-bold leading-[1.05] tracking-tight text-white md:text-6xl"
+            style={{ fontFamily: 'var(--font-serif)', fontWeight: 600 }}
+          >
             {displayName}
           </h1>
           <p className="mx-auto max-w-2xl text-lg leading-relaxed text-slate-400 md:text-xl">
@@ -205,8 +208,11 @@ export default async function RealisationDetailPage({ params }: RouteParams) {
           <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-slate-400">
             Et vous ?
           </p>
-          <h2 className="mb-4 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
-            Vous voulez un site comme celui-ci ?
+          <h2
+            className="mb-4 text-3xl tracking-tight text-slate-900 md:text-4xl"
+            style={{ fontFamily: 'var(--font-serif)', fontWeight: 600 }}
+          >
+            Vous voulez un site comme celui-ci&nbsp;?
           </h2>
           <p className="mb-8 text-lg text-slate-500">
             20 minutes au téléphone pour comprendre votre projet, puis un devis

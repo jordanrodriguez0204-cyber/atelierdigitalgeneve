@@ -31,7 +31,10 @@ export default function CaseStudySection({ caseStudy }: CaseStudySectionProps) {
           <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-slate-400">
             Étude de cas
           </p>
-          <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+          <h2
+            className="text-3xl tracking-tight text-slate-900 sm:text-4xl"
+            style={{ fontFamily: 'var(--font-serif)', fontWeight: 600 }}
+          >
             Comment on est arrivés là
           </h2>
         </div>
