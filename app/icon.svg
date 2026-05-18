@@ -1,16 +1,16 @@
 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Dark background -->
-  <rect width="32" height="32" rx="7" fill="#0F172A"/>
-  <!-- Red accent bar -->
-  <rect x="4" y="4" width="5" height="24" rx="2" fill="#DC2626"/>
-  <!-- A letter -->
+  <!-- Fond bourgogne arrondi — signature couleur ADG -->
+  <rect width="32" height="32" rx="6" fill="#7B1616"/>
+
+  <!-- A en Fraunces serif (avec fallback chain pour les contextes où Fraunces
+       n'est pas dispo — les serifs système restent élégants à cette taille) -->
   <text
-    x="12"
+    x="16"
     y="23"
-    font-family="Inter, system-ui, sans-serif"
-    font-size="16"
-    font-weight="800"
-    fill="#FFFFFF"
-    letter-spacing="-0.5"
+    text-anchor="middle"
+    font-family="Fraunces, 'Iowan Old Style', Cambria, Georgia, serif"
+    font-size="24"
+    font-weight="600"
+    fill="#F5F1EA"
   >A</text>
 </svg>
