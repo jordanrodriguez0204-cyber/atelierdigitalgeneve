@@ -150,11 +150,161 @@ export default function ServicesPage() {
       {/* ── Grille des 3 fiches ── */}
       <ServicesGrid />
 
+      {/* ── Options & Add-ons ── */}
+      <section className="border-t border-slate-100 bg-white py-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <header className="mb-12 max-w-2xl">
+            <SectionLabel number="01">Options &amp; add-ons</SectionLabel>
+            <h2
+              className="mt-4 text-3xl tracking-tight text-slate-900 md:text-4xl"
+              style={{ fontFamily: 'var(--font-serif)', fontWeight: 600 }}
+            >
+              Pour aller plus loin
+            </h2>
+            <span className="construction-line mt-4 block" />
+            <p className="mt-5 text-slate-500">
+              Des prestations complémentaires pour soigner votre présence en
+              ligne au-delà du site<span className="accent-square ml-1" />
+            </p>
+          </header>
+
+          {/* Fiche Add-on 01 — Google My Business */}
+          <article className="relative rounded-2xl bg-[#FAFAF8] p-8 ring-1 ring-black/[0.07] shadow-[0_4px_24px_rgba(0,0,0,0.05)] md:p-10">
+            {/* Trim marks aux 4 coins */}
+            <span className="pointer-events-none absolute left-3 top-3 h-3 w-3 border-l border-t border-[#0C0B09]/15" />
+            <span className="pointer-events-none absolute right-3 top-3 h-3 w-3 border-r border-t border-[#0C0B09]/15" />
+            <span className="pointer-events-none absolute bottom-3 left-3 h-3 w-3 border-b border-l border-[#0C0B09]/15" />
+            <span className="pointer-events-none absolute bottom-3 right-3 h-3 w-3 border-b border-r border-[#0C0B09]/15" />
+
+            <div className="grid grid-cols-1 gap-10 md:grid-cols-[1fr_320px]">
+              {/* Description à gauche */}
+              <div>
+                <p className="label-serif text-[12px]">Add-on 01</p>
+                <h3
+                  className="mt-2 text-2xl tracking-tight text-slate-900 md:text-3xl"
+                  style={{ fontFamily: 'var(--font-serif)', fontWeight: 600 }}
+                >
+                  Google My Business
+                </h3>
+                <span className="construction-line mt-3 block" />
+                <p className="mt-5 text-[15px] leading-relaxed text-slate-600">
+                  La fiche officielle de votre commerce sur Google Maps et
+                  dans la barre latérale des résultats Google.{' '}
+                  <span className="font-medium text-slate-900">
+                    75 % des recherches locales
+                  </span>{' '}
+                  passent par là avant d&apos;arriver sur un site.
+                </p>
+                <p className="mt-3 text-[15px] leading-relaxed text-slate-600">
+                  Je m&apos;occupe du setup complet (photos, description SEO,
+                  horaires, attributs) puis de la maintenance mensuelle (réponses
+                  aux avis, posts, mises à jour).
+                </p>
+                <p className="mt-5 text-[13px] italic text-slate-500">
+                  D&apos;autres add-ons à venir (photos pro, rédaction blog,
+                  formation CMS).
+                </p>
+              </div>
+
+              {/* Tarifs à droite — fiche éditoriale */}
+              <div className="relative rounded-xl bg-white p-6 ring-1 ring-black/[0.06]">
+                <p className="label-serif text-[12px]">Tarifs</p>
+                <h4
+                  className="mt-1 text-[17px] tracking-tight text-slate-900"
+                  style={{ fontFamily: 'var(--font-serif)', fontWeight: 600 }}
+                >
+                  Selon votre forfait
+                </h4>
+
+                <div className="mt-5 space-y-4 text-[14px]">
+                  <div>
+                    <p className="text-[10.5px] font-semibold uppercase tracking-[0.16em] text-slate-400">
+                      Setup initial
+                    </p>
+                    <div className="mt-2 space-y-1.5 text-slate-700">
+                      <div className="flex items-baseline justify-between">
+                        <span
+                          className="italic"
+                          style={{ fontFamily: 'var(--font-serif)' }}
+                        >
+                          Starter
+                        </span>
+                        <span className="tabular-nums">CHF 180 <span className="text-[12px] text-slate-400">one-shot</span></span>
+                      </div>
+                      <div className="flex items-baseline justify-between">
+                        <span
+                          className="italic"
+                          style={{ fontFamily: 'var(--font-serif)' }}
+                        >
+                          Standard
+                        </span>
+                        <span className="text-[#7B1616]">inclus</span>
+                      </div>
+                      <div className="flex items-baseline justify-between">
+                        <span
+                          className="italic"
+                          style={{ fontFamily: 'var(--font-serif)' }}
+                        >
+                          Pro
+                        </span>
+                        <span className="text-[#7B1616]">inclus</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="trim-line w-full" />
+
+                  <div>
+                    <p className="text-[10.5px] font-semibold uppercase tracking-[0.16em] text-slate-400">
+                      Gestion mensuelle
+                    </p>
+                    <div className="mt-2 space-y-1.5 text-slate-700">
+                      <div className="flex items-baseline justify-between">
+                        <span
+                          className="italic"
+                          style={{ fontFamily: 'var(--font-serif)' }}
+                        >
+                          Starter
+                        </span>
+                        <span className="tabular-nums">+ CHF 20 <span className="text-[12px] text-slate-400">/mois</span></span>
+                      </div>
+                      <div className="flex items-baseline justify-between">
+                        <span
+                          className="italic"
+                          style={{ fontFamily: 'var(--font-serif)' }}
+                        >
+                          Standard
+                        </span>
+                        <span className="tabular-nums">+ CHF 15 <span className="text-[12px] text-slate-400">/mois</span></span>
+                      </div>
+                      <div className="flex items-baseline justify-between">
+                        <span
+                          className="italic"
+                          style={{ fontFamily: 'var(--font-serif)' }}
+                        >
+                          Pro
+                        </span>
+                        <span className="text-[#7B1616]">incluse</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Petit folio en pied de la fiche tarifs */}
+                <p className="folio mt-6 text-center text-[10px]">
+                  ADD-ON 01 · ADG/GE
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
       {/* ── Process — chiffres serif XL en filigrane (cohérence /realisations) ── */}
       <section className="border-t border-slate-100 bg-white py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <header className="mb-14 max-w-2xl">
-            <SectionLabel number="01">Process</SectionLabel>
+            <SectionLabel number="02">Process</SectionLabel>
             <h2
               className="mt-4 text-3xl tracking-tight text-slate-900 md:text-4xl"
               style={{ fontFamily: 'var(--font-serif)', fontWeight: 600 }}
