@@ -1,6 +1,6 @@
 # Atelier Digital Genève
 
-**[atelierdigitalgeneve.ch](https://atelierdigitalgeneve.ch)** — Création de sites web pour les commerces de Genève.
+**[atelierdigitalgeneve.ch](https://atelierdigitalgeneve.ch)** · Création de sites web pour les commerces de Genève.
 
 Sites web modernes, rapides et optimisés Google pour les restaurants, coiffeurs, boutiques et artisans genevois.
 
@@ -14,9 +14,9 @@ Sites web modernes, rapides et optimisés Google pour les restaurants, coiffeurs
 
 ## Démos en ligne
 
-- [Restaurant — Bistrot du Lac](https://restaurant.atelierdigitalgeneve.ch)
-- [Coiffeur — Studio Nuance](https://coiffeur.atelierdigitalgeneve.ch)
-- [Boutique — Elara](https://boutique.atelierdigitalgeneve.ch)
+- [Restaurant · Bistrot du Lac](https://restaurant.atelierdigitalgeneve.ch)
+- [Coiffeur · Studio Nuance](https://coiffeur.atelierdigitalgeneve.ch)
+- [Boutique · Elara](https://boutique.atelierdigitalgeneve.ch)
 
 ## Stack
 

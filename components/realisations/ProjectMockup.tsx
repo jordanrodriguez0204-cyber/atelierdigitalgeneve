@@ -2,9 +2,9 @@ import type { Mockup } from '@/lib/realisations';
 
 interface ProjectMockupProps {
   mockup: Mockup;
-  /** Texte alternatif descriptif — pas "image1" */
+  /** Texte alternatif descriptif · pas "image1" */
   alt: string;
-  /** Si true, on affiche un cadre macbook + iphone côte à côte (large) — sinon une seule capture (compact) */
+  /** Si true, on affiche un cadre macbook + iphone côte à côte (large) · sinon une seule capture (compact) */
   size?: 'compact' | 'large';
   /** Permet de réduire l'éventuelle élévation au hover (utile en page détail) */
   hoverable?: boolean;
@@ -15,7 +15,7 @@ interface ProjectMockupProps {
  *
  * - Server Component (aucun state, aucune interaction côté client).
  * - Si les fichiers `/public/realisations/*.png` n'existent pas encore, on rend
- *   un placeholder en gradient avec un emoji thématique — le composant reste
+ *   un placeholder en gradient avec un emoji thématique · le composant reste
  *   présentable même tant que Jordan n'a pas généré les screenshots.
  * - Lazy loading natif via `loading="lazy"` + `decoding="async"`.
  */
@@ -30,7 +30,7 @@ export default function ProjectMockup({
   // En l'absence de fichier mockup réel, on rend un placeholder élégant.
   // Convention : chemin commence par /realisations/, on présume que tant que
   // les fichiers ne sont pas livrés on garde le fallback. Le navigateur fera
-  // un 404 silencieux et `onError` (côté <img>) basculerait — mais pour rester
+  // un 404 silencieux et `onError` (côté <img>) basculerait · mais pour rester
   // 100% Server Component on choisit a priori le fallback si `fallback` est
   // défini ET que les noms par défaut commencent par "/realisations/".
   //

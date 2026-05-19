@@ -7,12 +7,12 @@ interface LogoProps {
 }
 
 /**
- * Mark ADG pour navbar — version Fraunces native.
+ * Mark ADG pour navbar · version Fraunces native.
  *
  * Ne dessine plus les lettres en paths Bézier hand-made (qui trahissaient
  * leur origine "rapide"). À la place, utilise directement la police Fraunces
  * via un élément SVG `<text>`. Les lettres sont rendues par les vrais
- * glyphes de Fraunces — qualité typographique professionnelle garantie.
+ * glyphes de Fraunces · qualité typographique professionnelle garantie.
  *
  * Aspect ratio 2.5:1 (cohérent avec le format paysage du logo papier).
  * À size=32, le mark rend 80×32 dans le DOM.
@@ -38,7 +38,7 @@ export default function Logo({ className = '', size = 32, light = false }: LogoP
       aria-label="Atelier Digital Genève"
       role="img"
     >
-      {/* ADG en Fraunces — letterforms professionnelles, scalable à toute taille */}
+      {/* ADG en Fraunces · letterforms professionnelles, scalable à toute taille */}
       <text
         x="40"
         y="26"
@@ -55,7 +55,7 @@ export default function Logo({ className = '', size = 32, light = false }: LogoP
         ADG
       </text>
 
-      {/* Petit carré accent en bas à droite — écho discret aux marques de
+      {/* Petit carré accent en bas à droite · écho discret aux marques de
           repérage du logo papier. Préservé pour la signature de marque. */}
       <rect x="73" y="27.5" width="2.5" height="2.5" fill={fill} />
     </svg>

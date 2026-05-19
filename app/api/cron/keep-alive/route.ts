@@ -3,12 +3,12 @@ import { createClient } from '@supabase/supabase-js';
 export const dynamic = 'force-dynamic';
 
 /**
- * Route GET /api/cron/keep-alive — empêche Supabase free tier de mettre
+ * Route GET /api/cron/keep-alive · empêche Supabase free tier de mettre
  * la base en pause après 7 jours sans activité.
  *
  * Déclenchée par Vercel Cron (voir vercel.json) deux fois par semaine.
  * Effectue une requête minimale (COUNT head-only sur la table `leads`)
- * — coût mémoire/CPU quasi nul côté Supabase, mais ça suffit à compter
+ * · coût mémoire/CPU quasi nul côté Supabase, mais ça suffit à compter
  * comme activité.
  *
  * Sécurité : Vercel passe automatiquement un header

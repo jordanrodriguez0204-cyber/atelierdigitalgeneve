@@ -3,15 +3,15 @@ import TrimMarks from '@/components/visual/TrimMarks';
 import Watermark from '@/components/visual/Watermark';
 
 /**
- * Hero de la home — refonte phase 2 DA "éditorial atelier".
+ * Hero de la home · refonte phase 2 DA "éditorial atelier".
  *
  * - Server Component (drop de framer-motion sur le critical path,
- *   cf. memory `framer_motion_nextjs16.md` — le hero reste figé en opacity 0
+ *   cf. memory `framer_motion_nextjs16.md` · le hero reste figé en opacity 0
  *   sur Next 16 + Turbopack si on l'anime via framer).
  * - Animations via Tailwind `animate-in fade-in slide-in-from-bottom`,
  *   100% CSS, lisible sans JS.
  * - H1 traité en Fraunces serif comme un titre de revue.
- * - Watermark "A" XL bourgogne (exclusif à la home — signature de la page
+ * - Watermark "A" XL bourgogne (exclusif à la home · signature de la page
  *   d'entrée, pas reproduit ailleurs sur le site).
  * - Croix de repérage `TrimMarks` aux 4 coins.
  * - Stats bar en fiches tabulaires : hairlines 0.5px, tabular-nums, carré
@@ -27,7 +27,7 @@ const stats = [
 export default function HeroSection() {
   return (
     <section className="relative flex min-h-[93vh] flex-col justify-between overflow-hidden bg-[#FAFAF8]">
-      {/* ── Watermark "A" XL bourgogne — signature de la home ── */}
+      {/* ── Watermark "A" XL bourgogne · signature de la home ── */}
       <Watermark size={75} opacity={0.045} offsetX={28} offsetY={-4}>
         A
       </Watermark>
@@ -45,7 +45,7 @@ export default function HeroSection() {
             filter: 'blur(60px)',
           }}
         />
-        {/* Grain papier — appliqué directement plutôt que via .grain pour ne
+        {/* Grain papier · appliqué directement plutôt que via .grain pour ne
             pas occulter le watermark qui est aussi en position absolute. */}
         <div
           className="absolute inset-0 opacity-[0.025]"
@@ -62,7 +62,7 @@ export default function HeroSection() {
         <div className="max-w-4xl">
           {/* Folio en haut (référence atelier) */}
           <p className="folio mb-10 animate-in fade-in duration-700">
-            DOC. 2026.05 — Atelier Digital Genève
+            DOC. 2026.05 · Atelier Digital Genève
           </p>
 
           {/* Badge disponibilité */}
@@ -108,7 +108,7 @@ export default function HeroSection() {
             className="flex animate-in fade-in slide-in-from-bottom-2 flex-col items-start gap-3 duration-1000 sm:flex-row sm:items-center"
             style={{ animationDelay: '400ms', animationFillMode: 'backwards' }}
           >
-            {/* Primaire — dark editorial */}
+            {/* Primaire · dark editorial */}
             <Link
               href="/contact"
               className="group inline-flex items-center gap-2.5 rounded-full bg-[#0C0B09] px-7 py-3.5 text-[14px] font-semibold tracking-tight text-white shadow-[0_1px_2px_rgba(0,0,0,0.12),0_4px_16px_rgba(0,0,0,0.10)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#1C1B18] hover:shadow-[0_2px_4px_rgba(0,0,0,0.14),0_8px_28px_rgba(0,0,0,0.16)]"
@@ -126,7 +126,7 @@ export default function HeroSection() {
               </svg>
             </Link>
 
-            {/* Secondaire — ghost */}
+            {/* Secondaire · ghost */}
             <Link
               href="/realisations"
               className="group inline-flex items-center gap-2 px-2 py-3.5 text-[14px] font-medium text-[#4A453F] transition-colors duration-200 hover:text-[#0C0B09]"
@@ -147,7 +147,7 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* ── Stats bar — bande de fiches tabulaires ──
+      {/* ── Stats bar · bande de fiches tabulaires ──
           Hairlines 0.5px, tabular-nums, accent square en fin. */}
       <div
         className="relative animate-in fade-in slide-in-from-bottom-1 duration-1000"
@@ -178,7 +178,7 @@ export default function HeroSection() {
               </div>
             ))}
 
-            {/* Mention sociale — alignée en bord droit */}
+            {/* Mention sociale · alignée en bord droit */}
             <div className="hidden flex-1 items-center px-8 py-5 lg:flex">
               <p className="max-w-[200px] text-[12px] leading-snug text-[#8C837A]">
                 Restaurant, coiffeur, boutique.{' '}

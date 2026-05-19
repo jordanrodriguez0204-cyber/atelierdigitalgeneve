@@ -117,7 +117,7 @@ export default function ServicesPage() {
 
         <div className="relative mx-auto max-w-3xl text-center">
           <p className="folio mb-6 text-white/35">
-            TARIFS 2026 — Atelier Digital Genève
+            TARIFS 2026 · Atelier Digital Genève
           </p>
 
           <SectionLabel variant="dark" className="justify-center">
@@ -165,7 +165,7 @@ export default function ServicesPage() {
             <p className="mt-5 text-slate-500">
               Quand votre site date manifestement, qu&apos;il ne s&apos;ouvre plus
               correctement sur mobile ou que votre formulaire de contact ne
-              reçoit plus rien — je le refais, sans toucher à ce qui marche
+              reçoit plus rien. Je le refais sans toucher à ce qui marche
               déjà côté contenu<span className="accent-square ml-1" />
             </p>
           </header>
@@ -192,7 +192,7 @@ export default function ServicesPage() {
 
                 <p className="mt-5 text-[15px] leading-relaxed text-slate-600">
                   Vous avez déjà des textes, des photos, peut-être une fiche
-                  Google plus ou moins maintenue. On garde tout ça —{' '}
+                  Google plus ou moins maintenue. On garde tout ça&nbsp;:{' '}
                   <span className="font-medium text-slate-900">
                     le travail de l&apos;écriture et de la prise de photos a déjà
                     été fait
@@ -203,8 +203,8 @@ export default function ServicesPage() {
                 </p>
 
                 <p className="mt-3 text-[15px] leading-relaxed text-slate-600">
-                  Le résultat est strictement identique à un site neuf — même
-                  qualité, même forfait mensuel, même fonctionnalités. Seule la
+                  Le résultat est strictement identique à un site neuf&nbsp;:
+                  même qualité, même forfait mensuel, même fonctionnalités. Seule la
                   facture initiale est réduite parce que vous me fournissez la
                   matière première.
                 </p>
@@ -325,7 +325,7 @@ export default function ServicesPage() {
           </article>
 
           <p className="mt-8 text-center text-[13px] italic text-slate-500">
-            Réduction d&apos;environ 33 % par rapport à la création — parce que
+            Réduction d&apos;environ 33 % par rapport à la création, parce que
             les contenus existent déjà.
           </p>
         </div>
@@ -349,7 +349,7 @@ export default function ServicesPage() {
             </p>
           </header>
 
-          {/* Fiche Add-on 01 — Google My Business */}
+          {/* Fiche Add-on 01 · Google My Business */}
           <article className="relative rounded-2xl bg-[#FAFAF8] p-8 ring-1 ring-black/[0.07] shadow-[0_4px_24px_rgba(0,0,0,0.05)] md:p-10">
             {/* Trim marks aux 4 coins */}
             <span className="pointer-events-none absolute left-3 top-3 h-3 w-3 border-l border-t border-[#0C0B09]/15" />
@@ -387,7 +387,7 @@ export default function ServicesPage() {
                 </p>
               </div>
 
-              {/* Tarifs à droite — fiche éditoriale */}
+              {/* Tarifs à droite · fiche éditoriale */}
               <div className="relative rounded-xl bg-white p-6 ring-1 ring-black/[0.06]">
                 <p className="label-serif text-[12px]">Tarifs</p>
                 <h4
@@ -481,7 +481,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* ── Process — chiffres serif XL en filigrane (cohérence /realisations) ── */}
+      {/* ── Process · chiffres serif XL en filigrane (cohérence /realisations) ── */}
       <section className="border-t border-slate-100 bg-white py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <header className="mb-14 max-w-2xl">
@@ -533,7 +533,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* ── FAQ — feuillet annexe Q.01 / Q.02 ── */}
+      {/* ── FAQ · feuillet annexe Q.01 / Q.02 ── */}
       <section className="grain border-t border-slate-100 bg-[#FAFAF8] py-24">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <header className="mb-12 text-center">

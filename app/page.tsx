@@ -13,11 +13,11 @@ export const metadata: Metadata = {
 };
 
 /**
- * Home — séquence de sections.
+ * Home · séquence de sections.
  *
  *   Hero           → la promesse (H1 Fraunces + watermark A + CTAs)
- *   MethodSection  → Sect. 01 — La méthode (blueprint d'architecte)
- *   ProblemSolution→ Sect. 02 — Pourquoi agir maintenant
+ *   MethodSection  → Sect. 01 · La méthode (blueprint d'architecte)
+ *   ProblemSolution→ Sect. 02 · Pourquoi agir maintenant
  *   ServicesGrid   → 3 fiches Starter / Standard / Pro (sans numéro)
  *   Testimonials   → Sect. 03 (Engagements) + Sect. 04 (Sites en ligne)
  *   CTASection     → CTA finale (sans numéro)

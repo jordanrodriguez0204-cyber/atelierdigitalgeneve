@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Projet
 
-**Atelier Digital Genève** — Site vitrine d'une agence web genevoise qui crée des sites pour les commerçants locaux.
+**Atelier Digital Genève** · Site vitrine d'une agence web genevoise qui crée des sites pour les commerçants locaux.
 
 - **Production** : [atelierdigitalgeneve.ch](https://atelierdigitalgeneve.ch)
 - **Vercel project** : `jordanrodriguez0204-cybers-projects/atelierdigitalgeneve`
@@ -28,22 +28,22 @@ git push perso main        # Push vers GitHub
 
 ## Stack
 
-- **Next.js 16.2.4** — App Router, TypeScript, Turbopack
-- **Tailwind CSS v4** — `@import "tailwindcss"` dans globals.css. Pas de `tailwind.config.ts`. Tokens custom via `@theme { }`.
-- **Supabase** (`@supabase/ssr`) — Client browser : `lib/supabase/client.ts`, client serveur : `lib/supabase/server.ts`
-- **Resend** — Emails via `app/api/contact/route.ts`
+- **Next.js 16.2.4** · App Router, TypeScript, Turbopack
+- **Tailwind CSS v4** · `@import "tailwindcss"` dans globals.css. Pas de `tailwind.config.ts`. Tokens custom via `@theme { }`.
+- **Supabase** (`@supabase/ssr`) · Client browser : `lib/supabase/client.ts`, client serveur : `lib/supabase/server.ts`
+- **Resend** · Emails via `app/api/contact/route.ts`
 
 ## Architecture
 
 ### Pages
-- `/` — Landing (Hero, ProblemSolution, ServicesGrid, Testimonials, CTA)
-- `/services` — 3 forfaits Starter CHF 299 / Standard CHF 599 / Pro CHF 990 + FAQ
-- `/realisations` — Page portfolio narrative : vrais projets clients (filtrables par secteur), sites de démonstration, stats, process. Source de vérité dans `lib/realisations.ts`
-- `/realisations/[slug]` — Page détail / case study, générée pour les projets ayant un `caseStudy: {…}` dans `lib/realisations.ts`. Sinon `notFound()`
-- `/a-propos` — Page honnête sur l'agence
-- `/contact` — `ContactForm` component
-- `/api/contact` — Route POST : sauvegarde Supabase + email Resend. Contient `export const dynamic = 'force-dynamic'` (obligatoire pour éviter l'erreur Resend au build)
-- `/portfolio` — redirige 301 vers `/realisations` (legacy)
+- `/` · Landing (Hero, ProblemSolution, ServicesGrid, Testimonials, CTA)
+- `/services` · 3 forfaits Starter CHF 299 / Standard CHF 599 / Pro CHF 990 + FAQ
+- `/realisations` · Page portfolio narrative : vrais projets clients (filtrables par secteur), sites de démonstration, stats, process. Source de vérité dans `lib/realisations.ts`
+- `/realisations/[slug]` · Page détail / case study, générée pour les projets ayant un `caseStudy: {…}` dans `lib/realisations.ts`. Sinon `notFound()`
+- `/a-propos` · Page honnête sur l'agence
+- `/contact` · `ContactForm` component
+- `/api/contact` · Route POST : sauvegarde Supabase + email Resend. Contient `export const dynamic = 'force-dynamic'` (obligatoire pour éviter l'erreur Resend au build)
+- `/portfolio` · redirige 301 vers `/realisations` (legacy)
 
 ### Flux formulaire
 `ContactForm.tsx` (client) → `POST /api/contact` → table `leads` Supabase + email Resend → `contact@atelierdigitalgeneve.ch`
@@ -78,4 +78,4 @@ Nameservers Infomaniak (`nsany1/2.infomaniak.com`). Records Vercel gérés manue
 - `www` → CNAME `cname.vercel-dns.com.`
 - `restaurant` → CNAME `cname.vercel-dns.com.`
 
-> Ne pas toucher les records `_domainkey NS` — ils gèrent le DKIM Infomaniak Mail.
+> Ne pas toucher les records `_domainkey NS` · ils gèrent le DKIM Infomaniak Mail.

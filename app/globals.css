@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  /* ── Brand (bourgogne ADG — depuis le 2026-05-13) ── */
+  /* ── Brand (bourgogne ADG · depuis le 2026-05-13) ── */
   --color-brand:     #7B1616;   /* burgundy main, depth + craft */
   --color-brand-dim: #5C1010;   /* burgundy darker (hover / accent profond) */
 
@@ -25,13 +25,13 @@
   --color-ink:       #0C0B09;   /* near-black chaud */
   --color-ink-mid:   #4A453F;
   --color-ink-muted: #8C837A;
-  --color-sand:      #FAFAF8;   /* white chaud — base de toutes les sections claires */
+  --color-sand:      #FAFAF8;   /* white chaud · base de toutes les sections claires */
   --color-sand-2:    #F2F0EB;   /* alternate section bg */
 
   /* ── Fonts ── */
   --font-sans:    var(--font-inter), system-ui, -apple-system, sans-serif;
   --font-display: var(--font-jakarta), system-ui, -apple-system, sans-serif;
-  /* Serif éditorial — pour drop-caps, watermarks, kickers, chiffres atelier */
+  /* Serif éditorial · pour drop-caps, watermarks, kickers, chiffres atelier */
   --font-serif:   var(--font-fraunces), 'Iowan Old Style', Cambria, Georgia, serif;
 }
 
@@ -53,7 +53,7 @@
     font-feature-settings: "kern" 1, "liga" 1;
   }
 
-  /* ── Display type — tight and editorial ── */
+  /* ── Display type · tight and editorial ── */
   h1 {
     font-family: var(--font-display);
     font-weight: 700;
@@ -98,12 +98,12 @@
 }
 
 /* ═══════════════════════════════════
-   UTILITIES — DA atelier / éditorial
+   UTILITIES · DA atelier / éditorial
    Ces utilities sont la colonne vertébrale de la DA. Chaque page peut en
    composer une partie pour sa propre identité. Voir aussi `components/visual/`.
 ═══════════════════════════════════ */
 @layer utilities {
-  /* ── Grain papier — overlay subtil pour fonds clairs ──
+  /* ── Grain papier · overlay subtil pour fonds clairs ──
      Appliqué via className="grain" sur une section. Le .grain-strong augmente
      l'opacité pour les sections où l'on veut vraiment sentir le papier. */
   .grain,
@@ -126,13 +126,13 @@
   .grain::after        { opacity: 0.025; }
   .grain-strong::after { opacity: 0.055; }
 
-  /* ── Mask reveal — wrapper pour les animations de texte (Hero) ── */
+  /* ── Mask reveal · wrapper pour les animations de texte (Hero) ── */
   .clip-line {
     overflow: hidden;
     display: block;
   }
 
-  /* ── Label éditorial — uppercase très tracké ── */
+  /* ── Label éditorial · uppercase très tracké ── */
   .label {
     font-size: 0.6875rem;     /* 11px */
     font-weight: 600;
@@ -151,12 +151,12 @@
     color: var(--color-brand);
   }
 
-  /* ── Hairline — bordure 0.5px ── */
+  /* ── Hairline · bordure 0.5px ── */
   .hairline { border-width: 0.5px; }
   .hairline-t { border-top-width: 0.5px; }
   .hairline-b { border-bottom-width: 0.5px; }
 
-  /* ── Drop-cap — lettrine serif bourgogne ──
+  /* ── Drop-cap · lettrine serif bourgogne ──
      Applique sur un <p> dont la première lettre doit être agrandie.
      Idéal pour les pages éditoriales (À propos, case studies). */
   .drop-cap::first-letter {
@@ -171,7 +171,7 @@
     text-rendering: optimizeLegibility;
   }
 
-  /* ── Construction line — trait sous H2 type plan d'architecte ──
+  /* ── Construction line · trait sous H2 type plan d'architecte ──
      Plein bourgogne sur ~3rem puis pointillés qui s'évanouissent. */
   .construction-line {
     display: inline-block;
@@ -195,7 +195,7 @@
   /* ── Carré accent bourgogne (echo du logo papier) ──
      Petit bloc 5px×5px à placer en fin de phrase comme un point final.
      Posé sur le baseline pour que la base du carré s'aligne sur la base
-     des lettres — typographiquement c'est la position d'un point. */
+     des lettres · typographiquement c'est la position d'un point. */
   .accent-square {
     display: inline-block;
     width: 5px;

@@ -1,17 +1,17 @@
 interface WatermarkProps {
-  /** Lettre ou texte à afficher (court — 1 à 3 caractères max) */
+  /** Lettre ou texte à afficher (court · 1 à 3 caractères max) */
   children: string;
-  /** Position d'ancrage du watermark dans le parent — défaut : center */
+  /** Position d'ancrage du watermark dans le parent · défaut : center */
   align?: 'center' | 'left' | 'right';
-  /** Opacité du watermark (0 à 1) — défaut : 0.05 */
+  /** Opacité du watermark (0 à 1) · défaut : 0.05 */
   opacity?: number;
-  /** Taille en vh — défaut : 60 (occupe 60% de la hauteur du viewport) */
+  /** Taille en vh · défaut : 60 (occupe 60% de la hauteur du viewport) */
   size?: number;
-  /** Décalage vertical en % (positif = descend) — défaut : 0 */
+  /** Décalage vertical en % (positif = descend) · défaut : 0 */
   offsetY?: number;
-  /** Décalage horizontal en % (positif = droite) — défaut : 0 */
+  /** Décalage horizontal en % (positif = droite) · défaut : 0 */
   offsetX?: number;
-  /** Couleur — défaut : bourgogne brand */
+  /** Couleur · défaut : bourgogne brand */
   color?: string;
 }
 

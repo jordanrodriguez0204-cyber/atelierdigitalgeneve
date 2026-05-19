@@ -2,7 +2,7 @@ import Link from 'next/link';
 import type { Service } from '@/lib/types';
 
 /**
- * Grille des 3 forfaits — refonte phase 3 DA "fiches d'atelier".
+ * Grille des 3 forfaits · refonte phase 3 DA "fiches d'atelier".
  *
  * Chaque forfait est traité comme une fiche papier avec :
  * - une languette d'onglet en haut (couleur subtile par forfait)
@@ -67,7 +67,7 @@ export default function ServicesGrid() {
   return (
     <section className="grain bg-[#FAFAF8] py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Trio de fiches — légèrement décalées comme posées sur un bureau */}
+        {/* Trio de fiches · légèrement décalées comme posées sur un bureau */}
         <div className="grid grid-cols-1 items-stretch gap-8 pt-6 md:grid-cols-3 lg:gap-10">
           {services.map((service, idx) => {
             const num = String(idx + 1).padStart(2, '0');
@@ -145,7 +145,7 @@ export default function ServicesGrid() {
                     </div>
                     <p className="mt-2 text-[13px] text-slate-500">
                       + <span className="font-medium text-[#0C0B09] tabular-nums">CHF {service.monthly}</span>{' '}
-                      <span className="text-slate-400">/mois — hébergement &amp; support</span>
+                      <span className="text-slate-400">/mois · hébergement &amp; support</span>
                     </p>
                   </div>
 

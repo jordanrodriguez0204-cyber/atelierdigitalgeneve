@@ -1,15 +1,15 @@
 interface SectionLabelProps {
-  /** Numéro de section formaté — ex: "01", "02", "I", "Q.01" */
+  /** Numéro de section formaté · ex: "01", "02", "I", "Q.01" */
   number?: string;
   /** Texte du label (généralement la catégorie ou le kicker) */
   children: React.ReactNode;
-  /** Couleur de fond — défaut : transparent (utilise les couleurs slate) */
+  /** Couleur de fond · défaut : transparent (utilise les couleurs slate) */
   variant?: 'light' | 'dark';
   className?: string;
 }
 
 /**
- * Kicker éditorial standardisé "Sect. NN — Texte".
+ * Kicker éditorial standardisé "Sect. NN · Texte".
  *
  * Pattern partagé par toutes les pages pour les titres de section.
  * Sur fond clair → texte slate. Sur fond sombre (hero ink, footer) → texte

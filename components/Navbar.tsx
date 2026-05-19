@@ -12,7 +12,7 @@ const navLinks = [
   { href: '/a-propos', label: 'À propos' },
 ];
 
-/* Pages dont le hero est sombre — la navbar reste blanche jusqu'au scroll */
+/* Pages dont le hero est sombre · la navbar reste blanche jusqu'au scroll */
 const DARK_HERO_PAGES = ['/services', '/realisations', '/a-propos', '/contact'];
 
 export default function Navbar() {
@@ -30,7 +30,7 @@ export default function Navbar() {
 
   useEffect(() => { setMobileOpen(false); }, [pathname]);
 
-  /* Couleurs dynamiques — fond toujours clair */
+  /* Couleurs dynamiques · fond toujours clair */
   const textColor   = 'text-[#0C0B09]';
   const textHover   = 'hover:text-[#0C0B09]';
   const activeColor = 'text-[#7B1616]';

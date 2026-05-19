@@ -2,16 +2,16 @@ import Link from 'next/link';
 import SectionLabel from '@/components/visual/SectionLabel';
 
 /**
- * Section Engagements + teaser portfolio sur la home — refonte DA atelier.
+ * Section Engagements + teaser portfolio sur la home · refonte DA atelier.
  *
  * Server Component (drop framer-motion).
  *
- * Bloc 1 — "Mes engagements" : 3 cards style Process avec chiffres XL Fraunces
+ * Bloc 1 · "Mes engagements" : 3 cards style Process avec chiffres XL Fraunces
  *   en filigrane, drop des icônes décoratives.
- * Bloc 2 — Teaser portfolio : 3 mini-cards (au lieu des 5 d'avant) puis CTA
+ * Bloc 2 · Teaser portfolio : 3 mini-cards (au lieu des 5 d'avant) puis CTA
  *   forte vers /realisations. Élimine le doublon avec la page Réalisations.
  *
- * Le nom "Testimonials" est historique — il n'y a pas de témoignages dedans.
+ * Le nom "Testimonials" est historique · il n'y a pas de témoignages dedans.
  * Renommer impliquerait de toucher l'import dans `app/page.tsx`. On le laisse
  * pour ne pas multiplier les changements.
  */
@@ -61,7 +61,7 @@ export default function Testimonials() {
   return (
     <>
       {/* ════════════════════════════════════════════════════════════════
-          Bloc 1 — Mes engagements
+          Bloc 1 · Mes engagements
           ════════════════════════════════════════════════════════════════ */}
       <section className="border-t border-slate-100 bg-white py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -115,7 +115,7 @@ export default function Testimonials() {
       </section>
 
       {/* ════════════════════════════════════════════════════════════════
-          Bloc 2 — Teaser portfolio (vers /realisations)
+          Bloc 2 · Teaser portfolio (vers /realisations)
           ════════════════════════════════════════════════════════════════ */}
       <section className="grain border-t border-slate-100 bg-[#FAFAF8] py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -135,7 +135,7 @@ export default function Testimonials() {
             </p>
           </header>
 
-          {/* Mini-cards éditoriales — pas de mockups image ici (réservés à /realisations),
+          {/* Mini-cards éditoriales · pas de mockups image ici (réservés à /realisations),
               juste des plaques typographiques propres. */}
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 lg:gap-5">
             {teaserDemos.map((d, idx) => {

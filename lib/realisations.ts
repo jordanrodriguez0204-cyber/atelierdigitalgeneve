@@ -3,7 +3,7 @@
  *
  * - `realisations` : vrais projets clients (avec ou sans anonymisation)
  * - `demos`        : sites de démonstration ADG (restaurant / coiffeur / boutique)
- * - `testimonials` : citations clients — vide tant qu'il n'y a pas au moins 2
+ * - `testimonials` : citations clients · vide tant qu'il n'y a pas au moins 2
  *   témoignages réels (la section /realisations#temoignages est masquée sinon)
  *
  * Les mockups référencés ici sont attendus dans /public/realisations/.
@@ -65,14 +65,14 @@ export interface Testimonial {
   citation: string;
   auteur: string;
   commerce: string;
-  /** Optionnel — chemin /public ou URL */
+  /** Optionnel · chemin /public ou URL */
   photo?: string;
   /** slug du projet auquel le témoignage est rattaché */
   realisationSlug?: string;
 }
 
 /* ────────────────────────────────────────────────────────────
-   RÉALISATIONS — vrais projets clients
+   RÉALISATIONS · vrais projets clients
    ──────────────────────────────────────────────────────────── */
 
 export const realisations: Realisation[] = [
@@ -111,7 +111,7 @@ export const realisations: Realisation[] = [
 ];
 
 /* ────────────────────────────────────────────────────────────
-   DEMOS — sites de démonstration ADG
+   DEMOS · sites de démonstration ADG
    ──────────────────────────────────────────────────────────── */
 
 export const demos: Realisation[] = [
@@ -172,7 +172,7 @@ export const demos: Realisation[] = [
 ];
 
 /* ────────────────────────────────────────────────────────────
-   TÉMOIGNAGES — masqués tant que length < 2
+   TÉMOIGNAGES · masqués tant que length < 2
    ──────────────────────────────────────────────────────────── */
 
 export const testimonials: Testimonial[] = [];

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import TrimMarks from '@/components/visual/TrimMarks';
 
 /**
- * Footer global — refonte DA atelier.
+ * Footer global · refonte DA atelier.
  *
  * Wordmark en Fraunces serif, kickers de colonnes en label-serif italique
  * bourgogne, trim marks aux 4 coins, folio en pied. Garde la structure
@@ -66,10 +66,10 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-5 pb-10 pt-20 sm:px-8 lg:px-10">
         {/* Folio en haut */}
         <p className="folio mb-8 text-white/30">
-          DOC. {year}.{String(new Date().getMonth() + 1).padStart(2, '0')} — Atelier Digital Genève
+          DOC. {year}.{String(new Date().getMonth() + 1).padStart(2, '0')} · Atelier Digital Genève
         </p>
 
-        {/* ── Brand statement — wordmark seul, pas de CTA (déjà dans <CTASection /> juste au-dessus) ── */}
+        {/* ── Brand statement · wordmark seul, pas de CTA (déjà dans <CTASection /> juste au-dessus) ── */}
         <div className="border-b border-white/[0.07] pb-14">
           <p
             className="mb-4 text-[13px] italic text-[#E8B4B4]"

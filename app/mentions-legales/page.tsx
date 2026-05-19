@@ -10,12 +10,12 @@ export const metadata: Metadata = {
 };
 
 /**
- * /mentions-legales — refonte phase 6 DA "imprimé légal".
+ * /mentions-legales · refonte phase 6 DA "imprimé légal".
  *
  * Esprit imprimé administratif suisse : layout strict ~720px, articles
  * numérotés `ART. N` en serif italique bourgogne au-dessus de chaque titre,
  * hairlines comme séparateurs (jamais de borders épaisses), folio en pied.
- * Pas de marques d'atelier décoratives — l'identité passe par la rigueur
+ * Pas de marques d'atelier décoratives · l'identité passe par la rigueur
  * typographique, comme un vrai document officiel.
  *
  * Le contenu juridique est intégralement conservé.
@@ -28,7 +28,7 @@ interface LegalArticleProps {
 }
 
 /**
- * Article de loi typographique — numéro en italique serif bourgogne, titre
+ * Article de loi typographique · numéro en italique serif bourgogne, titre
  * en sans-serif, contenu en dessous. Trim-line entre articles pour le côté
  * "feuillet imprimé".
  */
@@ -93,7 +93,7 @@ export default function MentionsLegalesPage() {
         </div>
       </section>
 
-      {/* ── Corps du document — colonne ~720px ── */}
+      {/* ── Corps du document · colonne ~720px ── */}
       <section className="grain bg-[#FAFAF8] py-20">
         <article className="mx-auto max-w-[720px] px-4 sm:px-6 lg:px-8">
           {/* En-tête de dossier */}
@@ -109,7 +109,7 @@ export default function MentionsLegalesPage() {
             </p>
           </header>
 
-          {/* ── PARTIE 1 — Mentions légales ── */}
+          {/* ── PARTIE 1 · Mentions légales ── */}
           <SectionLabel number="01">Partie première</SectionLabel>
           <h2
             className="mt-4 text-2xl tracking-tight text-slate-900 md:text-3xl"
@@ -191,7 +191,7 @@ export default function MentionsLegalesPage() {
             <div className="trim-line w-full" />
           </div>
 
-          {/* ── PARTIE 2 — CGV ── */}
+          {/* ── PARTIE 2 · CGV ── */}
           <SectionLabel number="02">Partie seconde</SectionLabel>
           <h2
             className="mt-4 text-2xl tracking-tight text-slate-900 md:text-3xl"
@@ -407,7 +407,7 @@ export default function MentionsLegalesPage() {
             </p>
           </div>
 
-          {/* Pied de document — folio final */}
+          {/* Pied de document · folio final */}
           <footer className="mt-12 flex items-baseline justify-between border-t border-[#0C0B09]/[0.08] pt-6">
             <p className="folio text-[10px]">
               IMPRIMÉ À GENÈVE · MAI 2026
@@ -416,7 +416,7 @@ export default function MentionsLegalesPage() {
               className="text-[10px] italic text-slate-400"
               style={{ fontFamily: 'var(--font-serif)' }}
             >
-              ADG/GE — Édition {new Date().getFullYear()}
+              ADG/GE · Édition {new Date().getFullYear()}
             </p>
           </footer>
         </article>

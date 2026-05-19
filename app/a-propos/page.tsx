@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 /**
- * /a-propos — refonte phase 5 DA "la lettre signée".
+ * /a-propos · refonte phase 5 DA "la lettre signée".
  *
  * Layout 1 colonne ~640px centrée avec marges très généreuses, drop-cap
  * bourgogne sur la première lettre, signature en bas, mission en pull-quote.
@@ -58,10 +58,10 @@ export default function AProposPage() {
         </div>
       </section>
 
-      {/* ── La lettre — colonne ~640px très aérée ── */}
+      {/* ── La lettre · colonne ~640px très aérée ── */}
       <section className="grain bg-[#FAFAF8] py-24">
         <article className="mx-auto max-w-[640px] px-4 sm:px-6">
-          {/* En-tête de lettre — date + lieu */}
+          {/* En-tête de lettre · date + lieu */}
           <header className="mb-12 flex items-baseline justify-between border-b border-[#0C0B09]/[0.08] pb-6">
             <p className="folio text-[12px]">
               Genève, mai 2026
@@ -74,19 +74,19 @@ export default function AProposPage() {
             </p>
           </header>
 
-          {/* Premier paragraphe — drop-cap bourgogne */}
+          {/* Premier paragraphe · drop-cap bourgogne */}
           <p
             className="drop-cap text-[18px] leading-[1.85] text-slate-700"
             style={{ fontFamily: 'var(--font-serif)' }}
           >
             Atelier Digital Genève est un studio web indépendant à taille
             humaine. Je m&apos;appelle Jordan Rodriguez, je crée des sites pour
-            les commerces de Genève — restaurants, boutiques, salons — avec
+            les commerces de Genève · restaurants, boutiques, salons · avec
             un parti pris simple : un site doit ramener des clients, pas juste
             être beau.
           </p>
 
-          {/* Histoire — Nouman */}
+          {/* Histoire · Nouman */}
           <h2
             className="mt-14 text-2xl tracking-tight text-slate-900 md:text-3xl"
             style={{ fontFamily: 'var(--font-serif)', fontWeight: 600 }}
@@ -100,7 +100,7 @@ export default function AProposPage() {
             <p>
               Nouman est mon ami d&apos;enfance. Passionné de photographie
               depuis l&apos;adolescence, il avait accumulé des centaines de
-              clichés magnifiques — portraits, paysages genevois, événements.
+              clichés magnifiques · portraits, paysages genevois, événements.
               Ses photos dormaient dans un disque dur.
             </p>
 
@@ -120,7 +120,7 @@ export default function AProposPage() {
                 Tu crois que je pourrais vivre de ça un jour ?
               </p>
               <footer className="mt-2 text-[12px] not-italic font-normal text-slate-500">
-                — Nouman, un soir, en 2024
+                · Nouman, un soir, en 2024
               </footer>
             </blockquote>
 
@@ -157,7 +157,7 @@ export default function AProposPage() {
                 className="text-[13px] italic text-[#7B1616]"
                 style={{ fontFamily: 'var(--font-serif)' }}
               >
-                01 — Proximité
+                01 · Proximité
               </p>
               <p className="mt-1">
                 Je suis votre voisin. Je me déplace, je vous rencontre, je
@@ -170,7 +170,7 @@ export default function AProposPage() {
                 className="text-[13px] italic text-[#7B1616]"
                 style={{ fontFamily: 'var(--font-serif)' }}
               >
-                02 — Honnêteté
+                02 · Honnêteté
               </p>
               <p className="mt-1">
                 Je vous dis ce que je peux faire et ce que je ne peux pas
@@ -183,7 +183,7 @@ export default function AProposPage() {
                 className="text-[13px] italic text-[#7B1616]"
                 style={{ fontFamily: 'var(--font-serif)' }}
               >
-                03 — Efficacité
+                03 · Efficacité
               </p>
               <p className="mt-1">
                 Des sites clairs, rapides, et efficaces. Votre site est livré
@@ -215,7 +215,7 @@ export default function AProposPage() {
             </p>
             <p className="mt-2 text-[15px] leading-relaxed text-slate-700">
               Si vous lisez ces lignes, c&apos;est que quelque chose vous a
-              fait cliquer. On peut en parler quand vous voulez —{' '}
+              fait cliquer. On peut en parler quand vous voulez ·{' '}
               <Link
                 href="/contact"
                 className="font-medium text-[#7B1616] underline-offset-4 hover:underline"

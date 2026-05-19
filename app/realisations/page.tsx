@@ -23,18 +23,18 @@ export const metadata: Metadata = {
 };
 
 /**
- * /realisations — page portfolio narrative (phase 2 DA).
+ * /realisations · page portfolio narrative (phase 2 DA).
  *
  * Structure :
  *   1. Hero éditorial sombre avec TrimMarks + folio + label serif
- *   2. Stats "tampon" — encart légèrement décalé
+ *   2. Stats "tampon" · encart légèrement décalé
  *   3. Section Réalisations clients (avec filtre onglets d'index)
  *   4. Section Modèles & démos (sans filtre)
  *   5. Section Témoignages (conditionnelle)
  *   6. Process bloc avec chiffres Fraunces XL en filigrane
  *   7. CTA final
  *
- * PAS de watermark "A" — réservé à la home pour rester unique.
+ * PAS de watermark "A" · réservé à la home pour rester unique.
  */
 export default function RealisationsPage() {
   const showTestimonials = testimonials.length >= 2;
@@ -52,7 +52,7 @@ export default function RealisationsPage() {
 
         <div className="relative mx-auto max-w-3xl text-center">
           <p className="folio mb-6 text-white/35">
-            DOC. 2026.05 — Portfolio de l&apos;atelier
+            DOC. 2026.05 · Portfolio de l&apos;atelier
           </p>
 
           <SectionLabel variant="dark" className="justify-center">
@@ -81,7 +81,7 @@ export default function RealisationsPage() {
         </div>
       </section>
 
-      {/* ── Stats en "tampon" — encart légèrement décalé ── */}
+      {/* ── Stats en "tampon" · encart légèrement décalé ── */}
       <section className="relative -mt-8 bg-transparent">
         <div className="mx-auto max-w-3xl px-4">
           <div
@@ -175,7 +175,7 @@ export default function RealisationsPage() {
         </div>
       </section>
 
-      {/* ── Section Témoignages — masquée tant que < 2 ── */}
+      {/* ── Section Témoignages · masquée tant que < 2 ── */}
       {showTestimonials && (
         <section
           id="temoignages"
@@ -204,7 +204,7 @@ export default function RealisationsPage() {
         </section>
       )}
 
-      {/* ── Process — chiffres Fraunces XL en filigrane ── */}
+      {/* ── Process · chiffres Fraunces XL en filigrane ── */}
       <section className="border-t border-slate-100 bg-white py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <header className="mb-14 max-w-2xl">

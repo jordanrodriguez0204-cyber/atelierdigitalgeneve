@@ -1,9 +1,9 @@
 interface MaskingTapeProps {
-  /** Largeur en pixels — défaut : 120 */
+  /** Largeur en pixels · défaut : 120 */
   width?: number;
-  /** Hauteur en pixels — défaut : 28 */
+  /** Hauteur en pixels · défaut : 28 */
   height?: number;
-  /** Angle de rotation en degrés — défaut : -3 */
+  /** Angle de rotation en degrés · défaut : -3 */
   rotate?: number;
   /** Texte optionnel sur le ruban (typo manuscrite) */
   children?: React.ReactNode;
@@ -13,7 +13,7 @@ interface MaskingTapeProps {
 /**
  * Bande de masking tape (ruban d'atelier translucide).
  *
- * Détail "wow" à utiliser avec parcimonie — une fois par page max, sinon
+ * Détail "wow" à utiliser avec parcimonie · une fois par page max, sinon
  * ça s'use. Idéal pour "tenir en place" une annotation ou une légende
  * importante.
  *

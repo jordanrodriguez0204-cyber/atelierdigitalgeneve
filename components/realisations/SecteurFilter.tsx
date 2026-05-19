@@ -8,7 +8,7 @@ interface SecteurFilterProps {
   options: SecteurOption[];
   selected: SecteurOption;
   onSelect: (option: SecteurOption) => void;
-  /** Compteur affiché en suffixe quand non-zéro — optionnel */
+  /** Compteur affiché en suffixe quand non-zéro · optionnel */
   counts?: Record<SecteurOption, number>;
 }
 
@@ -30,7 +30,7 @@ export default function SecteurFilter({
 }: SecteurFilterProps) {
   return (
     <div className="relative">
-      {/* Trait de coupe de base — passe sous tous les onglets */}
+      {/* Trait de coupe de base · passe sous tous les onglets */}
       <div className="hairline-b absolute inset-x-0 bottom-0 border-[#0C0B09]/[0.08]" />
 
       <div
@@ -81,7 +81,7 @@ export default function SecteurFilter({
                 </span>
               )}
 
-              {/* Soulignement actif — 2px bourgogne, par-dessus la hairline */}
+              {/* Soulignement actif · 2px bourgogne, par-dessus la hairline */}
               <span
                 aria-hidden="true"
                 className={`absolute inset-x-0 bottom-0 h-[2px] bg-[#7B1616] transition-transform duration-200 ${

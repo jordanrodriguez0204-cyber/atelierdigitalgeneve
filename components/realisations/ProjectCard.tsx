@@ -12,7 +12,7 @@ interface ProjectCardProps {
 /**
  * Card d'un projet dans la grille /realisations.
  *
- * Refonte phase 2 — traitement "book de portfolio" :
+ * Refonte phase 2 · traitement "book de portfolio" :
  * - Mockup encadré comme une vraie photo (trait fin sous l'image)
  * - Légende small caps tracée sous le mockup : SECT. RESTAURATION · STANDARD · MAI 2026
  * - Titre du commerce en Fraunces serif
@@ -50,7 +50,7 @@ export default function ProjectCard({ realisation, isDemo = false }: ProjectCard
           : 'rounded-[18px] bg-white ring-1 ring-black/[0.06] shadow-[0_2px_24px_rgba(0,0,0,0.06)] hover:shadow-[0_24px_64px_rgba(0,0,0,0.12)] hover:ring-black/[0.09]'
       }`}
     >
-      {/* ── Mockup — encadrement type book photo ── */}
+      {/* ── Mockup · encadrement type book photo ── */}
       <div className="relative">
         <ProjectMockup mockup={mockup} alt={`Aperçu du site ${displayName}`} />
 
@@ -69,7 +69,7 @@ export default function ProjectCard({ realisation, isDemo = false }: ProjectCard
         </div>
       </div>
 
-      {/* Trait fin sous l'image — encadrement type photo de livre */}
+      {/* Trait fin sous l'image · encadrement type photo de livre */}
       <div className="hairline-b border-[#0C0B09]/[0.08]" />
 
       {/* ── Légende small caps sous le mockup ── */}
@@ -139,7 +139,7 @@ export default function ProjectCard({ realisation, isDemo = false }: ProjectCard
           )}
         </div>
 
-        {/* Forfait — label-serif italique discret en pied de carte */}
+        {/* Forfait · label-serif italique discret en pied de carte */}
         <p
           className="mt-3 text-right text-[11px] italic text-slate-400"
           style={{ fontFamily: 'var(--font-serif)' }}

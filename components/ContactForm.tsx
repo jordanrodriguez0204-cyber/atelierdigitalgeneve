@@ -4,10 +4,10 @@ import { useState } from 'react';
 import type { ContactFormData } from '@/lib/types';
 
 /**
- * Formulaire de contact — refonte phase 4 DA "fiche de prise de RDV".
+ * Formulaire de contact · refonte phase 4 DA "fiche de prise de RDV".
  *
  * - Inputs avec underline-only (pas de borders complètes, pas de coins
- *   arrondis) — donne le sentiment d'une fiche papier qu'on remplit au stylo.
+ *   arrondis) · donne le sentiment d'une fiche papier qu'on remplit au stylo.
  * - Labels en small caps tracés (.label utility).
  * - Focus en bourgogne (cohérence brand).
  * - Bouton submit traité comme un tampon : encadré bourgogne, légère rotation
@@ -234,7 +234,7 @@ export default function ContactForm() {
         />
       </div>
 
-      {/* Bouton submit — traité comme un tampon */}
+      {/* Bouton submit · traité comme un tampon */}
       <div className="pt-2">
         <button
           type="submit"

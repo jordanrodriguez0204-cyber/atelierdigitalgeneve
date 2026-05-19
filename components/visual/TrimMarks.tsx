@@ -3,9 +3,9 @@ interface TrimMarksProps {
   inset?: number;
   /** Taille de chaque croix en pixels */
   size?: number;
-  /** Classe Tailwind pour la couleur (text-…) — défaut : text-stone-300 */
+  /** Classe Tailwind pour la couleur (text-…) · défaut : text-stone-300 */
   color?: string;
-  /** Coins à afficher — défaut : les 4 */
+  /** Coins à afficher · défaut : les 4 */
   corners?: Array<'tl' | 'tr' | 'bl' | 'br'>;
 }
 

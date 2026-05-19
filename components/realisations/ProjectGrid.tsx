@@ -19,7 +19,7 @@ interface ProjectGridProps {
  *
  * - Le filtre est client-side : pas de routing, pas de scroll jump.
  * - L'état "sélectionné" est conservé dans `useState`.
- * - L'animation à l'apparition utilise `animate-in fade-in` (Tailwind) — un
+ * - L'animation à l'apparition utilise `animate-in fade-in` (Tailwind) · un
  *   pur CSS, donc le contenu reste lisible sans JS.
  */
 export default function ProjectGrid({

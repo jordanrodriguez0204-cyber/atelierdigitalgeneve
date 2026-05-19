@@ -19,7 +19,7 @@ const blocks: Array<{
  *
  * Server Component. Format éditorial proche du process bloc du portfolio
  * (cards numérotées). Pour les case studies riches en métriques, Jordan peut
- * inclure des chiffres directement dans `resultat` — le composant ne fait pas
+ * inclure des chiffres directement dans `resultat` · le composant ne fait pas
  * de mise en valeur supplémentaire pour ne pas s'éloigner du style du reste
  * du site.
  */

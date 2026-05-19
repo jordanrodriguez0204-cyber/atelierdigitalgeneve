@@ -152,7 +152,7 @@ export default function ContactPage() {
                 ))}
               </div>
 
-              {/* Déroulement — 4 étapes */}
+              {/* Déroulement · 4 étapes */}
               <div className="mt-12">
                 <p className="text-[10.5px] font-semibold uppercase tracking-[0.16em] text-slate-400">
                   Comment ça se passe

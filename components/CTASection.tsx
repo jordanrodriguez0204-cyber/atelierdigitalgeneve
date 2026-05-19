@@ -4,7 +4,7 @@ import TrimMarks from '@/components/visual/TrimMarks';
 /**
  * Section CTA finale (utilisée sur Home, Services, et possiblement autres).
  *
- * Refonte DA atelier — Server Component (drop framer-motion sur ce qui était
+ * Refonte DA atelier · Server Component (drop framer-motion sur ce qui était
  * une animation reveal au scroll, remplacée par Tailwind animate-in côté CSS).
  * Le glow bourgogne remplace l'ancien gradient vermillon.
  */
@@ -20,7 +20,7 @@ export default function CTASection() {
     <section className="grain relative overflow-hidden bg-[#0C0B09]">
       <TrimMarks inset={24} size={16} color="text-white/15" />
 
-      {/* Atmosphère — glow bourgogne */}
+      {/* Atmosphère · glow bourgogne */}
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
         <div
           className="absolute bottom-0 left-1/2 h-[400px] w-[700px] -translate-x-1/2 translate-y-1/2 opacity-25"
@@ -37,7 +37,7 @@ export default function CTASection() {
         <div className="max-w-4xl">
           {/* Folio en haut */}
           <p className="folio mb-6 text-white/35">
-            DOC. 2026.05 — Prochaine étape
+            DOC. 2026.05 · Prochaine étape
           </p>
 
           {/* Label éditorial */}
@@ -106,7 +106,7 @@ export default function CTASection() {
             </Link>
           </div>
 
-          {/* Trust items — ligne épurée */}
+          {/* Trust items · ligne épurée */}
           <div
             className="flex animate-in fade-in flex-wrap gap-x-8 gap-y-4 border-t border-white/[0.07] pt-8 duration-1000"
             style={{ animationDelay: '500ms', animationFillMode: 'backwards' }}

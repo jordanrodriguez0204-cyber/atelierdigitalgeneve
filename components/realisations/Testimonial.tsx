@@ -5,7 +5,7 @@ interface TestimonialProps {
 }
 
 /**
- * Carte témoignage — citation + nom + commerce + photo optionnelle.
+ * Carte témoignage · citation + nom + commerce + photo optionnelle.
  *
  * Server Component. La section parente est responsable de cacher la grille
  * complète tant qu'il n'y a pas au moins 2 témoignages (cf. /realisations).

@@ -1,14 +1,14 @@
 import SectionLabel from '@/components/visual/SectionLabel';
 
 /**
- * Bloc "problème vs solution" sur la home — refonte DA atelier.
+ * Bloc "problème vs solution" sur la home · refonte DA atelier.
  *
  * Server Component (drop framer-motion).
  * - Carte gauche (problème) : fond blanc, libellés en label-serif, bullets
  *   marquées par une croix `✕` fine bourgogne.
  * - Carte droite (solution) : fond ink sombre, bourgogne en accent, bullets
  *   avec carré accent bourgogne.
- * - Pas d'icônes rondes décoratives — l'identité est portée par la typo et
+ * - Pas d'icônes rondes décoratives · l'identité est portée par la typo et
  *   les marques d'atelier.
  */
 
@@ -125,7 +125,7 @@ export default function ProblemSolution() {
               </h3>
 
               <p className="mt-5 text-[15px] leading-relaxed text-white/65">
-                Je m&apos;occupe de tout — design, textes, mise en ligne, SEO
+                Je m&apos;occupe de tout · design, textes, mise en ligne, SEO
                 local. Vous vous concentrez sur votre commerce.
               </p>
 

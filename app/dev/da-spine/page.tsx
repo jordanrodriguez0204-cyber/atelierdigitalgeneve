@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 /**
- * Page de démo interne — pas indexée (robots noindex).
+ * Page de démo interne · pas indexée (robots noindex).
  *
  * Sert à visualiser toutes les briques du squelette DA en un seul endroit
  * avant de les appliquer aux vraies pages. Ce fichier n'est PAS référencé
@@ -25,7 +25,7 @@ export default function DaSpinePage() {
       <div className="mx-auto max-w-5xl px-5 sm:px-8 lg:px-10 space-y-20">
         {/* ── En-tête de la page démo ── */}
         <header>
-          <p className="folio mb-3">DOC. 2026.05.13 · Démo DA — Phase 1</p>
+          <p className="folio mb-3">DOC. 2026.05.13 · Démo DA · Phase 1</p>
           <h1
             className="text-5xl tracking-tight text-[#0C0B09]"
             style={{ fontFamily: 'var(--font-serif)', fontWeight: 600 }}
@@ -55,7 +55,7 @@ export default function DaSpinePage() {
                 Atelier Digital Genève
               </p>
               <p className="text-slate-600">
-                Body texte — Inter, ce que tu lis maintenant. Le système
+                Body texte · Inter, ce que tu lis maintenant. Le système
                 principal reste sans-serif pour la lisibilité.
               </p>
             </div>
@@ -97,8 +97,8 @@ export default function DaSpinePage() {
           <p className="drop-cap mt-8 text-[17px] leading-[1.85] text-slate-700">
             Atelier Digital Genève est un studio web indépendant à taille
             humaine, fondé en 2025 par Jordan Rodriguez. Nous concevons des
-            sites pour les commerces de Genève — restaurants, boutiques,
-            salons — avec un parti pris simple : un site doit ramener des
+            sites pour les commerces de Genève · restaurants, boutiques,
+            salons · avec un parti pris simple : un site doit ramener des
             clients, pas juste être beau. Sur cette page, la première lettre
             est traitée en serif bourgogne sur ~3 lignes, comme dans un
             magazine. À utiliser surtout sur la page À propos.

@@ -14,7 +14,7 @@ const inter = Inter({
 });
 
 // Neue Montreal n'est pas sur Google Fonts (police payante).
-// Plus Jakarta Sans est la meilleure alternative libre — même géométrie, même caractère éditorial.
+// Plus Jakarta Sans est la meilleure alternative libre · même géométrie, même caractère éditorial.
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
   variable: '--font-jakarta',
@@ -143,7 +143,7 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${inter.variable} ${plusJakarta.variable} ${fraunces.variable} h-full antialiased`}>
       <head>
-        {/* Schema.org — LocalBusiness + WebSite */}
+        {/* Schema.org · LocalBusiness + WebSite */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
@@ -152,7 +152,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
         />
-        {/* Google Analytics — chargé après l'interactivité pour ne pas ralentir la page */}
+        {/* Google Analytics · chargé après l'interactivité pour ne pas ralentir la page */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
           strategy="afterInteractive"

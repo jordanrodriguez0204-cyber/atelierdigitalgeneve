@@ -2,7 +2,7 @@ import Link from 'next/link';
 import SectionLabel from '@/components/visual/SectionLabel';
 
 /**
- * MethodSection — bande éditoriale entre Hero et ProblemSolution sur la home.
+ * MethodSection · bande éditoriale entre Hero et ProblemSolution sur la home.
  *
  * Présente le blueprint `/public/illustrations/site-blueprint.svg` comme
  * preuve de méthode : chaque site ADG est dessiné comme un plan

@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: RouteParams): Promise<Metadat
   }
 
   const displayName = getDisplayName(project);
-  const title = `${displayName} — Étude de cas`;
+  const title = `${displayName} · Étude de cas`;
   const description = project.description ?? project.resultat;
 
   return {
@@ -58,7 +58,7 @@ export default async function RealisationDetailPage({ params }: RouteParams) {
   const displayName = getDisplayName(project);
   const isConfidential = project.statut === 'confidentiel' || project.anonymise;
 
-  // Schema.org — CreativeWork
+  // Schema.org · CreativeWork
   const creativeWorkSchema = {
     '@context': 'https://schema.org',
     '@type': 'CreativeWork',
