@@ -150,11 +150,192 @@ export default function ServicesPage() {
       {/* ── Grille des 3 fiches ── */}
       <ServicesGrid />
 
+      {/* ── Refonte de site existant ── */}
+      <section className="border-t border-slate-100 bg-white py-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <header className="mb-12 max-w-2xl">
+            <SectionLabel number="01">Vous avez déjà un site&nbsp;?</SectionLabel>
+            <h2
+              className="mt-4 text-3xl tracking-tight text-slate-900 md:text-4xl"
+              style={{ fontFamily: 'var(--font-serif)', fontWeight: 600 }}
+            >
+              La refonte
+            </h2>
+            <span className="construction-line mt-4 block" />
+            <p className="mt-5 text-slate-500">
+              Quand votre site date manifestement, qu&apos;il ne s&apos;ouvre plus
+              correctement sur mobile ou que votre formulaire de contact ne
+              reçoit plus rien — je le refais, sans toucher à ce qui marche
+              déjà côté contenu<span className="accent-square ml-1" />
+            </p>
+          </header>
+
+          {/* Fiche Refonte */}
+          <article className="relative rounded-2xl bg-[#FAFAF8] p-8 ring-1 ring-black/[0.07] shadow-[0_4px_24px_rgba(0,0,0,0.05)] md:p-10">
+            {/* Trim marks aux 4 coins */}
+            <span className="pointer-events-none absolute left-3 top-3 h-3 w-3 border-l border-t border-[#0C0B09]/15" />
+            <span className="pointer-events-none absolute right-3 top-3 h-3 w-3 border-r border-t border-[#0C0B09]/15" />
+            <span className="pointer-events-none absolute bottom-3 left-3 h-3 w-3 border-b border-l border-[#0C0B09]/15" />
+            <span className="pointer-events-none absolute bottom-3 right-3 h-3 w-3 border-b border-r border-[#0C0B09]/15" />
+
+            <div className="grid grid-cols-1 gap-10 md:grid-cols-[1fr_320px]">
+              {/* Description à gauche */}
+              <div>
+                <p className="label-serif text-[12px]">Sect. 01 / B</p>
+                <h3
+                  className="mt-2 text-2xl tracking-tight text-slate-900 md:text-3xl"
+                  style={{ fontFamily: 'var(--font-serif)', fontWeight: 600 }}
+                >
+                  Design neuf, contenus préservés
+                </h3>
+                <span className="construction-line mt-3 block" />
+
+                <p className="mt-5 text-[15px] leading-relaxed text-slate-600">
+                  Vous avez déjà des textes, des photos, peut-être une fiche
+                  Google plus ou moins maintenue. On garde tout ça —{' '}
+                  <span className="font-medium text-slate-900">
+                    le travail de l&apos;écriture et de la prise de photos a déjà
+                    été fait
+                  </span>
+                  . Ce qu&apos;on refait, c&apos;est l&apos;écrin&nbsp;: design contemporain,
+                  performance mobile, référencement Genève propre, et la
+                  bascule technique de votre ancien hébergeur vers le mien.
+                </p>
+
+                <p className="mt-3 text-[15px] leading-relaxed text-slate-600">
+                  Le résultat est strictement identique à un site neuf — même
+                  qualité, même forfait mensuel, même fonctionnalités. Seule la
+                  facture initiale est réduite parce que vous me fournissez la
+                  matière première.
+                </p>
+
+                {/* Petit bloc "ce qui est inclus" */}
+                <div className="mt-7">
+                  <p className="label-serif text-[12px]">Inclus en plus</p>
+                  <ul className="mt-3 space-y-2 text-[14px] text-slate-700">
+                    <li className="flex items-baseline gap-3">
+                      <span
+                        aria-hidden="true"
+                        className="mt-1 h-[5px] w-[5px] shrink-0 bg-[#7B1616]"
+                      />
+                      Audit SEO de l&apos;existant et plan de mapping des URLs
+                    </li>
+                    <li className="flex items-baseline gap-3">
+                      <span
+                        aria-hidden="true"
+                        className="mt-1 h-[5px] w-[5px] shrink-0 bg-[#7B1616]"
+                      />
+                      Redirections 301 pour préserver votre référencement
+                    </li>
+                    <li className="flex items-baseline gap-3">
+                      <span
+                        aria-hidden="true"
+                        className="mt-1 h-[5px] w-[5px] shrink-0 bg-[#7B1616]"
+                      />
+                      Migration des contenus (textes, photos optimisées)
+                    </li>
+                    <li className="flex items-baseline gap-3">
+                      <span
+                        aria-hidden="true"
+                        className="mt-1 h-[5px] w-[5px] shrink-0 bg-[#7B1616]"
+                      />
+                      Bascule DNS coordonnée &amp; monitoring 7 jours
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Tarifs à droite */}
+              <div className="relative rounded-xl bg-white p-6 ring-1 ring-black/[0.06]">
+                <p className="label-serif text-[12px]">Tarifs Refonte</p>
+                <h4
+                  className="mt-1 text-[17px] tracking-tight text-slate-900"
+                  style={{ fontFamily: 'var(--font-serif)', fontWeight: 600 }}
+                >
+                  Selon le forfait visé
+                </h4>
+
+                <div className="mt-5 space-y-4 text-[14px]">
+                  <div className="space-y-3 text-slate-700">
+                    <div>
+                      <div className="flex items-baseline justify-between">
+                        <span
+                          className="italic"
+                          style={{ fontFamily: 'var(--font-serif)' }}
+                        >
+                          Refonte Starter
+                        </span>
+                        <span className="tabular-nums font-medium">CHF 199</span>
+                      </div>
+                      <p className="mt-0.5 text-[11px] text-slate-400 line-through tabular-nums">
+                        CHF 299 en création
+                      </p>
+                    </div>
+
+                    <div>
+                      <div className="flex items-baseline justify-between">
+                        <span
+                          className="italic"
+                          style={{ fontFamily: 'var(--font-serif)' }}
+                        >
+                          Refonte Standard
+                        </span>
+                        <span className="tabular-nums font-medium">CHF 449</span>
+                      </div>
+                      <p className="mt-0.5 text-[11px] text-slate-400 line-through tabular-nums">
+                        CHF 599 en création
+                      </p>
+                    </div>
+
+                    <div>
+                      <div className="flex items-baseline justify-between">
+                        <span
+                          className="italic"
+                          style={{ fontFamily: 'var(--font-serif)' }}
+                        >
+                          Refonte Pro
+                        </span>
+                        <span className="tabular-nums font-medium">CHF 749</span>
+                      </div>
+                      <p className="mt-0.5 text-[11px] text-slate-400 line-through tabular-nums">
+                        CHF 990 en création
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="trim-line w-full" />
+
+                  <div className="text-[12.5px] leading-relaxed text-slate-500">
+                    <p>
+                      Le forfait mensuel reste identique (29, 49 ou 79 CHF
+                      selon le niveau choisi).
+                    </p>
+                    <p className="mt-2">
+                      L&apos;add-on Google My Business s&apos;applique de la même
+                      manière que pour une création.
+                    </p>
+                  </div>
+                </div>
+
+                <p className="folio mt-6 text-center text-[10px]">
+                  REFONTE · ADG/GE
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <p className="mt-8 text-center text-[13px] italic text-slate-500">
+            Réduction d&apos;environ 33 % par rapport à la création — parce que
+            les contenus existent déjà.
+          </p>
+        </div>
+      </section>
+
       {/* ── Options & Add-ons ── */}
       <section className="border-t border-slate-100 bg-white py-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <header className="mb-12 max-w-2xl">
-            <SectionLabel number="01">Options &amp; add-ons</SectionLabel>
+            <SectionLabel number="02">Options &amp; add-ons</SectionLabel>
             <h2
               className="mt-4 text-3xl tracking-tight text-slate-900 md:text-4xl"
               style={{ fontFamily: 'var(--font-serif)', fontWeight: 600 }}
@@ -304,7 +485,7 @@ export default function ServicesPage() {
       <section className="border-t border-slate-100 bg-white py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <header className="mb-14 max-w-2xl">
-            <SectionLabel number="02">Process</SectionLabel>
+            <SectionLabel number="03">Process</SectionLabel>
             <h2
               className="mt-4 text-3xl tracking-tight text-slate-900 md:text-4xl"
               style={{ fontFamily: 'var(--font-serif)', fontWeight: 600 }}
